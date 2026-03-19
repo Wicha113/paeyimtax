@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>บทความภาษี — แป๊ะยิ้มเล่าเรื่อง</title>
+  <meta name="description" content="บทความความรู้ภาษีฟรี จากแป๊ะยิ้มเล่าเรื่อง อ่านเข้าใจง่าย อัปเดตสม่ำเสมอ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">แป๊ะยิ้ม<span>เล่าเรื่อง</span></a>
+    <div class="nav-links">
+      <a href="courses.html">คอร์ส & E-Book</a>
+      
+      <a href="blog.html" style="color:var(--gold)">บทความ</a>
+      <a href="index.html#consult">ปรึกษาส่วนตัว</a>
+      <a href="index.html#consult" class="nav-cta">นัดปรึกษา</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="courses.html">คอร์ส & E-Book</a>
+  
+  <a href="blog.html">บทความ</a>
+  <a href="index.html#consult">ปรึกษาส่วนตัว</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <div class="section-label">บทความ</div>
+      <h1 class="page-hero-title">ความรู้ภาษีฟรี<br />อ่านได้ทุกวัน</h1>
+      <p class="page-hero-desc">บทความอธิบายภาษีที่คนทั่วไปต้องรู้ อัปเดตทุกสัปดาห์ ภาษาเข้าใจง่าย ไม่มีศัพท์เทคนิค</p>
+
+      <div class="blog-hero-search">
+        <input class="search-input" type="search" placeholder="ค้นหาบทความ..." id="blog-search" />
+        <button class="btn-search">ค้นหา</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Filter -->
+<section class="filter-section">
+  <div class="container">
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
+      <button class="filter-btn" data-filter="personal">บุคคลธรรมดา</button>
+      <button class="filter-btn" data-filter="business">ธุรกิจ</button>
+      <button class="filter-btn" data-filter="freelance">ฟรีแลนซ์</button>
+      <button class="filter-btn" data-filter="deduction">ลดหย่อน</button>
+      <button class="filter-btn" data-filter="news">ข่าวภาษี</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:48px;">
+  <div class="container">
+    <div class="blog-full-grid" id="blog-grid">
+
+      <!-- Featured Post — NEW -->
+      <div class="blog-card reveal" data-category="personal" data-article="parttime-tax">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #FFFDE7, #FFF9C4); aspect-ratio: 21/9;">
+          <div class="blog-thumb-placeholder" style="font-size:64px;">💼</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">บุคคลธรรมดา</span>
+          <h3 class="blog-title" style="font-size:22px;">ทำพาร์ทไทม์ได้ปีละ 50,000 บาท… ต้องยื่นภาษีจริงไหม?</h3>
+          <p class="blog-excerpt">กลัวโดนย้อนหลัง กลัวผิดกฎหมาย หลายคนได้ยินว่า "มีรายได้แค่บาทเดียวก็ต้องยื่นภาษีแล้ว!" แต่จริงๆ แล้วมันไม่ใช่แบบนั้น มาดูเกณฑ์ที่ถูกต้องกัน</p>
+          <div class="blog-footer">
+            <span>19 มีนาคม 2569 • อ่าน 3 นาที</span>
+            <a href="#" class="blog-read-more open-article" data-article="parttime-tax">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- บทความที่ 2 — ลดภาษีย้อนหลัง -->
+      <div class="blog-card reveal" data-category="personal" data-article="tax-penalty-reduction">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #FCE4EC, #F8BBD0);">
+          <div class="blog-thumb-placeholder">⚖️</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ภาษีย้อนหลัง</span>
+          <h3 class="blog-title">ลดภาษีย้อนหลังจาก 4 แสน เหลือแค่แสนกว่า แค่รู้เรื่องนี้</h3>
+          <p class="blog-excerpt">เคสจริง! โดนภาษีย้อนหลัง + VAT รวม 4 แสนกว่าบาท แต่ด้วยคำสั่งกรมสรรพากร ท.ป. 81/2542 สามารถต่อรองขอลดเหลือแสนกว่าได้</p>
+          <div class="blog-footer">
+            <span>19 มีนาคม 2569 • อ่าน 4 นาที</span>
+            <a href="#" class="blog-read-more open-article" data-article="tax-penalty-reduction">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- บทความที่ 3 — ทะเบียนพาณิชย์ชื่ออีกคน -->
+      <div class="blog-card reveal" data-category="personal" data-article="business-reg-tax">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+          <div class="blog-thumb-placeholder">🏪</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">บุคคลธรรมดา</span>
+          <h3 class="blog-title">ทะเบียนพาณิชย์เป็นชื่ออีกคน แต่คนรับเงินจริงเป็นเรา… ใครต้องยื่นภาษี?</h3>
+          <p class="blog-excerpt">ทะเบียนพาณิชย์เป็นชื่อเพื่อน ชื่อญาติ แต่ตัวเองเป็นคนทำจริง รับเงินจริง แบบนี้ต้องยื่นภาษีทั้งสองคนไหม?</p>
+          <div class="blog-footer">
+            <span>19 มีนาคม 2569 • อ่าน 3 นาที</span>
+            <a href="#" class="blog-read-more open-article" data-article="business-reg-tax">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- บทความที่ 4 — นายหน้า 40(2) vs 40(8) -->
+      <div class="blog-card reveal" data-category="freelance" data-article="broker-tax-type">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9);">
+          <div class="blog-thumb-placeholder">🛒</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ฟรีแลนซ์</span>
+          <h3 class="blog-title">นายหน้า TikTok / Shopee / Lazada จัดการภาษียังไง เป็น 40(2) หรือ 40(8)?</h3>
+          <p class="blog-excerpt">ค่านายหน้าเป็น 40(2) หรือ 40(8) กันแน่? AI ตอบผิดได้ ถ้าเชื่อผิดอาจโดนสรรพากรส่งจดหมายมาหา มาดูหลักการที่ถูกต้องกัน</p>
+          <div class="blog-footer">
+            <span>19 มีนาคม 2569 • อ่าน 4 นาที</span>
+            <a href="#" class="blog-read-more open-article" data-article="broker-tax-type">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- บทความที่ 5 — ขายของ 2.4 ล้าน ควรจ้างทำบัญชีไหม -->
+      <div class="blog-card reveal" data-category="business" data-article="hire-accountant-2m">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2);">
+          <div class="blog-thumb-placeholder">📦</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ธุรกิจ</span>
+          <h3 class="blog-title">ขายของได้ปีละ 2.4 ล้าน ควรจ้างทำบัญชีไหม?</h3>
+          <p class="blog-excerpt">หักต้นทุนเหมา 60% vs จ้างทำบัญชีหักตามจริง 80% แบบไหนคุ้มกว่ากัน? เปรียบเทียบตัวเลขจริงให้ดูเลย</p>
+          <div class="blog-footer">
+            <span>19 มีนาคม 2569 • อ่าน 3 นาที</span>
+            <a href="#" class="blog-read-more open-article" data-article="hire-accountant-2m">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- บทความที่ 6 — เงินกู้กรรมการ -->
+      <div class="blog-card reveal" data-category="business" data-article="director-loan">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #EDE7F6, #D1C4E9);">
+          <div class="blog-thumb-placeholder">🏢</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ธุรกิจ</span>
+          <h3 class="blog-title">เงินกู้กรรมการคืออะไร? สิ่งที่คนเปิดบริษัทต้องรู้</h3>
+          <p class="blog-excerpt">เอาเงินบริษัทไปใช้ส่วนตัวโดยไม่รู้ตัว นี่คือที่มาของ "เงินกู้กรรมการ" ปัญหาปวดหัวที่ส่งผลทั้งบัญชีและภาษี</p>
+          <div class="blog-footer">
+            <span>19 มีนาคม 2569 • อ่าน 4 นาที</span>
+            <a href="#" class="blog-read-more open-article" data-article="director-loan">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- บทความที่ 7 — ภาษีหุ้นต่างประเทศ -->
+      <div class="blog-card reveal" data-category="personal" data-article="foreign-stock-tax">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #E0F2F1, #B2DFDB);">
+          <div class="blog-thumb-placeholder">📈</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">บุคคลธรรมดา</span>
+          <h3 class="blog-title">รายได้จากหุ้นปันผล และกำไรจากหุ้นต่างประเทศ จัดการภาษียังไง?</h3>
+          <p class="blog-excerpt">คำถามยอดฮิตในกลุ่มลงทุน อยู่ไทยเกิน 180 วัน เอาเงินกลับไทย แบบนี้ต้องเสียภาษีเท่าไหร่ และมีวิธีจัดการอะไรได้บ้าง</p>
+          <div class="blog-footer">
+            <span>19 มีนาคม 2569 • อ่าน 5 นาที</span>
+            <a href="#" class="blog-read-more open-article" data-article="foreign-stock-tax">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 2 (เดิม Featured) -->
+      <div class="blog-card reveal" data-category="deduction">
+        <div class="blog-thumb blog-thumb-1">
+          <div class="blog-thumb-placeholder" style="font-size:48px;">📝</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ลดหย่อนภาษี</span>
+          <h3 class="blog-title">10 ค่าลดหย่อนภาษีที่คนทำงานมักลืมใช้ ปี 2569</h3>
+          <p class="blog-excerpt">ทุกปีมีคนเสียสิทธิ์ค่าลดหย่อนโดยไม่รู้ตัว ไม่ว่าจะเป็น LTF, RMF, เบี้ยประกัน หรือดอกเบี้ยบ้าน มาดูกันว่าคุณพลาดตัวไหนบ้าง</p>
+          <div class="blog-footer">
+            <span>17 มีนาคม 2569 • อ่าน 5 นาที</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="blog-card reveal" data-category="freelance">
+        <div class="blog-thumb blog-thumb-2">
+          <div class="blog-thumb-placeholder">💼</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ฟรีแลนซ์</span>
+          <h3 class="blog-title">ฟรีแลนซ์ต้องยื่นภาษีอย่างไร ครั้งแรกก็ทำได้</h3>
+          <p class="blog-excerpt">ฟรีแลนซ์หลายคนกังวลเรื่องภาษีและไม่รู้จะเริ่มต้นจากตรงไหน บทความนี้จะไกด์ทีละขั้นตอน...</p>
+          <div class="blog-footer">
+            <span>10 มีนาคม 2569 • อ่าน 7 นาที</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="blog-card reveal reveal-delay-1" data-category="business">
+        <div class="blog-thumb blog-thumb-3">
+          <div class="blog-thumb-placeholder">🏢</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">SME</span>
+          <h3 class="blog-title">เปิดบริษัทใหม่ต้องรู้ภาษีอะไรบ้างใน 3 เดือนแรก</h3>
+          <p class="blog-excerpt">เจ้าของกิจการมือใหม่หลายคนพลาดการยื่นภาษีในช่วงแรก เพราะไม่รู้ว่าต้องทำอะไรบ้าง...</p>
+          <div class="blog-footer">
+            <span>5 มีนาคม 2569 • อ่าน 6 นาที</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 4 -->
+      <div class="blog-card reveal" data-category="personal">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2);">
+          <div class="blog-thumb-placeholder">💰</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">บุคคลธรรมดา</span>
+          <h3 class="blog-title">ความแตกต่างระหว่าง ภ.ง.ด.90 และ ภ.ง.ด.91</h3>
+          <p class="blog-excerpt">หลายคนสับสนว่าตัวเองต้องยื่นแบบไหน ระหว่าง 90 กับ 91 บทความนี้อธิบายให้กระจ่าง...</p>
+          <div class="blog-footer">
+            <span>28 กุมภาพันธ์ 2569 • อ่าน 4 นาที</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 5 -->
+      <div class="blog-card reveal reveal-delay-1" data-category="news">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+          <div class="blog-thumb-placeholder">📰</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ข่าวภาษี</span>
+          <h3 class="blog-title">สรุปการเปลี่ยนแปลงกฎหมายภาษีปี 2569 ที่ต้องรู้</h3>
+          <p class="blog-excerpt">ปีนี้มีการปรับเปลี่ยนอัตราภาษีและเงื่อนไขหลายอย่าง มาสรุปให้ฟังว่าอะไรเปลี่ยนแปลงบ้าง...</p>
+          <div class="blog-footer">
+            <span>20 กุมภาพันธ์ 2569 • อ่าน 8 นาที</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 6 -->
+      <div class="blog-card reveal" data-category="deduction">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #F3E5F5, #CE93D8);">
+          <div class="blog-thumb-placeholder">🏥</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ลดหย่อนภาษี</span>
+          <h3 class="blog-title">ประกันชีวิต ประกันสุขภาพ หักภาษีได้เท่าไหร่</h3>
+          <p class="blog-excerpt">เบี้ยประกันที่จ่ายไป นำมาหักลดหย่อนภาษีได้ แต่มีเงื่อนไขและเพดานที่ต้องรู้...</p>
+          <div class="blog-footer">
+            <span>15 กุมภาพันธ์ 2569 • อ่าน 5 นาที</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 7 -->
+      <div class="blog-card reveal reveal-delay-1" data-category="freelance">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #E8F5E9, #A5D6A7);">
+          <div class="blog-thumb-placeholder">💻</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ฟรีแลนซ์</span>
+          <h3 class="blog-title">ขายของออนไลน์ ต้องจด VAT เมื่อไหร่</h3>
+          <p class="blog-excerpt">รายได้จากการขายออนไลน์ถึงเกณฑ์ที่ต้องจด VAT หรือยัง? ตอบทุกคำถามที่ r/freelance ถามบ่อย...</p>
+          <div class="blog-footer">
+            <span>8 กุมภาพันธ์ 2569 • อ่าน 5 นาที</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 8 -->
+      <div class="blog-card reveal reveal-delay-2" data-category="business">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #FFF8E1, #FFE082);">
+          <div class="blog-thumb-placeholder">📊</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ธุรกิจ</span>
+          <h3 class="blog-title">ค่าใช้จ่ายแบบไหนหักภาษีนิติบุคคลได้บ้าง</h3>
+          <p class="blog-excerpt">ไม่ใช่ทุกค่าใช้จ่ายของบริษัทที่นำมาหักภาษีได้ มาดูว่าอะไรหักได้ อะไรหักไม่ได้ พร้อมตัวอย่าง...</p>
+          <div class="blog-footer">
+            <span>1 กุมภาพันธ์ 2569 • อ่าน 9 นาที</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Load More -->
+    <div style="text-align:center; margin-top:56px;" class="reveal">
+      <button class="btn-secondary" id="load-more" style="padding:16px 40px;">โหลดบทความเพิ่มเติม</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.08);padding-top:40px;">
+      <span>© 2569 แป๊ะยิ้มเล่าเรื่อง</span>
+      <a href="index.html" style="color:var(--gold)">← กลับหน้าหลัก</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Article Modal -->
+<div class="article-modal-overlay" id="article-modal-overlay" role="dialog" aria-modal="true">
+  <div class="article-modal" id="article-modal">
+    <button class="article-modal-close" id="modal-close" aria-label="ปิด">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+// ===== Article Content Data =====
+const articles = {
+  'foreign-stock-tax': {
+    tag: 'บุคคลธรรมดา',
+    title: 'รายได้จากหุ้นปันผล และกำไรจากหุ้นต่างประเทศ จัดการ "ภาษี" ยังไง?',
+    meta: '19 มีนาคม 2569 &nbsp;•&nbsp; อ่าน 5 นาที',
+    body: `
+      <p>คำถามยอดฮิตที่เห็นเกือบทุกวันในกลุ่มลงทุน มาเขียนแชร์ความรู้ให้ครับ</p>
+
+      <p><strong>ก่อนอื่นต้องเข้าเงื่อนไข 2 ข้อนี้ก่อน</strong> ถึงจะต้องเสียภาษีในไทย</p>
+      <ul class="rule-list">
+        <li>
+          <strong>เงื่อนไขที่ 1 — อยู่ไทยเกิน 180 วัน/ปี</strong>
+          นับตั้งแต่ 1 มกราคม – 31 ธันวาคม ไปๆ กลับๆ นับรวมหมด
+        </li>
+        <li>
+          <strong>เงื่อนไขที่ 2 — นำรายได้เข้ามาในประเทศไทย</strong>
+          ถ้าเข้าทั้ง 2 ข้อ → ต้องเสียภาษีในไทย<br/>
+          ถ้าอยู่ไทยไม่ถึง 180 วัน → ไม่ต้องเสียภาษีในไทย
+        </li>
+      </ul>
+
+      <div class="highlight-box">
+        <strong>ประเภทรายได้ = 40(4)</strong><br/><br/>
+        รายได้จากการลงทุน กำไรหุ้น เงินปันผลต่างประเทศ ไม่ได้รับยกเว้นภาษี<br/>
+        ต้องนำมาคำนวณภาษีทุกปี โดยเอาเฉพาะ <strong>"กำไรที่ได้รับ หรือเงินปันผลที่ได้รับ"</strong> มาคำนวณ<br/>
+        <strong>หักต้นทุนไม่ได้เลย 🥹</strong>
+      </div>
+
+      <p><strong>ตัวอย่าง 👇</strong></p>
+      <div class="answer-box" style="background:#E8F5E9;">
+        <p>ลงทุน 100 บาท | ได้กำไร 20 บาท | เอากลับไทย 120 บาท</p>
+        <p>→ ยื่นภาษีแค่ <strong>20 บาท</strong> (เฉพาะกำไร ทุนไม่ต้องยื่น)</p>
+      </div>
+
+      <p>คำนวณตามปกติ: รายได้ − ค่าลดหย่อน → ถ้าเกิน 150,001 บาท เสียภาษีขั้นบันได <strong>5%–35%</strong></p>
+
+      <ul class="rule-list">
+        <li>
+          <strong>โดนหัก ณ ที่จ่ายจากต่างประเทศมาแล้ว (เช่น 15%) ต้องเสียในไทยอีกไหม?</strong>
+          ต้องยื่นและต้องเสียเหมือนเดิม เพราะเสียที่ต่างประเทศไม่ใช่ที่ไทย<br/>
+          <strong>แต่</strong> อาจนำ 15% ที่โดนหักมาหักลบกับภาษีที่ต้องเสียได้ตาม <strong>อนุสัญญาภาษีซ้อน</strong> ช่วยได้ไม่มากก็น้อย ดีกว่าเสียเปล่า
+        </li>
+        <li>
+          <strong>เคยได้ยินว่า "กำไรปีนี้เอาเข้าปีหน้า ไม่ต้องเสียภาษี"</strong>
+          ตอนนี้ทำไม่ได้แล้ว เพราะถูกแก้ด้วยคำสั่งสรรพากรไปแล้ว
+        </li>
+      </ul>
+
+      <div class="highlight-box">
+        <strong>วิธีที่อาจช่วยได้ — เอากลับมาแค่ทุน</strong><br/><br/>
+        ถ้าเอาเงินกลับมาไม่เกินทุนที่เอาออกไป ยังไม่ถือว่าเป็นรายได้หรือกำไร<br/><br/>
+        <strong>ตัวอย่าง:</strong> ลงทุนออกไป 100,000 บาท ได้กำไร 20,000 บาท<br/>
+        เอากลับมาแค่ 20,000 บาท → ยังไม่ต้องเสีย เพราะยังไม่เกิน 100,000 บาทที่เอาออกไป
+      </div>
+
+      <p style="font-size:15px; color:var(--gray);">ปล. ปีนี้อาจมีการแก้กฎหมายรายได้จากต่างประเทศให้ไม่ต้องเสียภาษีในไทย แต่ยังเงียบอยู่ ถ้ามีความคืบหน้าจะมาอัปเดตให้ครับ 🙏🏻</p>
+    `
+  },
+  'director-loan': {
+    tag: 'ธุรกิจ',
+    title: 'เงินกู้กรรมการคืออะไร? สิ่งที่คนเปิดบริษัทต้องรู้',
+    meta: '19 มีนาคม 2569 &nbsp;•&nbsp; อ่าน 4 นาที',
+    body: `
+      <p>ผมคิดว่านี่คือปัญหาที่แสนปวดหัวของคนทำบัญชีกับเจ้าของบริษัท และส่วนใหญ่เกิดจาก <strong>ความไม่รู้</strong> ล้วน ๆ</p>
+
+      <div class="highlight-box">
+        <strong>หลักการพื้นฐานที่ต้องเข้าใจก่อน</strong><br/><br/>
+        การเปิดบริษัท = การแยกตัวเราออกจากธุรกิจ บริษัทเปรียบเสมือน "อีกบุคคลหนึ่ง"<br/><br/>
+        การเอาเงินเข้า-ออกจากบริษัทจึงต้องเป็นขั้นตอน มีที่มาที่ไป ไม่สามารถดึงออกมาใช้เหมือนสมัยยังไม่ได้จดบริษัท
+      </div>
+
+      <p><strong>แล้ว "เงินกู้กรรมการ" มาจากไหน?</strong></p>
+      <ul class="rule-list">
+        <li>
+          <strong>นิยาม</strong>
+          เงินที่เจ้าของธุรกิจเอาออกจากบริษัทไปใช้โดยไม่มีสาเหตุที่เกี่ยวกับบริษัท เช่น จ่ายค่าเทอมลูก ใช้ในชีวิตประจำวัน ฯลฯ
+        </li>
+        <li>
+          <strong>ผลในทางบัญชี vs ภาษี</strong>
+          ในทางบัญชี — ลงค่าใช้จ่ายได้<br/>
+          ในทางภาษี — <strong>ทำไม่ได้</strong> ต้องบวกกลับเข้าเป็นรายได้เพื่อคำนวณภาษี
+        </li>
+        <li>
+          <strong>ทางออกในทางบัญชี</strong>
+          ต้องบันทึกว่าเป็น <strong>"เงินกู้ยืมของกรรมการ"</strong> เพราะในทางภาษีไม่สามารถตัดหนี้เป็น 0 ได้
+        </li>
+      </ul>
+
+      <p><strong>ตัวอย่างให้เห็นภาพ 👇</strong></p>
+      <div class="answer-box" style="background:#FFF3E0;">
+        <p>รายได้บริษัท = <strong>200,000 บาท</strong></p>
+        <p>กรรมการเอาเงินไปใช้ส่วนตัว = <strong>100,000 บาท</strong></p>
+        <p>บัญชีเหลือ = 100,000 บาท — แต่ยื่นภาษีต้องยื่น <strong>200,000 บาท เท่าเดิม</strong></p>
+        <p style="font-size:14px; color:var(--gray); margin-top:8px;">เพราะถือว่าไม่ใช่ค่าใช้จ่ายที่เกี่ยวข้องกับบริษัทในทางภาษี</p>
+      </div>
+
+      <div class="highlight-box">
+        <strong>⚠️ ผลพวงที่ตามมา</strong><br/><br/>
+        เมื่อบริษัทมี "เงินกู้กรรมการ" บริษัทต้องคิด <strong>ดอกเบี้ยเป็นรายได้</strong> จากเงินที่ให้กู้ยืมไปด้วย<br/>
+        ซึ่งทำให้บริษัทเสียภาษีเพิ่มขึ้นอีก
+      </div>
+
+      <div class="answer-box">
+        <p><strong>สรุป — ถ้าเปิดบริษัทแล้วต้องรู้ว่า</strong></p>
+        <p>❌ ห้ามดึงเงินบริษัทออกมาใช้ส่วนตัวโดยไม่ผ่านระบบ</p>
+        <p>✅ การเอาเงินออกต้องมีที่มาที่ไปที่ถูกต้อง เช่น เงินเดือน เงินปันผล หรือค่าใช้จ่ายที่เกี่ยวกับธุรกิจจริง</p>
+        <p>✅ ถ้าเกิดเงินกู้กรรมการขึ้นมาแล้ว ควรรีบจัดการกับนักบัญชีให้เรียบร้อย อย่าปล่อยทิ้งไว้</p>
+      </div>
+    `
+  },
+  'hire-accountant-2m': {
+    tag: 'ธุรกิจ',
+    title: 'ขายของได้ปีละ 2.4 ล้าน ควรจ้างทำบัญชีไหม?',
+    meta: '19 มีนาคม 2569 &nbsp;•&nbsp; อ่าน 3 นาที',
+    body: `
+      <p>หลายคนขายของออนไลน์ได้ปีละ 2 ล้านกว่า ๆ เริ่มสงสัยว่า<br/>
+      <strong>"แบบนี้ควรจ้างทำบัญชีไหม หรือหักต้นทุนเหมาไปเลยง่ายกว่า?"</strong></p>
+
+      <p>ลองเปรียบเทียบตามหลักความเป็นจริงให้ดู 👇</p>
+
+      <ul class="rule-list">
+        <li>
+          <strong>กรณีที่ 1 — หักต้นทุนเหมา 60%</strong>
+          มีแค่ค่าลดหย่อนส่วนตัว 60,000 บาท<br/>
+          ภาษีที่ต้องจ่าย ≈ <strong>95,000 บาท/ปี</strong>
+        </li>
+        <li>
+          <strong>กรณีที่ 2 — หักต้นทุนตามจริง 80%</strong>
+          ภาษีที่ต้องจ่าย ≈ <strong>19,500 บาท/ปี</strong>
+        </li>
+      </ul>
+
+      <div class="highlight-box">
+        ประหยัดภาษีได้ถึง <strong>75,500 บาท 💰</strong>
+      </div>
+
+      <p><strong>"งั้นจ้างทำบัญชีสิ คุ้มกว่า!"</strong> — ถ้าค่าทำบัญชีเดือนละ 3,000 บาท ปีละ 36,000 บาท</p>
+
+      <ul class="rule-list">
+        <li>
+          <strong>รวมค่าใช้จ่ายทั้งหมด (กรณีจ้างบัญชี)</strong>
+          ภาษี 19,500 + ค่าบัญชี 36,000 = <strong>55,500 บาท/ปี</strong>
+        </li>
+        <li>
+          <strong>เทียบกับหักเหมา</strong>
+          95,000 บาท/ปี
+        </li>
+      </ul>
+
+      <div class="answer-box">
+        <p>✅ ถึงแม้จะมีค่าทำบัญชี แต่รวมแล้วยัง <strong>ประหยัดกว่าหักเหมาอยู่ประมาณ 39,500 บาท</strong></p>
+      </div>
+
+      <p><strong>สรุป</strong> — ถ้าธุรกิจมีต้นทุนจริงเยอะเกิน 60% และยอดขายแตะหลักล้าน ควรจ้างทำบัญชี เพราะรวมต้นทุนแล้วยัง "จ่ายน้อยกว่า" หักเหมาแน่นอน</p>
+
+      <div class="highlight-box">
+        <strong>แต่ถ้าทำบัญชีเองได้ หรือใช้โปรแกรมบัญชีจัดการเองได้</strong><br/>
+        บอกเลยว่า <strong>"โคตรคุ้ม"</strong> เพราะได้ทั้งลดภาษี และลดค่าใช้จ่ายไปพร้อมกัน
+      </div>
+
+      <p style="font-size:15px; color:var(--gray);">หมายเหตุ: ตัวเลขข้างต้นเป็นเพียงตัวอย่าง ทั้งนี้ทั้งนั้นควรลองคำนวณหาความคุ้มค่าก่อนว่าแบบไหนประหยัดได้มากกว่าหรือเสียเงินน้อยกว่าในแต่ละเคสครับ</p>
+    `
+  },
+  'broker-tax-type': {
+    tag: 'ฟรีแลนซ์',
+    title: 'นายหน้า TikTok / Shopee / Lazada จัดการภาษียังไง เป็น 40(2) หรือ 40(8)?',
+    meta: '19 มีนาคม 2569 &nbsp;•&nbsp; อ่าน 4 นาที',
+    body: `
+      <p>มีหลายคนที่เพิ่งมีรายได้จากค่านายหน้าแล้วสงสัยว่าต้องจัดการภาษียังไง เลยไปถาม AI ซึ่งสิ่งที่อยากบอกคือ <strong>AI ให้คำตอบได้แต่ไม่ได้ถูกทั้งหมด ณ วันนี้</strong></p>
+
+      <div class="highlight-box">
+        <strong>หลักการที่ถูกต้อง</strong><br/><br/>
+        รายได้จากค่านายหน้า = <strong>40(2) ทุกกรณี</strong> ไม่ว่าจะมีรายได้เท่าไหร่ก็ตาม<br/>
+        หักต้นทุนได้แค่ <strong>50% แต่ไม่เกิน 100,000 บาท/ปี</strong> เท่านั้น<br/>
+        และไม่สามารถหักต้นทุนตามจริงที่มากกว่านี้ได้
+      </div>
+
+      <div class="answer-box" style="background:#FFEBEE;">
+        <p>❌ <strong>ถ้า AI ตอบว่าเป็น 40(8) หักต้นทุนแบบเหมา 60% ได้ — ผิดเต็ม ๆ</strong></p>
+        <p>ถ้าใครไปยื่นแบบนี้ สรรพากรร่อนจดหมายมาหาแน่นอน</p>
+      </div>
+
+      <p><strong>แล้วถ้ามีต้นทุนจริงเกิน 100,000 บาท/ปี จะหักได้ไหม?</strong></p>
+      <ul class="rule-list">
+        <li>
+          <strong>คำตอบ: ได้ — แต่ต้องย้ายประเภทรายได้</strong>
+          จาก 40(2) มาเป็น 40(8) ประเภทอื่น ๆ ที่หักต้นทุน<strong>ตามจริง</strong>ได้เท่านั้น — หักแบบเหมา "ไม่ได้"
+        </li>
+        <li>
+          <strong>เงื่อนไขของการย้ายมาเป็น 40(8)</strong>
+          ต้องมีการทำบัญชีรับ-จ่าย เก็บบิล เอกสาร หลักฐานต้นทุนที่เกี่ยวกับการทำธุรกิจทั้งหมด ถึงจะหักต้นทุนตามจริงได้
+        </li>
+        <li>
+          <strong>ไม่ใช่ว่าอยากยื่น 40(8) ก็ยื่น</strong>
+          ฝืนทำแบบนี้ไป เจ้าหน้าที่อยากพบปะพูดคุยแน่นอน พร้อมประเมินภาษีย้อนหลัง + ค่าปรับ + ดอกเบี้ย
+        </li>
+      </ul>
+
+      <div class="answer-box">
+        <p><strong>สรุป</strong></p>
+        <p>✅ ค่านายหน้า = <strong>40(2)</strong> หักได้สูงสุด 100,000 บาท/ปี</p>
+        <p>✅ ต้นทุนจริงเกินกว่านั้น → ย้ายเป็น <strong>40(8)</strong> แต่ต้องมีเอกสารครบ</p>
+        <p>❌ ยื่น 40(8) แบบไม่มีเอกสาร = เสี่ยงโดนสรรพากร</p>
+      </div>
+
+      <p>ใครทำอาชีพนายหน้าอยู่ เรื่องนี้ถือว่าสำคัญมากและต้องรู้หลักการก่อน ถึงจะช่วยประหยัดภาษีได้จริง ไม่ใช่จกตาตัวเอง</p>
+    `
+  },
+  'business-reg-tax': {
+    tag: 'บุคคลธรรมดา',
+    title: 'ทะเบียนพาณิชย์เป็นชื่ออีกคน แต่ "คนรับเงินจริง" เป็นเรา… แบบนี้ใครต้องยื่นภาษี?',
+    meta: '19 มีนาคม 2569 &nbsp;•&nbsp; อ่าน 3 นาที',
+    body: `
+      <p>มีหลายคนทักมาปรึกษาเรื่องนี้<br/>
+      ทะเบียนพาณิชย์เป็นชื่อเพื่อน เป็นชื่อญาติ<br/>
+      แต่ตัวเองนี่แหละ… เป็นคนทำจริง รับเงินจริง 💵<br/>
+      แล้วแบบนี้ "ต้องยื่นภาษีทั้งสองคนไหม?"</p>
+
+      <div class="highlight-box">
+        <strong>คำตอบ — ไม่ต้องยื่นทั้งสองคนครับ</strong><br/><br/>
+        สิ่งที่ต้องดูสำคัญที่สุดอย่างเดียวคือ<br/>
+        <strong>"ใครเป็นคนที่รับเงินจริง มีรายได้จริง จากการทำธุรกิจนี้"</strong>
+      </div>
+
+      <p>ยกตัวอย่างให้เห็นภาพ 👇</p>
+      <ul class="rule-list">
+        <li>
+          <strong>นายเอ = ชื่ออยู่ในทะเบียนพาณิชย์</strong>
+          แต่นายเอ "ไม่ได้ทำธุรกิจนี้แล้ว" และ "ไม่ได้รับเงิน" จากธุรกิจนี้
+        </li>
+        <li>
+          <strong>นายบี = คนที่ทำธุรกิจและรับเงินจริง</strong>
+          คนที่ต้องยื่นภาษี = <strong>นายบี เท่านั้น</strong>
+        </li>
+      </ul>
+
+      <p>เพราะเรื่องของภาษีจะดูหลัก ๆ ที่ว่า</p>
+      <div class="answer-box">
+        <p>✅ <strong>"ใครได้รับรายได้"</strong></p>
+        <p>❌ ไม่ใช่ "ใครมีชื่ออยู่ในทะเบียน"</p>
+      </div>
+
+      <p>ดังนั้น ถ้าเราเป็นคนที่มีชื่ออยู่ในทะเบียนพาณิชย์ แต่เราไม่ได้ทำธุรกิจนั้นแล้ว และไม่ได้รับรายได้จากตรงนั้นเลย — <strong>เราไม่จำเป็นต้องยื่นภาษีส่วนนี้ครับ</strong></p>
+
+      <div class="highlight-box">
+        <strong>⚠️ ข้อแนะนำสำคัญมาก</strong><br/><br/>
+        ถ้าไม่ทำแล้ว ควรรีบไป <strong>"จดเลิกทะเบียนพาณิชย์ หรือเปลี่ยนชื่อ"</strong> ให้เรียบร้อย<br/><br/>
+        เพราะถ้าปล่อยทิ้งไว้ อาจมีปัญหาตามมา เช่น<br/>
+        • ยอดขายไปโผล่ที่ชื่อเรา ทั้งที่เราไม่ได้ทำ<br/>
+        • โดนเรียกตรวจเอกสาร ทั้งที่เราไม่มีส่วนเกี่ยวข้องแล้ว<br/><br/>
+        <strong>กันไว้ดีกว่าแก้</strong>
+      </div>
+    `
+  },
+  'tax-penalty-reduction': {
+    tag: 'ภาษีย้อนหลัง',
+    title: 'ลดภาษีย้อนหลังจาก 4 แสน เหลือแค่แสนกว่าบาท แค่รู้เรื่องนี้',
+    meta: '19 มีนาคม 2569 &nbsp;•&nbsp; อ่าน 4 นาที',
+    body: `
+      <p>ออกตัวก่อนว่าผมไม่ได้มีความลับทางภาษีหลักแสนหลักหมื่นจะมาขายแต่อย่างใด แต่อยากมาแชร์เคสนี้ให้ฟัง</p>
+
+      <div class="highlight-box">
+        <strong>เคสจริง</strong> — พี่ท่านหนึ่งโดนภาษีย้อนหลัง พร้อม VAT เพราะมีรายได้เกิน 1.8 ล้านบาท<br/><br/>
+        ยอดที่ต้องจ่ายทั้งหมด:<br/>
+        ภาษีย้อนหลัง <strong>1 แสนกว่าบาท</strong> + ค่าปรับ + เงินเพิ่ม <strong>3 แสนกว่าบาท</strong><br/>
+        รวม = <strong>4 แสนบาท</strong>
+      </div>
+
+      <p>ถ้าเราโดนภาษีย้อนหลัง โดยปกติจะมีค่าปรับและเงินเพิ่มอยู่แล้ว คิดตามระยะเวลาที่ผ่านมา หรืออาจดูจาก statement และทางเจ้าหน้าที่ก็จะประเมินยอดรวมที่ต้องจ่ายทั้งหมดออกมา</p>
+
+      <p>คนที่โดนภาษีย้อนหลังมักเกิดความกลัว สติแตกได้เป็นธรรมดา เพราะไม่เคยเจอหรือไม่ทันตั้งตัว <strong>แต่สิ่งที่อยากบอกคือ เราสามารถขอต่อรองได้ และนี่คือสิทธิ์พื้นฐาน</strong></p>
+
+      <p>สิ่งที่ต้องรู้คือ</p>
+      <ul class="rule-list">
+        <li>
+          <strong>คำสั่งกรมสรรพากร ท.ป. 81/2542</strong>
+          เรื่อง หลักเกณฑ์การงดหรือลดเบี้ยปรับหรือเงินเพิ่มภาษีเงินได้ ภาษีมูลค่าเพิ่ม และภาษีธุรกิจเฉพาะ ตามมาตรา 22, 26, 67 ตรี, 89 และ 91/21(6) แห่งประมวลรัษฎากร
+        </li>
+        <li>
+          <strong>ถ้าต่อรองแล้วเจ้าหน้าที่ไม่ยอมลด</strong>
+          เราสามารถ <strong>เขียนคำร้องขออุทธรณ์</strong> เพื่อขอลดหรืองดเบี้ยปรับจากกรมสรรพากรได้
+        </li>
+      </ul>
+
+      <p>ซึ่งสิ่งนี้จะช่วยให้เราจ่ายเบี้ยปรับ เงินเพิ่มน้อยลง หรืออาจไม่ต้องจ่ายเบี้ยปรับเงินเพิ่มเลยก็ได้ (แล้วแต่เคสและการพิจารณาของเจ้าหน้าที่)</p>
+
+      <div class="answer-box">
+        <p><strong>สรุปขั้นตอนถ้าโดนภาษีย้อนหลัง:</strong></p>
+        <p>1️⃣ <strong>ตั้งสติ</strong> — อย่าตื่นตระหนก</p>
+        <p>2️⃣ <strong>รวบรวมเอกสาร</strong> ให้ครบก่อน</p>
+        <p>3️⃣ <strong>เข้าพบเจ้าหน้าที่</strong> ตรงไปตรงมา ไม่เอาอารมณ์เข้าไปเกี่ยว</p>
+        <p>4️⃣ <strong>อ้างคำสั่ง ท.ป. 81/2542</strong> และขอให้ช่วยลดหรืองดเบี้ยปรับ</p>
+        <p>5️⃣ ถ้าไม่ได้ผล ➡️ <strong>ยื่นคำร้องขออุทธรณ์</strong></p>
+      </div>
+
+      <p>เคสนี้นำคำร้องไปคุยกับเจ้าหน้าที่โดยตรง ผลคือ<br/>
+      จากต้องจ่าย <strong>4 แสนกว่าบาท</strong> เหลือจ่ายย้อนหลังแค่ <strong>แสนกว่าบาท</strong> เท่านั้น</p>
+    `
+  },
+  'parttime-tax': {
+    tag: 'บุคคลธรรมดา',
+    title: 'ทำพาร์ทไทม์ได้ปีละ 50,000 บาท… ต้องยื่นภาษีจริงไหม?',
+    meta: '19 มีนาคม 2569 &nbsp;•&nbsp; อ่าน 3 นาที',
+    body: `
+      <p>กลัวโดนย้อนหลังด้วย ทำยังไงดี?</p>
+
+      <div class="highlight-box">
+        น่าจะมีหลายคนได้ยินมาว่า<br/>
+        <strong>"มีรายได้แค่บาทเดียวก็ต้องยื่นภาษีแล้วนะ!"</strong><br/>
+        ฟังแล้วก็กลัวกันหมด กลัวโดนย้อนหลัง กลัวผิดกฎหมาย<br/>
+        แต่จริง ๆ แล้ว… มันไม่ใช่แบบนั้นครับ 😅
+      </div>
+
+      <p><strong>อย่างแรกเลย</strong> ให้ดูรายได้ทั้งปีของเราก่อน<br/>
+      นับตั้งแต่ 1 มกราคม – 31 ธันวาคม<br/>
+      ว่า รายได้ถึงเกณฑ์ที่กฎหมายบังคับให้ต้องยื่น หรือยัง</p>
+
+      <p>ถ้ายังไม่ถึงเกณฑ์</p>
+      <ul style="padding-left:20px; margin-bottom:20px; line-height:2;">
+        <li>➡️ จะยื่นก็ได้</li>
+        <li>➡️ ไม่ยื่นก็ได้</li>
+      </ul>
+      <p>ไม่ผิดกฎหมาย ไม่โดนย้อนหลังอะไรทั้งนั้นครับ</p>
+
+      <p>ทีนี้ <strong>"เกณฑ์ยื่นภาษี"</strong> ของบุคคลธรรมดามีอยู่แบบนี้ 👇</p>
+      <ul class="rule-list">
+        <li>
+          <strong>ถ้าเป็นคนโสด ไม่ได้จดทะเบียนสมรส</strong>
+          รายได้จาก "เงินเดือน" ต้องเกิน <strong>120,000 บาท/ปี</strong>
+        </li>
+        <li>
+          <strong>หรือ</strong>
+          รายได้จาก "อย่างอื่นนอกจากเงินเดือน" ต้องเกิน <strong>60,000 บาท/ปี</strong>
+        </li>
+      </ul>
+      <p>ถึงจะต้องเริ่มยื่นภาษีครับ</p>
+
+      <p><strong>กลับมาที่เคสนี้</strong><br/>
+      ทำพาร์ทไทม์ รายได้ปีละ 50,000 บาท<br/>
+      รายได้ไม่ถึง 60,000 บาท</p>
+
+      <div class="answer-box">
+        <p>✅ ยังไม่จำเป็นต้องยื่นภาษี</p>
+        <p>✅ "ไม่มีอะไรต้องกลัวเรื่องย้อนหลัง" เพราะต่อให้ยื่นก็ไม่เสียภาษีอยู่ดี</p>
+      </div>
+
+      <p>พูดง่าย ๆ คือ<br/>
+      รายได้ไม่ถึงเกณฑ์ กฎหมายไม่ได้บังคับให้ยื่นครับ<br/>
+      ไม่ต้องเครียด ไม่ต้องกังวล</p>
+
+      <p>แต่ถ้าอยากยื่นไว้เฉย ๆ เพื่อให้มีประวัติการยื่นก็สามารถทำได้<br/>
+      เพราะรายได้น้อยแบบนี้ <strong>"ไม่มีภาษีต้องเสีย"</strong> อยู่แล้ว</p>
+    `
+  }
+};
+
+// ===== Modal Logic =====
+const overlay = document.getElementById('article-modal-overlay');
+const modalContent = document.getElementById('modal-content');
+const closeBtn = document.getElementById('modal-close');
+
+function openArticle(articleId) {
+  const art = articles[articleId];
+  if (!art) return;
+  modalContent.innerHTML = `
+    <span class="article-modal-tag">${art.tag}</span>
+    <h2 class="article-modal-title">${art.title}</h2>
+    <div class="article-modal-meta">${art.meta}</div>
+    <div class="article-modal-body">${art.body}</div>
+    <div class="article-modal-author">จาก <span>แป๊ะยิ้มเล่าเรื่อง</span></div>
+  `;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  overlay.scrollTop = 0;
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.open-article').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    openArticle(btn.dataset.article);
+  });
+});
+
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', e => {
+  if (e.target === overlay) closeModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
+<script>
+  // Blog Filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const blogCards = document.querySelectorAll('.blog-card[data-category]');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+
+      blogCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = '';
+          setTimeout(() => card.style.opacity = '1', 10);
+        } else {
+          card.style.opacity = '0';
+          setTimeout(() => card.style.display = 'none', 300);
+        }
+      });
+    });
+  });
+
+  // Blog Search
+  const searchInput = document.getElementById('blog-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase();
+      blogCards.forEach(card => {
+        const title = card.querySelector('.blog-title')?.textContent.toLowerCase() || '';
+        const excerpt = card.querySelector('.blog-excerpt')?.textContent.toLowerCase() || '';
+        if (title.includes(q) || excerpt.includes(q)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  }
+</script>
+</body>
+</html>

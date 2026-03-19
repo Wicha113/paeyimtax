@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>แพ็กเกจปรึกษารายชั่วโมง — แป๊ะยิ้มเล่าเรื่อง</title>
+  <meta name="description" content="ปรึกษาภาษีส่วนตัวแบบรายชั่วโมง วางแผนภาษีเฉพาะบุคคล ประเมินความเสี่ยง โดยแป๊ะยิ้มเล่าเรื่อง" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+      padding: calc(var(--nav-height) + 56px) 0 80px;
+    }
+    .product-sticky { position: sticky; top: calc(var(--nav-height) + 24px); }
+    .product-img {
+      border-radius: var(--radius);
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      box-shadow: var(--shadow-lg);
+    }
+    .product-info { padding-top: 8px; }
+    .product-badge-row { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .product-badge {
+      font-size: 11px; font-weight: 700; padding: 5px 12px;
+      border-radius: 100px; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .badge-normal { background: var(--dark); color: #fff; }
+    .badge-express { background: #E53E3E; color: #fff; }
+    .product-title {
+      font-size: clamp(26px, 3.5vw, 38px); font-weight: 800;
+      color: var(--dark); letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 12px;
+    }
+    .product-subtitle { font-size: 17px; color: var(--gray); line-height: 1.7; margin-bottom: 28px; }
+    .price-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+    .price-option {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 16px 20px; border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border); background: var(--light-gray);
+    }
+    .price-option.express { border-color: #E53E3E33; background: #FFF5F5; }
+    .price-option-left { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .price-option-name { font-size: 15px; font-weight: 700; color: var(--dark); }
+    .price-option-sub { font-size: 13px; color: var(--gray); }
+    .price-option-amount { font-size: 22px; font-weight: 800; color: var(--gold); white-space: nowrap; }
+    .price-option.express .price-option-amount { color: #E53E3E; }
+    .price-option-btn {
+      font-size: 13px; font-weight: 700; padding: 9px 18px;
+      border-radius: var(--radius-sm); background: var(--gold); color: #fff;
+      border: none; cursor: pointer; font-family: var(--font);
+      transition: background 0.2s; white-space: nowrap; flex-shrink: 0;
+    }
+    .price-option.express .price-option-btn { background: #E53E3E; }
+    .price-option-btn:hover { opacity: 0.85; }
+    .product-meta-row {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+    .product-meta-item { font-size: 14px; color: var(--gray); display: flex; align-items: center; gap: 6px; }
+    .btn-buy {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 18px; border-radius: var(--radius-sm);
+      background: var(--gold); color: #fff; font-size: 17px; font-weight: 700;
+      cursor: pointer; border: none; font-family: var(--font);
+      transition: background 0.2s, transform 0.2s; margin-bottom: 12px;
+      text-decoration: none;
+    }
+    .btn-buy:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-buy-note { font-size: 13px; color: var(--gray); text-align: center; }
+    .detail-section { padding: 72px 0; border-top: 1px solid var(--border); }
+    .detail-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .detail-title { font-size: 28px; font-weight: 800; color: var(--dark); margin-bottom: 24px; }
+    .detail-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .detail-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 16px; color: var(--dark); line-height: 1.6;
+    }
+    .detail-list li::before {
+      content: '✓'; color: var(--gold); font-weight: 800; font-size: 16px; flex-shrink: 0; margin-top: 1px;
+    }
+    .compare-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .compare-card {
+      border-radius: var(--radius-sm); padding: 24px;
+      border: 1.5px solid var(--border); background: var(--light-gray); text-align: center;
+      cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .compare-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .compare-card.featured { border-color: var(--gold); background: var(--gold-pale); }
+    .compare-card-label { font-size: 12px; font-weight: 700; color: var(--gray); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .compare-card.featured .compare-card-label { color: var(--gold); }
+    .compare-card-price { font-size: 26px; font-weight: 800; color: var(--dark); }
+    .compare-card-sub { font-size: 13px; color: var(--gray); margin-top: 4px; }
+    .compare-card.featured .compare-card-price { color: var(--gold); }
+    @media (max-width: 768px) {
+      .product-layout { grid-template-columns: 1fr; gap: 32px; padding-top: calc(var(--nav-height) + 32px); }
+      .product-sticky { position: static; }
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">แป๊ะยิ้ม<span>เล่าเรื่อง</span></a>
+    <div class="nav-links">
+      <a href="courses.html">คอร์ส & E-Book</a>
+      
+      <a href="blog.html">บทความ</a>
+      <a href="index.html#consult" style="color:var(--gold)">ปรึกษาส่วนตัว</a>
+      <a href="index.html#consult" class="nav-cta">นัดปรึกษา</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="courses.html">คอร์ส & E-Book</a>
+  
+  <a href="blog.html">บทความ</a>
+  <a href="index.html#consult">ปรึกษาส่วนตัว</a>
+</div>
+
+<div class="container">
+  <div class="product-layout">
+
+    <!-- Left: Image -->
+    <div class="product-sticky reveal">
+      <img src="images/h01.jpg" alt="แพ็กเกจปรึกษารายชั่วโมง" class="product-img" />
+    </div>
+
+    <!-- Right: Info -->
+    <div class="product-info reveal reveal-delay-1">
+      <div class="product-badge-row">
+        <span class="product-badge badge-normal">📞 ปรึกษาปกติ</span>
+        <span class="product-badge badge-express">⚡ ปรึกษาด่วน</span>
+      </div>
+
+      <h1 class="product-title">ปรึกษาภาษีส่วนตัว<br />แบบรายชั่วโมง</h1>
+      <p class="product-subtitle">วางแผนภาษีเฉพาะบุคคล ตรงกับสถานการณ์ของคุณ ไม่มีพื้นฐานก็ปรึกษาได้</p>
+
+      <div class="price-options">
+        <div class="price-option">
+          <div class="price-option-left">
+            <div class="price-option-name">ปรึกษาปกติ</div>
+            <div class="price-option-sub">นัดล่วงหน้า 2–3 วัน</div>
+          </div>
+          <div class="price-option-amount">฿1,500<span style="font-size:14px;font-weight:400;color:var(--gray)">/ชม.</span></div>
+          <button class="price-option-btn" data-payment data-product="ปรึกษาภาษีส่วนตัว (ปกติ)" data-price="฿1,500">เลือก →</button>
+        </div>
+        <div class="price-option express">
+          <div class="price-option-left">
+            <div class="price-option-name">⚡ ปรึกษาด่วน</div>
+            <div class="price-option-sub">ภายในวันนี้</div>
+          </div>
+          <div class="price-option-amount">฿2,000<span style="font-size:14px;font-weight:400;color:var(--gray)">/ชม.</span></div>
+          <button class="price-option-btn" data-payment data-product="ปรึกษาภาษีส่วนตัว (ด่วน)" data-price="฿2,000">เลือก →</button>
+        </div>
+      </div>
+
+      <div class="product-meta-row">
+        <div class="product-meta-item">📞 ปรึกษาผ่านโทรศัพท์</div>
+        <div class="product-meta-item">⏱ คิดตามชั่วโมงจริง</div>
+        <div class="product-meta-item">📝 ยื่นภาษีฟรี 1 ครั้ง</div>
+      </div>
+
+      <button class="btn-buy" data-payment data-product="ปรึกษาภาษีส่วนตัว (ปกติ)" data-price="฿1,500">ชำระเงินเลย →</button>
+      <p class="btn-buy-note">หลังโอนเงิน ส่งสลิปมาที่ LINE <strong>@wicha</strong> แป๊ะจะติดต่อนัดเวลาทันที</p>
+    </div>
+  </div>
+</div>
+
+<!-- Detail Sections -->
+<div style="background: var(--light-gray);">
+  <div class="container">
+
+    <!-- สิ่งที่ได้รับ -->
+    <div class="detail-section">
+      <div class="detail-label">สิ่งที่ได้รับ</div>
+      <h2 class="detail-title">ปรึกษาแต่ละครั้งได้อะไรบ้าง?</h2>
+      <ul class="detail-list">
+        <li>ไม่มีพื้นฐานเลยก็ปรึกษาได้ แป๊ะอธิบายให้เข้าใจตั้งแต่ต้น</li>
+        <li>วางแผนภาษีเฉพาะบุคคล เน้นนำไปใช้งานจริงได้ทันที</li>
+        <li>ประเมินความเสี่ยงภาษีย้อนหลังให้ ก่อนโดนสรรพากรเรียกตรวจ</li>
+        <li>ยื่นภาษีให้ฟรี 1 ครั้ง</li>
+      </ul>
+    </div>
+
+    <!-- เปรียบเทียบแพ็กเกจ -->
+    <div class="detail-section">
+      <div class="detail-label">เปรียบเทียบแพ็กเกจ</div>
+      <h2 class="detail-title">เลือกแบบไหนที่ใช่สำหรับคุณ</h2>
+      <div class="compare-grid">
+        <div class="compare-card" onclick="location.href='consult-hourly.html'">
+          <div class="compare-card-label">ปรึกษาปกติ</div>
+          <div class="compare-card-price">฿1,500</div>
+          <div class="compare-card-sub">ต่อชั่วโมง<br />นัดล่วงหน้า 2–3 วัน</div>
+        </div>
+        <div class="compare-card" onclick="location.href='consult-hourly.html'">
+          <div class="compare-card-label">ปรึกษาด่วน</div>
+          <div class="compare-card-price">฿2,000</div>
+          <div class="compare-card-sub">ต่อชั่วโมง<br />ภายในวันนี้</div>
+        </div>
+        <div class="compare-card featured" onclick="location.href='consult-annual.html'">
+          <div class="compare-card-label">⭐ รายปี — แนะนำ</div>
+          <div class="compare-card-price">฿9,900</div>
+          <div class="compare-card-sub">ต่อปี<br />โทรได้ไม่จำกัดครั้ง</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-orb"></div>
+      <div class="cta-orb cta-orb-2"></div>
+      <div class="cta-label">พร้อมแล้วหรือยัง?</div>
+      <h2 class="cta-title">แก้ปัญหาภาษีของคุณ<br />ได้ตั้งแต่วันนี้</h2>
+      <p class="cta-desc">ปรึกษาตรงจุด ตรงสถานการณ์ของคุณ ไม่เสียเวลากับคำตอบสำเร็จรูป</p>
+      <div class="cta-actions">
+        <button class="btn-cta-primary" data-payment data-product="ปรึกษาภาษีส่วนตัว (ปกติ)" data-price="฿1,500">ชำระเงินเลย →</button>
+        <a href="consult-annual.html" class="btn-cta-secondary">ดูแพ็กเกจรายปี</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.08);padding-top:40px;">
+      <span>© 2569 แป๊ะยิ้มเล่าเรื่อง</span>
+      <a href="index.html#consult" style="color:var(--gold)">← กลับหน้าปรึกษา</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="payment-modal">
+  <div class="modal">
+    <button class="modal-close" aria-label="ปิด">✕</button>
+    <div class="modal-title">ชำระเงิน</div>
+    <div class="modal-subtitle">
+      <strong id="modal-product-name"></strong>
+      <span style="color:var(--gold);font-weight:800;margin-left:8px;" id="modal-product-price"></span>
+    </div>
+    <div class="payment-tabs">
+      <button class="payment-tab active" data-tab="tab-transfer">โอนบัญชี</button>
+      <button class="payment-tab" data-tab="tab-qr">QR PromptPay</button>
+    </div>
+    <div class="payment-content active" id="tab-transfer">
+      <div class="bank-info">
+        <div class="bank-name">ธนาคารกรุงไทย (Krungthai)</div>
+        <div class="bank-account">722-0-53505-8</div>
+        <div class="bank-holder">นายวิชา เอี่ยมผดุง</div>
+      </div>
+    </div>
+    <div class="payment-content" id="tab-qr">
+      <div class="qr-wrapper">
+        <img src="images/qr.jpg" alt="QR PromptPay" style="width:200px;height:200px;object-fit:contain;margin:0 auto;display:block;border-radius:12px;" />
+        <div class="qr-desc">สแกน QR Code ด้วยแอปธนาคารหรือ PromptPay</div>
+      </div>
+    </div>
+    <p class="modal-note">โอนแล้วกดปุ่มด้านล่าง แจ้งสลิปเพื่อนัดเวลาปรึกษา</p>
+    <a href="https://lin.ee/sj45zDY" target="_blank" class="btn-line">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      ทัก LINE → นัดเวลาปรึกษาทันที
+    </a>
+    <p class="btn-line-sub">หรือ แอด ID <strong>@wicha</strong></p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

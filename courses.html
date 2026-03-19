@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>คอร์สและ E-Book — แป๊ะยิ้มเล่าเรื่อง</title>
+  <meta name="description" content="คอร์สวิดีโอและ E-Book ภาษี โดยแป๊ะยิ้มเล่าเรื่อง" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">แป๊ะยิ้ม<span>เล่าเรื่อง</span></a>
+    <div class="nav-links">
+      <a href="courses.html" style="color:var(--gold)">คอร์ส & E-Book</a>
+      <a href="blog.html">บทความ</a>
+      <a href="index.html#consult">ปรึกษาส่วนตัว</a>
+      <a href="index.html#consult" class="nav-cta">นัดปรึกษา</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="courses.html">คอร์ส & E-Book</a>
+  <a href="blog.html">บทความ</a>
+  <a href="index.html#consult">ปรึกษาส่วนตัว</a>
+</div>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <div class="section-label">คอร์ส & E-Book</div>
+      <h1 class="page-hero-title">เรียนรู้เรื่องภาษี<br />ในแบบของคุณ</h1>
+      <p class="page-hero-desc">เลือกเรียนแบบวิดีโอเต็มคอร์ส หรือ E-Book พกพาอ่านได้ทุกที่ ราคาย่อมเยา</p>
+    </div>
+  </div>
+</section>
+
+<!-- คอร์สเรียน -->
+<section class="section" style="padding-top:64px;">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">คอร์สวิดีโอ</div>
+    <h2 style="font-size:22px;font-weight:800;color:var(--dark);margin-bottom:32px;">คอร์สเรียน</h2>
+    <div class="courses-grid">
+
+      <div class="course-card reveal" style="cursor:pointer;" onclick="location.href='course-pnd.html'">
+        <div class="course-thumb img-slider">
+          <div class="slider-track">
+            <img src="images/p01.jpg" alt="คอร์สภาษีเงินได้บุคคลธรรมดา" class="slide-img" />
+            <img src="images/p02.jpg" alt="" class="slide-img" />
+          </div>
+          <button class="slider-btn slider-prev">&#8249;</button>
+          <button class="slider-btn slider-next">&#8250;</button>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+          </div>
+          <span class="course-badge hot">ขายดี</span>
+        </div>
+        <div class="course-body">
+          <div class="course-category">ภาษีเงินได้บุคคลธรรมดา</div>
+          <h3 class="course-title">คู่มือภาษีเงินได้บุคคลธรรมดา ฉบับเริ่มต้นจากศูนย์</h3>
+          <p class="course-desc">เริ่มต้นจากไม่รู้อะไรเลย สู่การจัดการภาษีได้ด้วยตัวเอง ครอบคลุมพื้นฐาน การคำนวณ เทคนิคลดหย่อน จนถึงการยื่นภาษีจริง</p>
+          <div class="course-meta">
+            <span class="course-meta-item">🎬 คอร์สวิดีโอ</span>
+            <span class="course-meta-item">⏱ 3 ชม.</span>
+            <span class="course-meta-item">🎁 แถม E-Book ครบชุด</span>
+          </div>
+          <div class="course-footer">
+            <div class="course-price">฿1,390 <span class="original">฿2,990</span></div>
+            <button class="btn-enroll" data-payment data-product="คู่มือภาษีเงินได้บุคคลธรรมดา ฉบับเริ่มต้นจากศูนย์" data-price="฿1,390">สั่งซื้อ →</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- E-Book -->
+<section class="section" style="padding-top:64px;padding-bottom:80px;">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">คู่มือดิจิทัล</div>
+    <h2 style="font-size:22px;font-weight:800;color:var(--dark);margin-bottom:32px;">E-Book</h2>
+    <div class="ebooks-page-grid">
+
+      <div class="ebook-card reveal" style="cursor:pointer;" onclick="location.href='ebook-epayment.html'">
+        <div class="ebook-cover img-slider">
+          <div class="slider-track">
+            <img src="images/e01.jpg" alt="E-Payment Handbook" class="slide-img" />
+            <img src="images/e02.jpg" alt="" class="slide-img" />
+          </div>
+          <button class="slider-btn slider-prev">&#8249;</button>
+          <button class="slider-btn slider-next">&#8250;</button>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+          </div>
+        </div>
+        <div class="ebook-body">
+          <h3 class="ebook-title">E-Payment Handbook</h3>
+          <p class="ebook-desc">คู่มือจัดการเงินเข้าบัญชียังไงไม่ให้โดนธนาคารรายงานให้สรรพากร แบบถูกกฎหมาย สำหรับร้านค้าออนไลน์ ฟรีแลนซ์ และผู้มีธุรกรรมจำนวนมาก</p>
+          <button class="btn-enroll" data-payment data-product="E-Payment Handbook" data-price="฿250" style="margin-top:12px;width:100%;justify-content:center;">ซื้อ ฿250 <span style="text-decoration:line-through;opacity:0.5;font-size:12px;margin-left:4px;">฿599</span> →</button>
+        </div>
+      </div>
+
+      <div class="ebook-card reveal reveal-delay-1" style="cursor:pointer;" onclick="location.href='ebook-vat.html'">
+        <div class="ebook-cover img-slider">
+          <div class="slider-track">
+            <img src="images/v01.jpg" alt="คู่มือภาษีมูลค่าเพิ่ม" class="slide-img" />
+            <img src="images/v02.jpg" alt="" class="slide-img" />
+          </div>
+          <button class="slider-btn slider-prev">&#8249;</button>
+          <button class="slider-btn slider-next">&#8250;</button>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+          </div>
+        </div>
+        <div class="ebook-body">
+          <h3 class="ebook-title">คู่มือภาษีมูลค่าเพิ่ม (VAT)</h3>
+          <p class="ebook-desc">VAT Handbook ฉบับเข้าใจง่าย สำหรับเจ้าของธุรกิจมือใหม่ ครอบคลุมตั้งแต่การจดทะเบียน การออกใบกำกับภาษี จนถึงการยื่นภาษีรายเดือน</p>
+          <button class="btn-enroll" data-payment data-product="คู่มือภาษีมูลค่าเพิ่ม (VAT)" data-price="฿250" style="margin-top:12px;width:100%;justify-content:center;">ซื้อ ฿250 <span style="text-decoration:line-through;opacity:0.5;font-size:12px;margin-left:4px;">฿599</span> →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-orb"></div>
+      <div class="cta-orb cta-orb-2"></div>
+      <div class="cta-label">ไม่แน่ใจจะเริ่มจากตรงไหน?</div>
+      <h2 class="cta-title">ปรึกษาแป๊ะก่อนตัดสินใจ</h2>
+      <p class="cta-desc">นัดคุยกับแป๊ะเพื่อวางแผนให้ตรงกับสถานการณ์ของคุณ</p>
+      <div class="cta-actions">
+        <a href="index.html#consult" class="btn-cta-primary">ดูแพ็กเกจปรึกษา →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 40px;">
+      <span>© 2569 แป๊ะยิ้มเล่าเรื่อง</span>
+      <a href="index.html" style="color:var(--gold)">← กลับหน้าหลัก</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="payment-modal">
+  <div class="modal">
+    <button class="modal-close" aria-label="ปิด">✕</button>
+    <div class="modal-title">ชำระเงิน</div>
+    <div class="modal-subtitle">
+      <strong id="modal-product-name"></strong>
+      <span style="color:var(--gold);font-weight:800;margin-left:8px;" id="modal-product-price"></span>
+    </div>
+    <div class="payment-tabs">
+      <button class="payment-tab active" data-tab="tab-transfer">โอนบัญชี</button>
+      <button class="payment-tab" data-tab="tab-qr">QR PromptPay</button>
+    </div>
+    <div class="payment-content active" id="tab-transfer">
+      <div class="bank-info">
+        <div class="bank-name">ธนาคารกรุงไทย (Krungthai)</div>
+        <div class="bank-account">722-0-53505-8</div>
+        <div class="bank-holder">นายวิชา เอี่ยมผดุง</div>
+      </div>
+    </div>
+    <div class="payment-content" id="tab-qr">
+      <div class="qr-wrapper">
+        <img src="images/qr.jpg" alt="QR PromptPay" style="width:200px;height:200px;object-fit:contain;margin:0 auto;display:block;border-radius:12px;" />
+        <div class="qr-desc">สแกน QR Code ด้วยแอปธนาคารหรือ PromptPay</div>
+      </div>
+    </div>
+    <p class="modal-note">โอนแล้วกดปุ่มด้านล่าง ส่งสลิปเพื่อรับสินค้าทันที</p>
+    <a href="https://lin.ee/sj45zDY" target="_blank" class="btn-line">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      ทัก LINE ส่งสลิป → รับสินค้าทันที
+    </a>
+    <p class="btn-line-sub">หรือ แอด ID <strong>@wicha</strong></p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

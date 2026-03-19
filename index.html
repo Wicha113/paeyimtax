@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>แป๊ะยิ้มเล่าเรื่อง — เรียนภาษีให้เข้าใจ ง่ายกว่าที่คิด</title>
+  <meta name="description" content="คอร์สเรียนภาษี ebook และบทความความรู้ภาษีสำหรับผู้ประกอบการและบุคคลทั่วไป โดยแป๊ะยิ้มเล่าเรื่อง" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😊</text></svg>" />
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">แป๊ะยิ้ม<span>เล่าเรื่อง</span></a>
+
+    <div class="nav-links">
+      <a href="courses.html">คอร์ส & E-Book</a>
+      <a href="blog.html">บทความ</a>
+      <a href="#consult">ปรึกษาส่วนตัว</a>
+      <a href="#consult" class="nav-cta">นัดปรึกษา</a>
+    </div>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="เมนู">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="courses.html">คอร์ส & E-Book</a>
+  <a href="blog.html">บทความ</a>
+  <a href="#consult">ปรึกษาส่วนตัว</a>
+  <a href="#consult" class="nav-cta" style="display:inline-block;margin-top:8px;text-align:center;padding:14px;">นัดปรึกษา →</a>
+</div>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="dot"></span>
+        คอร์สใหม่ 2569 พร้อมแล้ว
+      </div>
+
+      <h1 class="hero-title reveal reveal-delay-1">
+        เรียนภาษี<br />
+        ให้<span class="highlight">เข้าใจจริง</span><br />
+        ไม่ใช่แค่ท่องจำ
+      </h1>
+
+      <p class="hero-desc reveal reveal-delay-2">
+        แป๊ะเล่าเรื่องภาษีให้เป็นเรื่องง่าย ด้วยภาษาคนธรรมดา
+        สำหรับผู้ประกอบการ ฟรีแลนซ์ และบุคคลทั่วไป
+        ที่อยากวางแผนภาษีให้ถูกต้องและประหยัดที่สุด
+      </p>
+
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="#courses" class="btn-primary">
+          ดูคอร์สทั้งหมด
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#consult" class="btn-secondary">
+          นัดปรึกษาส่วนตัว
+        </a>
+      </div>
+
+      <div class="hero-stats reveal reveal-delay-4">
+        <div>
+          <div class="hero-stat-number"><span class="counter" data-target="1200" data-suffix="+">0</span></div>
+          <div class="hero-stat-label">ผู้เรียนแล้ว</div>
+        </div>
+        <div>
+          <div class="hero-stat-number"><span class="counter" data-target="3">0</span></div>
+          <div class="hero-stat-label">คอร์สและ E-Book</div>
+        </div>
+        <div>
+          <div class="hero-stat-number"><span class="counter" data-target="4.9" data-suffix=" ★" data-decimals="1">0</span></div>
+          <div class="hero-stat-label">คะแนนเฉลี่ย</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo-wrap reveal reveal-delay-2">
+        <img src="images/paeyim.jpg" alt="แป๊ะยิ้มเล่าเรื่อง" class="hero-photo" />
+
+        <div class="hero-card hero-card-float-1">
+          <div class="card-float-icon">🎯</div>
+          <div class="card-float-label">ผู้เรียนใหม่วันนี้</div>
+          <div class="card-float-value">+24</div>
+        </div>
+
+        <div class="hero-card hero-card-float-2">
+          <div class="card-float-icon">💰</div>
+          <div class="card-float-label">ประหยัดภาษีได้</div>
+          <div class="card-float-value">หมื่น+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     STATS BAR
+     ============================================ -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number"><span class="counter" data-target="1200" data-suffix="+" >0</span></div>
+        <div class="stat-label">ผู้เรียนทั้งหมด</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-number"><span class="counter gold" data-target="1">0</span></div>
+        <div class="stat-label">คอร์สเรียน</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-number"><span class="counter" data-target="2">0</span></div>
+        <div class="stat-label">E-Book</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-number"><span class="counter" data-target="50" data-suffix="+">0</span></div>
+        <div class="stat-label">บทความฟรี</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     COURSES
+     ============================================ -->
+<!-- ============================================
+     PRODUCTS (คอร์ส & E-Book)
+     ============================================ -->
+<section class="section" id="courses">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-row reveal">
+        <div>
+          <div class="section-label">คอร์ส & E-Book</div>
+          <h2 class="section-title">เรียนรู้เรื่องภาษี<br />ในแบบของคุณ</h2>
+        </div>
+        <a href="courses.html" class="link-arrow reveal">
+          ดูทั้งหมด
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- คอร์สวิดีโอ -->
+    <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">🎬 คอร์สวิดีโอ</div>
+    <div class="courses-grid" style="margin-bottom:48px;">
+      <div class="course-card reveal" style="cursor:pointer;" onclick="location.href='course-pnd.html'">
+        <div class="course-thumb img-slider">
+          <div class="slider-track">
+            <img src="images/p01.jpg" alt="คอร์สภาษีเงินได้บุคคลธรรมดา" class="slide-img" />
+            <img src="images/p02.jpg" alt="" class="slide-img" />
+          </div>
+          <button class="slider-btn slider-prev">&#8249;</button>
+          <button class="slider-btn slider-next">&#8250;</button>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+          </div>
+          <span class="course-badge hot">ขายดี</span>
+        </div>
+        <div class="course-body">
+          <div class="course-category">ภาษีเงินได้บุคคลธรรมดา</div>
+          <h3 class="course-title">คู่มือภาษีเงินได้บุคคลธรรมดา ฉบับเริ่มต้นจากศูนย์</h3>
+          <p class="course-desc">เริ่มต้นจากไม่รู้อะไรเลย สู่การจัดการภาษีได้ด้วยตัวเอง ครอบคลุมพื้นฐาน การคำนวณ เทคนิคลดหย่อน จนถึงการยื่นภาษีจริง</p>
+          <div class="course-meta">
+            <span class="course-meta-item">🎬 คอร์สวิดีโอ</span>
+            <span class="course-meta-item">⏱ 3 ชม.</span>
+            <span class="course-meta-item">🎁 แถม E-Book ครบชุด</span>
+          </div>
+          <div class="course-footer">
+            <div class="course-price">฿1,390 <span class="original">฿2,990</span></div>
+            <button class="btn-enroll" data-payment data-product="คู่มือภาษีเงินได้บุคคลธรรมดา ฉบับเริ่มต้นจากศูนย์" data-price="฿1,390">สั่งซื้อ →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- E-Book -->
+    <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">📖 E-Book</div>
+    <div class="ebooks-grid">
+      <div class="ebook-card reveal" style="cursor:pointer;" onclick="location.href='ebook-epayment.html'">
+        <div class="ebook-cover img-slider">
+          <div class="slider-track">
+            <img src="images/e01.jpg" alt="E-Payment Handbook" class="slide-img" />
+            <img src="images/e02.jpg" alt="" class="slide-img" />
+          </div>
+          <button class="slider-btn slider-prev">&#8249;</button>
+          <button class="slider-btn slider-next">&#8250;</button>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+          </div>
+        </div>
+        <div class="ebook-body">
+          <h3 class="ebook-title">E-Payment Handbook</h3>
+          <p class="ebook-desc">คู่มือจัดการเงินเข้าบัญชียังไงไม่ให้โดนธนาคารรายงานให้สรรพากร แบบถูกกฎหมาย</p>
+          <div class="ebook-price">
+            <button class="btn-enroll" data-payment data-product="E-Payment Handbook" data-price="฿250" style="margin-top:0">฿250 <span style="text-decoration:line-through;opacity:0.5;font-size:12px;margin-left:4px;">฿599</span> →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ebook-card reveal reveal-delay-1" style="cursor:pointer;" onclick="location.href='ebook-vat.html'">
+        <div class="ebook-cover img-slider">
+          <div class="slider-track">
+            <img src="images/v01.jpg" alt="คู่มือภาษีมูลค่าเพิ่ม" class="slide-img" />
+            <img src="images/v02.jpg" alt="" class="slide-img" />
+          </div>
+          <button class="slider-btn slider-prev">&#8249;</button>
+          <button class="slider-btn slider-next">&#8250;</button>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+          </div>
+        </div>
+        <div class="ebook-body">
+          <h3 class="ebook-title">คู่มือภาษีมูลค่าเพิ่ม (VAT)</h3>
+          <p class="ebook-desc">VAT Handbook ฉบับเข้าใจง่าย ครอบคลุมตั้งแต่การจดทะเบียนจนถึงการยื่นภาษีรายเดือน</p>
+          <div class="ebook-price">
+            <button class="btn-enroll" data-payment data-product="คู่มือภาษีมูลค่าเพิ่ม (VAT)" data-price="฿250" style="margin-top:0">฿250 <span style="text-decoration:line-through;opacity:0.5;font-size:12px;margin-left:4px;">฿599</span> →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     WHY US
+     ============================================ -->
+<section class="why-section" id="about">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">ทำไมต้องแป๊ะยิ้มเล่าเรื่อง</div>
+      <h2 class="section-title">เรียนภาษีให้ได้ผลจริง<br />ไม่ใช่แค่ฟังผ่านหู</h2>
+      <p class="section-subtitle">เราเชื่อว่าทุกคนเรียนรู้ภาษีได้ ถ้าสอนด้วยวิธีที่ถูกต้อง</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">🗣️</div>
+        <h3 class="feature-title">ภาษาคนธรรมดา ไม่ใช่ศัพท์กฎหมาย</h3>
+        <p class="feature-desc">แป๊ะแปลภาษากฎหมายและภาษีให้เป็นภาษาที่เข้าใจง่าย พร้อมตัวอย่างจากชีวิตจริงที่คุณเจอทุกวัน</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">📱</div>
+        <h3 class="feature-title">เรียนได้ทุกที่ ทุกเวลา ตลอดชีพ</h3>
+        <p class="feature-desc">ซื้อครั้งเดียว เรียนได้ตลอดชีพ ดูซ้ำได้ไม่จำกัด ทั้งบนมือถือ แท็บเล็ต และคอมพิวเตอร์</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🎯</div>
+        <h3 class="feature-title">อัปเดตตามกฎหมายล่าสุด</h3>
+        <p class="feature-desc">เนื้อหาอัปเดตทุกปีตามประกาศกรมสรรพากร ไม่ต้องกังวลว่าข้อมูลจะล้าสมัย</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">💡</div>
+        <h3 class="feature-title">เน้นปฏิบัติจริง ใช้ได้เลย</h3>
+        <p class="feature-desc">ทุก workshop มีแบบฝึกหัดและตัวอย่างจริง ทำตามได้เลยทันที ไม่ใช่แค่ทฤษฎี</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🤝</div>
+        <h3 class="feature-title">ปรึกษาส่วนตัวได้</h3>
+        <p class="feature-desc">นัดหมายปรึกษาส่วนตัวกับแป๊ะโดยตรง สำหรับกรณีเฉพาะของคุณ ไม่ว่าจะเป็นเรื่องภาษีส่วนตัวหรือธุรกิจ</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">✅</div>
+        <h3 class="feature-title">รับประกัน ถ้าไม่พอใจคืนเงิน 7 วัน</h3>
+        <p class="feature-desc">มั่นใจในคุณภาพเนื้อหา ถ้าเรียนแล้วไม่ถูกใจหรือไม่ตรงความต้องการ ยินดีคืนเงินภายใน 7 วัน</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CONSULTING / APPOINTMENT
+     ============================================ -->
+<section class="consult-section" id="consult">
+  <div class="consult-bg-orb"></div>
+  <div class="container">
+    <div class="consult-inner">
+
+      <!-- Left: Title + Perks -->
+      <div class="consult-left">
+        <div class="section-label reveal">ปรึกษาส่วนตัว</div>
+        <h2 class="section-title reveal reveal-delay-1">นัดคุยกับแป๊ะ<br />แบบตัวต่อตัว</h2>
+        <p class="section-subtitle reveal reveal-delay-2">ปัญหาภาษีบางเรื่องต้องการคำตอบที่ตรงกับสถานการณ์ของคุณโดยเฉพาะ ไม่ใช่คำตอบทั่วไป</p>
+
+        <div class="consult-perks reveal reveal-delay-2">
+          <div class="consult-perk">
+            <div class="consult-perk-icon">🎯</div>
+            <div>
+              <div class="consult-perk-title">ไม่มีพื้นฐานเลยก็ปรึกษาได้</div>
+              <div class="consult-perk-desc">เริ่มจากศูนย์ได้เลย แป๊ะจะอธิบายให้เข้าใจตั้งแต่ต้น</div>
+            </div>
+          </div>
+          <div class="consult-perk">
+            <div class="consult-perk-icon">💰</div>
+            <div>
+              <div class="consult-perk-title">วางแผนภาษีเฉพาะบุคคล นำไปใช้ได้จริง</div>
+              <div class="consult-perk-desc">ไม่ใช่คำตอบสำเร็จรูป แต่วางแผนตรงกับสถานการณ์ของคุณโดยเฉพาะ</div>
+            </div>
+          </div>
+          <div class="consult-perk">
+            <div class="consult-perk-icon">🔍</div>
+            <div>
+              <div class="consult-perk-title">ประเมินความเสี่ยงภาษีย้อนหลังให้</div>
+              <div class="consult-perk-desc">ตรวจสอบว่ามีความเสี่ยงที่ต้องแก้ไขหรือไม่ ก่อนโดนสรรพากรเรียกตรวจ</div>
+            </div>
+          </div>
+          <div class="consult-perk">
+            <div class="consult-perk-icon">📝</div>
+            <div>
+              <div class="consult-perk-title">ยื่นภาษีให้ฟรี 1 ครั้ง</div>
+              <div class="consult-perk-desc">รวมอยู่ในทุกแพ็กเกจ ไม่ต้องเสียค่าใช้จ่ายเพิ่ม</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Pricing + Annual Feature -->
+      <div class="reveal reveal-delay-2">
+        <div class="consult-pricing">
+          <div class="consult-plan" onclick="location.href='consult-hourly.html'" style="cursor:pointer;">
+            <div class="consult-plan-name">ปรึกษาปกติ</div>
+            <div class="consult-plan-sub">นัดล่วงหน้า 2–3 วัน</div>
+            <div class="consult-plan-price">฿1,500<span>/ชั่วโมง</span></div>
+          </div>
+          <div class="consult-plan" onclick="location.href='consult-hourly.html'" style="border-color:rgba(176,125,46,0.5);position:relative;cursor:pointer;">
+            <div class="consult-plan-badge">ด่วน</div>
+            <div class="consult-plan-name">ปรึกษาด่วน</div>
+            <div class="consult-plan-sub">ภายในวันนี้</div>
+            <div class="consult-plan-price">฿2,000<span>/ชั่วโมง</span></div>
+          </div>
+          <div class="consult-plan" onclick="location.href='consult-annual.html'" style="border-color:rgba(176,125,46,0.5);cursor:pointer;">
+            <div class="consult-plan-name">รายปี</div>
+            <div class="consult-plan-sub">ปรึกษาไม่จำกัดครั้ง</div>
+            <div class="consult-plan-price">฿9,900<span>/ปี</span></div>
+            <div class="consult-plan-original">จากปกติ ฿15,900</div>
+          </div>
+        </div>
+
+        <!-- Featured Annual Plan -->
+        <div class="annual-feature reveal reveal-delay-3" onclick="location.href='consult-annual.html'" style="cursor:pointer;margin-top:24px;">
+          <img src="images/y01.jpg" alt="แพ็กเกจปรึกษารายปี" class="annual-img" />
+          <div class="annual-feature-body">
+            <div class="annual-feature-badge">⭐ แนะนำ</div>
+            <div class="annual-feature-title">แพ็กเกจรายปี — คุ้มที่สุด</div>
+            <ul class="annual-feature-list">
+              <li>โทรปรึกษาได้ตลอดทั้งปีไม่จำกัดครั้ง</li>
+              <li>วางแผนปรับเปลี่ยนได้ตลอด</li>
+              <li>ปรึกษาได้ทั้งเรื่องภาษีและธุรกิจ</li>
+              <li>ยื่นภาษีให้ฟรี ปีละ 2 ครั้ง</li>
+            </ul>
+            <div class="annual-feature-price">฿9,900 <span>/ ปี</span> <s>฿15,900</s></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TESTIMONIALS
+     ============================================ -->
+<section class="testimonials-section" id="reviews">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">รีวิวจากผู้เรียน</div>
+      <h2 class="section-title">ผู้เรียนพูดถึงแป๊ะ<br />อย่างไรบ้าง</h2>
+    </div>
+  </div>
+
+  <div class="testimonials-track-wrapper" style="margin-top:64px;">
+    <div class="testimonials-track">
+      <!-- Row 1 (will be duplicated by CSS animation) -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"เรียนภาษีมานานแต่ไม่เคยเข้าใจจริงๆ จนมาเจอคอร์สของแป๊ะ อธิบายชัดมาก ตัวอย่างจริงทุกอย่าง ยื่นแบบเองได้แล้วปีนี้"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ก</div>
+          <div>
+            <div class="testimonial-name">คุณกานต์ สมใจ</div>
+            <div class="testimonial-role">เจ้าของธุรกิจออนไลน์</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"ฟรีแลนซ์มา 5 ปี ไม่เคยรู้ว่าต้องยื่นภาษีอย่างไร คอร์สฟรีแลนซ์ของแป๊ะแก้ปัญหาได้ทุกข้อ ราคาถูกมากเมื่อเทียบกับที่ได้รับ"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ป</div>
+          <div>
+            <div class="testimonial-name">คุณปาล์ม วิชาญ</div>
+            <div class="testimonial-role">ฟรีแลนซ์กราฟิก</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"นัดปรึกษาส่วนตัวกับแป๊ะ ช่วยประหยัดภาษีได้เกือบหนึ่งแสนบาทปีนี้ คุ้มมากๆ ครับ แนะนำค่าลดหย่อนที่ผมไม่รู้มาก่อนหลายตัว"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ธ</div>
+          <div>
+            <div class="testimonial-name">คุณธนา ชัยมงคล</div>
+            <div class="testimonial-role">พนักงานบริษัทรายได้สูง</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"อ่าน ebook ลดหย่อนภาษีแล้วได้ไอเดียเยอะมาก จัดการภาษีได้ดีขึ้นทั้งปี ภาษาเข้าใจง่ายมาก ไม่ต้องมีพื้นฐานก็อ่านได้"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ส</div>
+          <div>
+            <div class="testimonial-name">คุณสาวิตรี นุชนวล</div>
+            <div class="testimonial-role">แม่บ้านนักลงทุน</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"เปิดบริษัทใหม่ ไม่รู้เรื่องภาษีเลย คอร์สนิติบุคคลของแป๊ะช่วยได้มาก ตอนนี้คุมบัญชีเองได้ ไม่ต้องพึ่งนักบัญชีทุกเรื่อง"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">น</div>
+          <div>
+            <div class="testimonial-name">คุณนิด สตาร์ตอัพ</div>
+            <div class="testimonial-role">Co-founder Startup</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★☆</div>
+        <p class="testimonial-text">"เนื้อหาดีมาก อัปเดตตามกฎหมายล่าสุด มีกลุ่ม LINE ถามตอบได้ด้วย ชอบมากที่มีตัวอย่างจากกรณีจริง ไม่ใช่แค่ทฤษฎีแห้งๆ"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ม</div>
+          <div>
+            <div class="testimonial-name">คุณมีน พาณิชย์</div>
+            <div class="testimonial-role">เจ้าของร้านค้าออนไลน์</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Duplicate for infinite scroll -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"เรียนภาษีมานานแต่ไม่เคยเข้าใจจริงๆ จนมาเจอคอร์สของแป๊ะ อธิบายชัดมาก ตัวอย่างจริงทุกอย่าง ยื่นแบบเองได้แล้วปีนี้"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ก</div>
+          <div>
+            <div class="testimonial-name">คุณกานต์ สมใจ</div>
+            <div class="testimonial-role">เจ้าของธุรกิจออนไลน์</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"ฟรีแลนซ์มา 5 ปี ไม่เคยรู้ว่าต้องยื่นภาษีอย่างไร คอร์สฟรีแลนซ์ของแป๊ะแก้ปัญหาได้ทุกข้อ ราคาถูกมากเมื่อเทียบกับที่ได้รับ"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ป</div>
+          <div>
+            <div class="testimonial-name">คุณปาล์ม วิชาญ</div>
+            <div class="testimonial-role">ฟรีแลนซ์กราฟิก</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"นัดปรึกษาส่วนตัวกับแป๊ะ ช่วยประหยัดภาษีได้เกือบหนึ่งแสนบาทปีนี้ คุ้มมากๆ ครับ แนะนำค่าลดหย่อนที่ผมไม่รู้มาก่อนหลายตัว"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ธ</div>
+          <div>
+            <div class="testimonial-name">คุณธนา ชัยมงคล</div>
+            <div class="testimonial-role">พนักงานบริษัทรายได้สูง</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"อ่าน ebook ลดหย่อนภาษีแล้วได้ไอเดียเยอะมาก จัดการภาษีได้ดีขึ้นทั้งปี ภาษาเข้าใจง่ายมาก ไม่ต้องมีพื้นฐานก็อ่านได้"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ส</div>
+          <div>
+            <div class="testimonial-name">คุณสาวิตรี นุชนวล</div>
+            <div class="testimonial-role">แม่บ้านนักลงทุน</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"เปิดบริษัทใหม่ ไม่รู้เรื่องภาษีเลย คอร์สนิติบุคคลของแป๊ะช่วยได้มาก ตอนนี้คุมบัญชีเองได้ ไม่ต้องพึ่งนักบัญชีทุกเรื่อง"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">น</div>
+          <div>
+            <div class="testimonial-name">คุณนิด สตาร์ตอัพ</div>
+            <div class="testimonial-role">Co-founder Startup</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★☆</div>
+        <p class="testimonial-text">"เนื้อหาดีมาก อัปเดตตามกฎหมายล่าสุด มีกลุ่ม LINE ถามตอบได้ด้วย ชอบมากที่มีตัวอย่างจากกรณีจริง ไม่ใช่แค่ทฤษฎีแห้งๆ"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ม</div>
+          <div>
+            <div class="testimonial-name">คุณมีน พาณิชย์</div>
+            <div class="testimonial-role">เจ้าของร้านค้าออนไลน์</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     BLOG PREVIEW
+     ============================================ -->
+<section class="section" id="blog" style="background: var(--light-gray);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-row reveal">
+        <div>
+          <div class="section-label">บทความ</div>
+          <h2 class="section-title">ความรู้ภาษีฟรี<br />อ่านได้เลย</h2>
+        </div>
+        <a href="blog.html" class="link-arrow reveal">
+          ดูทั้งหมด
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-thumb blog-thumb-1">
+          <div class="blog-thumb-placeholder">📝</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ลดหย่อนภาษี</span>
+          <h3 class="blog-title">10 ค่าลดหย่อนภาษีที่คนทำงานมักลืมใช้ ปี 2569</h3>
+          <p class="blog-excerpt">ทุกปีมีคนเสียสิทธิ์ค่าลดหย่อนโดยไม่รู้ตัว ไม่ว่าจะเป็น LTF, RMF, เบี้ยประกัน หรือดอกเบี้ยบ้าน มาดูกันว่าคุณพลาดตัวไหนบ้าง...</p>
+          <div class="blog-footer">
+            <span>17 มีนาคม 2569</span>
+            <a href="blog.html" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-thumb blog-thumb-2">
+          <div class="blog-thumb-placeholder">💼</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">ฟรีแลนซ์</span>
+          <h3 class="blog-title">ฟรีแลนซ์ต้องยื่นภาษีอย่างไร ครั้งแรกก็ทำได้</h3>
+          <p class="blog-excerpt">ฟรีแลนซ์หลายคนกังวลเรื่องภาษีและไม่รู้จะเริ่มต้นจากตรงไหน บทความนี้จะไกด์ทีละขั้นตอนตั้งแต่ต้นจนจบ...</p>
+          <div class="blog-footer">
+            <span>10 มีนาคม 2569</span>
+            <a href="blog.html" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-thumb blog-thumb-3">
+          <div class="blog-thumb-placeholder">🏢</div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">SME</span>
+          <h3 class="blog-title">เปิดบริษัทใหม่ต้องรู้ภาษีอะไรบ้างใน 3 เดือนแรก</h3>
+          <p class="blog-excerpt">เจ้าของกิจการมือใหม่หลายคนพลาดการยื่นภาษีในช่วงแรก เพราะไม่รู้ว่าต้องทำอะไรบ้าง มาดูรายการที่ต้องทำให้ครบ...</p>
+          <div class="blog-footer">
+            <span>5 มีนาคม 2569</span>
+            <a href="blog.html" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CTA BANNER
+     ============================================ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-orb"></div>
+      <div class="cta-orb cta-orb-2"></div>
+      <div class="cta-label">เริ่มต้นวันนี้</div>
+      <h2 class="cta-title">พร้อมจัดการภาษี<br />อย่างมืออาชีพแล้วหรือยัง?</h2>
+      <p class="cta-desc">เรียนรู้จากผู้เชี่ยวชาญ ด้วยภาษาที่เข้าใจง่าย พร้อมรับประกันคืนเงินภายใน 7 วัน</p>
+      <div class="cta-actions">
+        <a href="#courses" class="btn-cta-primary">ดูคอร์สทั้งหมด →</a>
+        <a href="#consult" class="btn-cta-secondary">ดูแพ็กเกจปรึกษา</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">แป๊ะยิ้ม<span>เล่าเรื่อง</span></div>
+        <p class="footer-brand-desc">สอนภาษีให้เข้าใจง่าย ด้วยภาษาคนธรรมดา สำหรับผู้ประกอบการ ฟรีแลนซ์ และบุคคลทั่วไป</p>
+        <div class="footer-social">
+          <a class="social-btn" href="https://www.facebook.com/profile.php?id=61557330880201" target="_blank" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a class="social-btn" href="https://line.me/R/ti/p/@wicha" target="_blank" title="LINE">
+            <svg viewBox="0 0 24 24" fill="#06C755" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          </a>
+          <a class="social-btn" href="https://www.instagram.com/pae.wicha/" target="_blank" title="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a class="social-btn" href="https://www.youtube.com/@paewicha" target="_blank" title="YouTube">
+            <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+          <a class="social-btn" href="https://www.tiktok.com/@paewicha" target="_blank" title="TikTok">
+            <svg viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">เรียนรู้</div>
+        <div class="footer-links">
+          <a href="courses.html">คอร์สวิดีโอทั้งหมด</a>
+          
+          <a href="blog.html">บทความฟรี</a>
+          <a href="#consult">ปรึกษาส่วนตัว</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">หมวดหมู่</div>
+        <div class="footer-links">
+          <a href="courses.html">ภาษีเงินได้บุคคลธรรมดา</a>
+          <a href="courses.html">ภาษีนิติบุคคล</a>
+          <a href="courses.html">ภาษีฟรีแลนซ์</a>
+          <a href="courses.html">VAT & ภาษีหัก ณ ที่จ่าย</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">ติดต่อ</div>
+        <div class="footer-links">
+          <a href="https://lin.ee/sj45zDY" target="_blank">💬 LINE: แป๊ะยิ้มเล่าเรื่อง</a>
+          <a href="https://www.facebook.com/profile.php?id=61557330880201" target="_blank">Facebook: แป๊ะยิ้มเล่าเรื่อง</a>
+          <a href="https://www.instagram.com/pae.wicha/" target="_blank">Instagram: แป๊ะยิ้มเล่าเรื่อง</a>
+          <a href="https://www.tiktok.com/@paewicha" target="_blank">TikTok: แป๊ะยิ้มเล่าเรื่อง</a>
+          <a href="https://www.youtube.com/@paewicha" target="_blank">YouTube: แป๊ะยิ้มเล่าเรื่อง</a>
+          <a href="#">📍 หัวหิน</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2569 แป๊ะยิ้มเล่าเรื่อง สงวนลิขสิทธิ์</span>
+      <span>ออกแบบด้วย ♥ เพื่อให้เรียนภาษีได้จริง</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     PAYMENT MODAL
+     ============================================ -->
+<div class="modal-overlay" id="payment-modal">
+  <div class="modal">
+    <button class="modal-close" aria-label="ปิด">✕</button>
+
+    <div class="modal-title">ชำระเงิน</div>
+    <div class="modal-subtitle">
+      <strong id="modal-product-name"></strong>
+      <span style="color:var(--gold);font-weight:800;margin-left:8px;" id="modal-product-price"></span>
+    </div>
+
+    <div class="payment-tabs">
+      <button class="payment-tab active" data-tab="tab-transfer">โอนบัญชี</button>
+      <button class="payment-tab" data-tab="tab-qr">QR PromptPay</button>
+    </div>
+
+    <div class="payment-content active" id="tab-transfer">
+      <div class="bank-info">
+        <div class="bank-name">ธนาคารกรุงไทย (Krungthai)</div>
+        <div class="bank-account">722-0-53505-8</div>
+        <div class="bank-holder">นายวิชา เอี่ยมผดุง</div>
+      </div>
+    </div>
+
+    <div class="payment-content" id="tab-qr">
+      <div class="qr-wrapper">
+        <img src="images/qr.jpg" alt="QR PromptPay" style="width:200px;height:200px;object-fit:contain;margin:0 auto;display:block;border-radius:12px;" />
+        <div class="qr-desc">สแกน QR Code ด้วยแอปธนาคารหรือ PromptPay<br />รองรับทุกธนาคารในไทย</div>
+      </div>
+    </div>
+
+    <p class="modal-note">
+      หลังโอนเงินแล้ว ส่งสลิปมาที่ LINE <strong>@wicha</strong><br />
+      ระบบจะเปิดคอร์สให้ภายใน 1-3 ชั่วโมง (ในวันทำการ)
+    </p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
