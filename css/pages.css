@@ -385,35 +385,48 @@
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   background: #000;
-  aspect-ratio: 16 / 9;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
 }
 
 .youtube-embed-wrap iframe {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: var(--radius);
 }
 
 /* ============================================
    Brands / Collaborations Section
    ============================================ */
 .brands-section {
-  padding: 80px 0;
+  padding: 80px 0 80px;
   background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
-.brands-grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+.brands-track-wrapper {
+  overflow: hidden;
   margin-top: 48px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.brands-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: brandScroll 22s linear infinite;
+}
+
+.brands-track:hover { animation-play-state: paused; }
+
+@keyframes brandScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .brand-logo-item {
@@ -422,12 +435,12 @@
   justify-content: center;
   width: 160px;
   height: 72px;
+  flex-shrink: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: #fff;
   padding: 12px 20px;
-  transition: box-shadow 0.3s, border-color 0.3s, filter 0.3s;
-  cursor: default;
+  transition: box-shadow 0.3s, border-color 0.3s;
   position: relative;
   overflow: hidden;
 }
@@ -439,9 +452,9 @@
 
 .brand-logo-img {
   max-width: 100%;
-  max-height: 44px;
+  max-height: 40px;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.6);
+  filter: grayscale(100%) opacity(0.55);
   transition: filter 0.3s;
   display: block;
 }
@@ -450,10 +463,9 @@
   filter: grayscale(0%) opacity(1);
 }
 
-/* Fallback text shown when logo image is missing or fails to load */
 .brand-logo-fallback {
   position: absolute;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--gray);
   letter-spacing: -0.01em;
@@ -461,22 +473,6 @@
   pointer-events: none;
 }
 
-.brand-logo-item:has(.brand-logo-img[src*="PASTE"]) .brand-logo-fallback,
-.brand-logo-item:not(:has(img[src])) .brand-logo-fallback {
-  display: flex;
-}
-
 .brand-logo-item:hover .brand-logo-fallback {
   color: var(--dark);
-}
-
-@media (max-width: 600px) {
-  .brand-logo-item {
-    width: 130px;
-    height: 60px;
-    padding: 10px 14px;
-  }
-  .brands-grid {
-    gap: 12px;
-  }
 }
