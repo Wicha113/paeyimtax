@@ -379,13 +379,13 @@
 .youtube-embed-wrap {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 48px auto 0;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   background: #000;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: min(56.25%, 562px); /* 16:9 */
   height: 0;
 }
 
@@ -402,60 +402,69 @@
    Brands / Collaborations Section
    ============================================ */
 .brands-section {
-  padding: 80px 0 80px;
+  padding: 64px 0;
   background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
-.brands-track-wrapper {
-  overflow: hidden;
-  margin-top: 48px;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-}
-
-.brands-track {
+.brands-grid {
   display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: brandScroll 22s linear infinite;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.brands-track:hover { animation-play-state: paused; }
-
-@keyframes brandScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+/* Float keyframe */
+@keyframes brandFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
 }
+
+/* Staggered delays */
+.brand-logo-item:nth-child(1) { animation-delay: 0s; }
+.brand-logo-item:nth-child(2) { animation-delay: 0.4s; }
+.brand-logo-item:nth-child(3) { animation-delay: 0.8s; }
+.brand-logo-item:nth-child(4) { animation-delay: 1.2s; }
+.brand-logo-item:nth-child(5) { animation-delay: 0.2s; }
+.brand-logo-item:nth-child(6) { animation-delay: 0.6s; }
+.brand-logo-item:nth-child(7) { animation-delay: 1.0s; }
 
 .brand-logo-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  height: 72px;
-  flex-shrink: 0;
+  width: 148px;
+  height: 70px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   background: #fff;
-  padding: 12px 20px;
-  transition: box-shadow 0.3s, border-color 0.3s;
+  padding: 12px 18px;
   position: relative;
   overflow: hidden;
+  cursor: default;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+  animation: brandFloat 4s ease-in-out infinite;
 }
 
 .brand-logo-item:hover {
-  box-shadow: var(--shadow-md);
-  border-color: rgba(176, 125, 46, 0.35);
+  animation-play-state: paused;
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  border-color: rgba(176, 125, 46, 0.5);
 }
 
 .brand-logo-img {
   max-width: 100%;
-  max-height: 40px;
+  max-height: 36px;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.55);
-  transition: filter 0.3s;
+  filter: grayscale(100%) opacity(0.5);
+  transition: filter 0.4s ease;
   display: block;
 }
 
@@ -475,4 +484,15 @@
 
 .brand-logo-item:hover .brand-logo-fallback {
   color: var(--dark);
+}
+
+@media (max-width: 640px) {
+  .brands-grid {
+    gap: 10px;
+  }
+  .brand-logo-item {
+    width: 120px;
+    height: 58px;
+    padding: 10px 12px;
+  }
 }
