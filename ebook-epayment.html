@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1450358026640464');fbq('track','PageView');fbq('track','ViewContent',{content_name:'E-Payment Handbook',content_ids:['epayment-handbook'],content_type:'product',value:250,currency:'THB'});</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1450358026640464&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
   <style>
     .product-layout {
       display: grid;
@@ -168,7 +172,7 @@
         <div class="product-meta-item">♾️ ไม่มีวันหมดอายุ</div>
       </div>
 
-      <a href="https://buy.stripe.com/9B66oI3slasc93Na5D2go00" class="btn-buy" target="_blank" rel="noopener">
+      <a href="https://buy.stripe.com/9B66oI3slasc93Na5D2go00" class="btn-buy" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{content_name:'E-Payment Handbook',value:250,currency:'THB'})">
         สั่งซื้อเลย — ฿250 →
       </a>
       <p class="btn-buy-note">ชำระผ่าน Stripe • รับไฟล์ PDF ทางอีเมลอัตโนมัติทันที</p>
@@ -219,7 +223,7 @@
       <div class="cta-label">พร้อมแล้วหรือยัง?</div>
       <h2 class="cta-title">จัดการบัญชีอย่างถูกกฎหมาย<br />ไม่ต้องกังวลอีกต่อไป</h2>
       <div class="cta-actions">
-        <a href="https://buy.stripe.com/9B66oI3slasc93Na5D2go00" class="btn-cta-primary" target="_blank" rel="noopener">สั่งซื้อเลย ฿250 →</a>
+        <a href="https://buy.stripe.com/9B66oI3slasc93Na5D2go00" class="btn-cta-primary" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{content_name:'E-Payment Handbook',value:250,currency:'THB'})">สั่งซื้อเลย ฿250 →</a>
       </div>
     </div>
   </div>
