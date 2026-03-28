@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ภาษีขายของออนไลน์ เริ่มจาก 0 — แป๊ะยิ้มเล่าเรื่อง</title>
+  <meta name="description" content="คู่มือภาษีสำหรับคนขายของออนไลน์และ Dropship ตั้งแต่พื้นฐานจนยื่นภาษีเองได้ ประหยัดจริง ไม่ต้องกลัวย้อนหลัง" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1450358026640464');fbq('track','PageView');fbq('track','ViewContent',{content_name:'ภาษีขายของออนไลน์ เริ่มจาก 0',content_ids:['ebook-seller-tax'],content_type:'product',value:990,currency:'THB'});</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1450358026640464&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+  <style>
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+      padding: calc(var(--nav-height) + 56px) 0 80px;
+    }
+    .product-slider { position: sticky; top: calc(var(--nav-height) + 24px); }
+    .product-img-slider {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #111;
+      aspect-ratio: 3/4;
+      position: relative;
+    }
+    .product-info { padding-top: 8px; }
+    .product-badge-row { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .product-badge {
+      font-size: 11px; font-weight: 700; padding: 5px 12px;
+      border-radius: 100px; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .badge-pdf { background: var(--dark); color: #fff; }
+    .badge-video { background: #7C3AED; color: #fff; }
+    .badge-legal { background: #276749; color: #fff; }
+    .product-title {
+      font-size: clamp(22px, 3.2vw, 34px); font-weight: 800;
+      color: var(--dark); letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 12px;
+    }
+    .product-subtitle { font-size: 17px; color: var(--gray); line-height: 1.7; margin-bottom: 20px; }
+    .product-alert {
+      background: #FFF9E6; border: 1.5px solid #F6C90E55; border-radius: var(--radius-sm);
+      padding: 14px 16px; font-size: 15px; color: #856404; margin-bottom: 24px; line-height: 1.6;
+    }
+    .product-price-row { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; }
+    .product-price { font-size: 40px; font-weight: 800; color: var(--gold); }
+    .product-price-original { font-size: 18px; color: var(--gray); text-decoration: line-through; }
+    .product-price-save {
+      font-size: 13px; font-weight: 700; color: #E53E3E;
+      background: #FFF0F0; padding: 4px 10px; border-radius: 100px;
+    }
+    .product-meta-row {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+    .product-meta-item { font-size: 14px; color: var(--gray); display: flex; align-items: center; gap: 6px; }
+    .btn-buy {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 18px; border-radius: var(--radius-sm);
+      background: var(--gold); color: #fff; font-size: 17px; font-weight: 700;
+      cursor: pointer; border: none; font-family: var(--font);
+      transition: background 0.2s, transform 0.2s; margin-bottom: 12px;
+    }
+    .btn-buy:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-buy-note { font-size: 13px; color: var(--gray); text-align: center; }
+    .detail-section { padding: 72px 0; border-top: 1px solid var(--border); }
+    .detail-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .detail-title { font-size: 28px; font-weight: 800; color: var(--dark); margin-bottom: 24px; }
+    .detail-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .detail-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 16px; color: var(--dark); line-height: 1.6;
+    }
+    .detail-list li::before {
+      content: '✓'; color: var(--gold); font-weight: 800; font-size: 16px; flex-shrink: 0; margin-top: 1px;
+    }
+    /* TOC */
+    .toc-parts { display: flex; flex-direction: column; gap: 32px; }
+    .toc-part {
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .toc-part-header {
+      background: var(--dark); color: #fff;
+      padding: 16px 24px; font-size: 15px; font-weight: 700;
+    }
+    .toc-part-header span { color: var(--gold); margin-right: 8px; }
+    .toc-chapter-list { list-style: none; padding: 0; margin: 0; }
+    .toc-chapter-list li {
+      padding: 12px 24px; font-size: 15px; color: var(--dark);
+      border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+    }
+    .toc-chapter-list li:last-child { border-bottom: none; }
+    .toc-chapter-list li .ch-num {
+      font-size: 11px; font-weight: 700; color: var(--gold);
+      background: var(--gold-pale); padding: 3px 8px; border-radius: 100px;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .toc-chapter-list li.toc-checklist { background: #F0FFF4; }
+    .toc-chapter-list li.toc-checklist .ch-num { color: #276749; background: #C6F6D5; }
+    .toc-chapter-list li.toc-bonus { background: #FFFBEB; }
+    .toc-chapter-list li.toc-bonus .ch-num { color: #B7791F; background: #FEFCBF; }
+    /* Audience */
+    .audience-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+    .audience-card {
+      background: var(--light-gray); border-radius: var(--radius-sm);
+      padding: 20px; display: flex; align-items: center; gap: 12px;
+      font-size: 15px; font-weight: 600; color: var(--dark);
+    }
+    .value-box {
+      background: var(--gold-pale); border: 1.5px solid var(--gold);
+      border-radius: var(--radius); padding: 32px; margin-top: 40px; text-align: center;
+    }
+    .value-box-title { font-size: 20px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .value-box-desc { font-size: 16px; color: var(--gray); }
+    @media (max-width: 768px) {
+      .product-layout { grid-template-columns: 1fr; gap: 32px; padding-top: calc(var(--nav-height) + 32px); }
+      .product-slider { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">แป๊ะยิ้ม<span>เล่าเรื่อง</span></a>
+    <div class="nav-links">
+      <a href="courses.html">คอร์สเรียน</a>
+      <a href="ebooks.html">E-Book</a>
+      <a href="blog.html">บทความ</a>
+      <a href="index.html#consult">ปรึกษาส่วนตัว</a>
+      <a href="index.html#consult" class="nav-cta">นัดปรึกษา</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="courses.html">คอร์สเรียน</a>
+  <a href="ebooks.html">E-Book</a>
+  <a href="blog.html">บทความ</a>
+  <a href="index.html#consult">ปรึกษาส่วนตัว</a>
+</div>
+
+<div class="container">
+  <div class="product-layout">
+
+    <!-- Left: Image -->
+    <div class="product-slider reveal">
+      <div class="product-img-slider img-slider">
+        <div class="slider-track">
+          <img src="images/ec01.png" alt="ภาษีขายของออนไลน์ เริ่มจาก 0" class="slide-img" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Product Info -->
+    <div class="product-info reveal reveal-delay-1">
+      <div class="product-badge-row">
+        <span class="product-badge badge-pdf">📄 PDF + VDO</span>
+        <span class="product-badge badge-legal">✅ ถูกกฎหมาย</span>
+        <span class="product-badge badge-video">🎬 มีคลิปประกอบ</span>
+      </div>
+
+      <h1 class="product-title">ภาษีขายของ / ขายของออนไลน์ / Dropship<br />เริ่มจาก 0 จนยื่นเองเป็น</h1>
+      <p class="product-subtitle">ฉบับกันเจ๊ง! ครอบคลุมตั้งแต่พื้นฐานภาษีจนถึงภาคปฏิบัติ — <strong>ยื่นเองเป็น ประหยัดจริง ไม่ต้องกลัวย้อนหลัง</strong></p>
+
+      <div class="product-alert">
+        💡 <strong>รู้หรือไม่?</strong> พ่อค้าแม่ค้าออนไลน์หลายคนโดนเรียกเสียภาษีย้อนหลังเพราะไม่รู้กฎ e-Payment และสิทธิ์หักค่าใช้จ่าย — อ่านเล่มนี้จบ รู้ทัน ป้องกันได้ก่อนเกิดปัญหา
+      </div>
+
+      <div class="product-price-row">
+        <div class="product-price">฿990</div>
+        <div class="product-price-original">฿1,390</div>
+        <div class="product-price-save">ประหยัด ฿400</div>
+      </div>
+
+      <div class="product-meta-row">
+        <div class="product-meta-item">📄 PDF + 🎬 VDO</div>
+        <div class="product-meta-item">📲 ดาวน์โหลดได้ทันที</div>
+        <div class="product-meta-item">♾️ ไม่มีวันหมดอายุ</div>
+        <div class="product-meta-item">📋 มี Checklist และ Workshop</div>
+      </div>
+
+      <button class="btn-buy" data-payment data-product="ภาษีขายของออนไลน์ เริ่มจาก 0" data-price="฿990" onclick="fbq('track','InitiateCheckout',{content_name:'ภาษีขายของออนไลน์ เริ่มจาก 0',value:990,currency:'THB'})">
+        สั่งซื้อเลย — ฿990 →
+      </button>
+      <p class="btn-buy-note">โอนแล้วส่งสลิปทาง LINE → รับไฟล์ทันที</p>
+    </div>
+  </div>
+</div>
+
+<!-- Detail Sections -->
+<div style="background: var(--light-gray);">
+  <div class="container">
+
+    <!-- สิ่งที่จะได้ -->
+    <div class="detail-section">
+      <div class="detail-label">ทำไมต้องอ่านเล่มนี้</div>
+      <h2 class="detail-title">สิ่งที่คุณจะได้จาก E-Book เล่มนี้</h2>
+      <ul class="detail-list">
+        <li>คำนวณภาษีเองได้ทันที รู้ว่าต้องยื่นหรือเปล่า ไม่ต้องเดาหรือถามนักบัญชีทุกปี</li>
+        <li>ยื่นภาษี 40(8) ด้วยตัวเองผ่านเว็บสรรพากรได้ มี Step-by-Step และ VDO พาทำจริงทีละขั้น</li>
+        <li>เลือกวิธีหักค่าใช้จ่ายที่คุ้มที่สุดระหว่างหักเหมา 60% vs หักตามจริง ลดภาษีได้ถูกกฎหมาย</li>
+        <li>วางแผนภาษีล่วงหน้าให้เงินเหลือมากขึ้น ไม่ใช่แค่ยื่นแล้วจ่าย</li>
+        <li>เข้าใจกฎ VAT รู้ว่าตัวเองต้องจดทะเบียนหรือยัง และต้องทำอะไรบ้าง</li>
+        <li>ตรวจสอบและลดความเสี่ยงโดนภาษีย้อนหลังด้วยตัวเองได้ ก่อนสรรพากรเรียกตรวจ</li>
+        <li>รู้วิธีรับมือ "จดหมายสีฟ้า" จากสรรพากรแบบมืออาชีพ ไม่ตื่นตระหนก</li>
+        <li>รู้จุดคุ้มทุนที่ควรจดบริษัท เพื่อประหยัดภาษีได้มากขึ้นเมื่อรายได้โต</li>
+        <li>ได้ Bonus รวมเงินได้ที่ไม่ต้องเสียภาษี + FAQ คำถามยอดฮิตที่ตอบข้อสงสัยได้ทันที</li>
+      </ul>
+    </div>
+
+    <!-- สารบัญ -->
+    <div class="detail-section">
+      <div class="detail-label">เนื้อหาภายใน</div>
+      <h2 class="detail-title">สารบัญ — ครบ 3 Parts ฉบับจับมือทำ</h2>
+      <div class="toc-parts">
+
+        <div class="toc-part">
+          <div class="toc-part-header"><span>Part 1</span>ปูพื้นฐานภาษี — เลิกงง เลิกกลัวสรรพากร</div>
+          <ul class="toc-chapter-list">
+            <li><span class="ch-num">บทที่ 1</span>รายได้เท่าไหร่ต้องยื่น? (โสด/สมรส เช็กด่วน!)</li>
+            <li><span class="ch-num">บทที่ 2</span>วิธีคำนวณภาษี</li>
+            <li><span class="ch-num">บทที่ 3</span>กระเป๋าเงิน 8 ใบ: คุณมีรายได้ทางไหนบ้าง?</li>
+            <li><span class="ch-num">บทที่ 4</span>พลังค่าลดหย่อน: ตัวช่วยประหยัดเงินที่หลายคนมองข้าม</li>
+            <li><span class="ch-num">บทที่ 5</span>กฎ e-Payment: ยอดโอนเท่าไหร่ธนาคารส่งชื่อให้สรรพากร?</li>
+            <li class="toc-checklist"><span class="ch-num">🚩 Checklist</span>สรุป 5 เรื่องต้องรู้ก่อนเริ่มธุรกิจ</li>
+          </ul>
+        </div>
+
+        <div class="toc-part">
+          <div class="toc-part-header"><span>Part 2</span>เจาะลึกสายขายของ — Online & Offline</div>
+          <ul class="toc-chapter-list">
+            <li><span class="ch-num">บทที่ 6</span>พ่อค้าแม่ค้าคือ 40(8): รายได้นับจากยอดโอนหรือยอดขาย?</li>
+            <li><span class="ch-num">บทที่ 7</span>เลือกทางไหนคุ้ม? หักเหมา 60% vs หักตามจริง</li>
+            <li><span class="ch-num">บทที่ 8</span>กำแพง 1.8 ล้าน: VAT คืออะไร? เมื่อไหร่ต้องจด?</li>
+            <li><span class="ch-num">บทที่ 9</span>Workshop เตรียมตัวยื่นจริง: ฉบับจับมือทำทีละ Step</li>
+            <li class="toc-checklist"><span class="ch-num">🚩 Checklist</span>ตรวจสุขภาพภาษีร้านค้าก่อนโดนเรียกตรวจ</li>
+          </ul>
+        </div>
+
+        <div class="toc-part">
+          <div class="toc-part-header"><span>Part 3</span>ภาคปฏิบัติ & วิชาเอาตัวรอด — The Masterclass</div>
+          <ul class="toc-chapter-list">
+            <li><span class="ch-num">📋 Step-by-Step</span>วิธีสมัครและกดยื่นภาษีออนไลน์ผ่านเว็บสรรพากร</li>
+            <li><span class="ch-num">🎬 Deep Dive</span>Video: พาดูหน้าจอวิธียื่นภาษี 40(8) ของคนขายของ</li>
+            <li><span class="ch-num">💰 Tax Planning</span>วางแผนภาษียังไงให้เงินเหลือเยอะขึ้น (เฉพาะในวิดีโอ)</li>
+            <li><span class="ch-num">📈 Scale Up</span>รายได้เท่าไหร่ควรจดบริษัท? (จุดคุ้มทุนที่ต้องรู้)</li>
+            <li><span class="ch-num">🔍 Risk Audit</span>วิธีเช็กความเสี่ยงโดนภาษีย้อนหลังด้วยตัวเอง</li>
+            <li><span class="ch-num">🛡️ Survival Guide</span>วิธีรับมือเมื่อได้รับ "จดหมายสีฟ้า" จากสรรพากร</li>
+            <li class="toc-bonus"><span class="ch-num">🎁 Bonus</span>รวมเงินได้ที่ไม่ต้องเสียภาษี & FAQ คำถามยอดฮิตจากหน้าเพจ</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- เหมาะสำหรับ -->
+    <div class="detail-section">
+      <div class="detail-label">เหมาะสำหรับ</div>
+      <h2 class="detail-title">ใครควรอ่าน E-Book เล่มนี้?</h2>
+      <div class="audience-grid">
+        <div class="audience-card"><span>🛒</span>คนขายของออนไลน์มือใหม่ที่ยังไม่รู้เรื่องภาษีเลย</div>
+        <div class="audience-card"><span>📦</span>Dropshipper ที่กังวลเรื่องภาษีย้อนหลัง</div>
+        <div class="audience-card"><span>🏪</span>พ่อค้าแม่ค้าที่อยากยื่นภาษีเองโดยไม่ง้อนักบัญชี</div>
+        <div class="audience-card"><span>📈</span>เจ้าของร้านที่ยอดขายโตขึ้น กลัวเรื่อง VAT และภาษีย้อนหลัง</div>
+      </div>
+
+      <div class="value-box">
+        <div class="value-box-title">💰 ลงทุนครั้งเดียว ฿990</div>
+        <div class="value-box-desc">ประหยัดค่าจ้างนักบัญชีนับหมื่น และหลีกเลี่ยงค่าปรับ-ภาษีย้อนหลังที่อาจสูงถึงหลักแสน!</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-orb"></div>
+      <div class="cta-orb cta-orb-2"></div>
+      <div class="cta-label">พร้อมแล้วหรือยัง?</div>
+      <h2 class="cta-title">ยื่นภาษีเองเป็น<br />ประหยัดจริง ไม่ต้องกลัวย้อนหลัง</h2>
+      <div class="cta-actions">
+        <button class="btn-cta-primary" data-payment data-product="ภาษีขายของออนไลน์ เริ่มจาก 0" data-price="฿990" onclick="fbq('track','InitiateCheckout',{content_name:'ภาษีขายของออนไลน์ เริ่มจาก 0',value:990,currency:'THB'})">สั่งซื้อเลย ฿990 →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.08);padding-top:40px;">
+      <span>© 2569 แป๊ะยิ้มเล่าเรื่อง</span>
+      <a href="ebooks.html" style="color:var(--gold)">← กลับหน้า E-Book</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="payment-modal">
+  <div class="modal">
+    <button class="modal-close" aria-label="ปิด">✕</button>
+    <div class="modal-title">ชำระเงิน</div>
+    <div class="modal-subtitle">
+      <strong id="modal-product-name"></strong>
+      <span style="color:var(--gold);font-weight:800;margin-left:8px;" id="modal-product-price"></span>
+    </div>
+    <div class="payment-tabs">
+      <button class="payment-tab active" data-tab="tab-transfer">โอนบัญชี</button>
+      <button class="payment-tab" data-tab="tab-qr">QR PromptPay</button>
+    </div>
+    <div class="payment-content active" id="tab-transfer">
+      <div class="bank-info">
+        <div class="bank-name">ธนาคารกรุงไทย (Krungthai)</div>
+        <div class="bank-account">722-0-53505-8</div>
+        <div class="bank-holder">นายวิชา เอี่ยมผดุง</div>
+      </div>
+    </div>
+    <div class="payment-content" id="tab-qr">
+      <div class="qr-wrapper">
+        <img src="images/qr.jpg" alt="QR PromptPay" style="width:200px;height:200px;object-fit:contain;margin:0 auto;display:block;border-radius:12px;" />
+        <div class="qr-desc">สแกน QR Code ด้วยแอปธนาคารหรือ PromptPay</div>
+      </div>
+    </div>
+    <p class="modal-note">โอนแล้วกดปุ่มด้านล่าง ส่งสลิปเพื่อรับไฟล์ PDF ทันที</p>
+    <a href="https://lin.ee/sj45zDY" target="_blank" class="btn-line">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      ทัก LINE ส่งสลิป → รับไฟล์ PDF ทันที
+    </a>
+    <p class="btn-line-sub">หรือ แอด ID <strong>@wicha</strong></p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
