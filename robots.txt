@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /success.html
+
+Sitemap: https://paeyimtax.com/sitemap.xml
