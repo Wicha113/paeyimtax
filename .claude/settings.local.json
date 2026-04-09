@@ -1,7 +1,52 @@
 {
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // \"\"'); [[ \"$f\" =~ \\.(html|css|js)$ ]] && cd /Users/wicha/Desktop/paeyimtax && git add -A && git commit -m \"Auto-save: $(basename \"$f\")\" && git push 2>/dev/null || true",
+            "statusMessage": "กำลัง push..."
+          }
+        ]
+      }
+    ]
+  },
   "permissions": {
     "allow": [
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "Bash(wc:*)",
+      "WebSearch",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:flowaccount.com)",
+      "WebFetch(domain:peakaccount.com)",
+      "WebFetch(domain:www.kkpfg.com)",
+      "WebFetch(domain:www.shopback.co.th)",
+      "WebFetch(domain:www.ghbank.or.th)",
+      "WebFetch(domain:kkpfg.com)",
+      "WebFetch(domain:ghbank.or.th)",
+      "WebFetch(domain:gqsize.com)",
+      "WebFetch(domain:bank.kkpfg.com)",
+      "WebFetch(domain:www.betterloan.in.th)",
+      "WebFetch(domain:suparagroup.com)",
+      "WebFetch(domain:www.ghbank.co.th)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:brandfetch.com)",
+      "WebFetch(domain:www.betterloan.co.th)",
+      "WebFetch(domain:gqapparel.com)",
+      "WebFetch(domain:upload.wikimedia.org)",
+      "WebFetch(domain:www.gqapparel.co.th)",
+      "WebFetch(domain:en.gqsize.com)",
+      "WebFetch(domain:api.brandfetch.io)",
+      "WebFetch(domain:logo.clearbit.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:cdn.brandfetch.io)",
+      "WebFetch(domain:flowaccountcdn.com)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Skill(update-config)"
     ]
   }
 }
