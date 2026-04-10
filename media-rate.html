@@ -205,27 +205,31 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">แป๊ะยิ้ม<span>ภาษี</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html">หน้าแรก</a></li>
-        <li><a href="courses.html">คอร์ส & E-Book</a></li>
-        <li><a href="consult.html">ปรึกษาส่วนตัว</a></li>
-        <li><a href="blog.html">บทความ</a></li>
-      </ul>
-      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+<div id="progress-bar"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">แป๊ะยิ้ม<span>เล่าเรื่อง</span></a>
+    <div class="nav-links">
+      <a href="courses.html">คอร์ส & E-Book</a>
+      <a href="blog.html">บทความ</a>
+      <a href="media-rate.html" style="color:var(--gold)">Rate Card</a>
+      <a href="consult.html">ปรึกษาส่วนตัว</a>
+      <a href="consult.html" class="nav-cta">นัดปรึกษา</a>
     </div>
-  </nav>
-  <div class="mobile-nav">
-    <ul>
-      <li><a href="index.html">หน้าแรก</a></li>
-      <li><a href="courses.html">คอร์ส & E-Book</a></li>
-      <li><a href="consult.html">ปรึกษาส่วนตัว</a></li>
-      <li><a href="blog.html">บทความ</a></li>
-    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="courses.html">คอร์ส & E-Book</a>
+  <a href="blog.html">บทความ</a>
+  <a href="media-rate.html">Rate Card</a>
+  <a href="consult.html">ปรึกษาส่วนตัว</a>
+  <a href="consult.html" class="nav-cta" style="display:inline-block;margin-top:8px;text-align:center;padding:14px;">นัดปรึกษา →</a>
+</div>
 
   <!-- HERO -->
   <div class="rate-hero">
