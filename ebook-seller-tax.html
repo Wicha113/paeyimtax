@@ -138,9 +138,75 @@
     }
     .value-box-title { font-size: 20px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
     .value-box-desc { font-size: 16px; color: var(--gray); }
+    /* Pain Points */
+    .pain-section {
+      padding: calc(var(--nav-height) + 56px) 0 48px;
+      text-align: center;
+    }
+    .pain-label {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gray); margin-bottom: 24px;
+    }
+    .pain-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px; margin-bottom: 28px; text-align: left;
+    }
+    .pain-card {
+      background: #FFF5F5; border: 1.5px solid #FED7D7; border-radius: var(--radius-sm);
+      padding: 16px 18px; font-size: 15px; color: #742A2A; line-height: 1.6;
+    }
+    .pain-solution {
+      font-size: 18px; font-weight: 800; color: var(--dark);
+      background: var(--gold-pale); border: 1.5px solid var(--gold);
+      border-radius: var(--radius-sm); padding: 16px 24px; display: inline-block;
+    }
+    /* Urgency */
+    .urgency-box {
+      background: #FFF3CD; border: 2px solid #F6C90E; border-radius: var(--radius-sm);
+      padding: 14px 18px; font-size: 15px; color: #7D4E00; margin-bottom: 20px; line-height: 1.6;
+    }
+    /* Orange CTA button */
+    .btn-buy-orange {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 20px; border-radius: var(--radius-sm);
+      background: #F97316; color: #fff; font-size: 18px; font-weight: 800;
+      cursor: pointer; border: none; font-family: var(--font); text-decoration: none;
+      transition: background 0.2s, transform 0.15s; margin-bottom: 10px;
+      box-shadow: 0 4px 20px rgba(249,115,22,0.4); letter-spacing: -0.01em;
+    }
+    .btn-buy-orange:hover { background: #EA6C0A; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(249,115,22,0.5); }
+    /* Mid-page CTA */
+    .midpage-cta {
+      background: var(--dark); border-radius: var(--radius); padding: 40px 32px;
+      text-align: center; margin: 40px 0;
+    }
+    .midpage-cta-title { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .midpage-cta-sub { font-size: 16px; color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+    .midpage-cta .btn-buy-orange { max-width: 480px; margin: 0 auto 10px; }
+    /* Instructor */
+    .instructor-section { padding: 72px 0; border-top: 1px solid var(--border); }
+    .instructor-card {
+      display: flex; gap: 32px; align-items: flex-start;
+    }
+    .instructor-img {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+      flex-shrink: 0; border: 3px solid var(--gold);
+    }
+    .instructor-name { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+    .instructor-title { font-size: 14px; color: var(--gold); font-weight: 700; margin-bottom: 14px; }
+    .instructor-bio { font-size: 16px; color: var(--dark); line-height: 1.8; }
+    .instructor-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    .instructor-badge {
+      font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px;
+      background: var(--dark); color: #fff;
+    }
     @media (max-width: 768px) {
-      .product-layout { grid-template-columns: 1fr; gap: 32px; padding-top: calc(var(--nav-height) + 32px); }
+      .product-layout { grid-template-columns: 1fr; gap: 32px; padding-top: 0; }
       .product-slider { position: static; }
+      .pain-section { padding-top: calc(var(--nav-height) + 32px); padding-bottom: 32px; }
+      .instructor-card { flex-direction: column; align-items: center; text-align: center; }
+      .instructor-badges { justify-content: center; }
+      .midpage-cta { padding: 28px 20px; }
     }
   </style>
 </head>
