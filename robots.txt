@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /success.html
 
-Sitemap: https://paeyimtax.com/sitemap.xml
+Sitemap: https://taxpaeyim.com/sitemap.xml
