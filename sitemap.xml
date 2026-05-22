@@ -3,162 +3,183 @@
 
   <url>
     <loc>https://paeyimtax.com/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/courses.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/consult.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/ebooks.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/ebook-seller-tax.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/ebook-epayment.html</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/ebook-vat.html</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/consult-hourly.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/consult-annual.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://paeyimtax.com/course-pnd.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://paeyimtax.com/media-rate.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- บทความ -->
   <url>
+    <loc>https://paeyimtax.com/blog-seller-3m-vat-tax.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://paeyimtax.com/blog-company-vs-personal-tax.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-tax-assessment-appeal.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-tax-no-pay.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-income-tax-table.html</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-tax-prep-checklist.html</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-illegal-loan-tax.html</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-parttime-tax.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-foreign-stock-tax.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-director-loan.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-hire-accountant-2m.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-broker-tax-type.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-business-reg-tax.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://paeyimtax.com/blog-tax-penalty-reduction.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
