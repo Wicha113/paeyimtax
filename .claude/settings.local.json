@@ -34,7 +34,12 @@
       "Bash(git push:*)",
       "Skill(update-config)",
       "Bash(git:*)",
-      "Bash(grep -l \"nav-links\" /Users/wicha/Desktop/paeyimtax/*.html)"
+      "Bash(grep -l \"nav-links\" /Users/wicha/Desktop/paeyimtax/*.html)",
+      "Bash(sips -s format jpeg -s formatOptions 70 /Users/wicha/Desktop/paeyimtax/images/ec01.png --out /Users/wicha/Desktop/paeyimtax/images/ec01.png)",
+      "Bash(sips -Z 1000 v02.jpg -s formatOptions 65 --out v02.jpg)",
+      "Bash(sips -Z 900 p03.jpg -s formatOptions 65 --out p03.jpg)",
+      "Bash(sips -Z 900 p01.jpg -s formatOptions 65 --out p01.jpg)",
+      "Bash(sips -Z 900 y01.jpg -s formatOptions 65 --out y01.jpg)"
     ]
   },
   "hooks": {
