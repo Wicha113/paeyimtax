@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>คู่มือภาษีมูลค่าเพิ่ม VAT Handbook — แป๊ะยิ้มเล่าเรื่อง</title>
-  <meta name="description" content="คู่มือภาษีมูลค่าเพิ่ม VAT ฉบับเข้าใจง่าย สำหรับเจ้าของธุรกิจมือใหม่ โดยแป๊ะยิ้มเล่าเรื่อง" />
+  <title>VAT Handbook คู่มือภาษีมูลค่าเพิ่มฉบับเข้าใจง่าย — แป๊ะยิ้มเล่าเรื่อง</title>
+  <meta name="description" content="คู่มือภาษีมูลค่าเพิ่ม VAT ฉบับเข้าใจง่าย ครอบคลุมตั้งแต่เกณฑ์จด VAT การออกใบกำกับภาษี จนถึงการยื่น ภ.พ.30 รายเดือน สำหรับเจ้าของธุรกิจมือใหม่ ราคา ฿250" />
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="แป๊ะยิ้มเล่าเรื่อง" />
-  <meta property="og:title" content="คู่มือภาษีมูลค่าเพิ่ม VAT Handbook — แป๊ะยิ้มเล่าเรื่อง" />
-  <meta property="og:description" content="คู่มือภาษีมูลค่าเพิ่ม VAT ฉบับเข้าใจง่าย สำหรับเจ้าของธุรกิจมือใหม่ โดยแป๊ะยิ้มเล่าเรื่อง" />
+  <meta property="og:title" content="VAT Handbook คู่มือภาษีมูลค่าเพิ่มฉบับเข้าใจง่าย — แป๊ะยิ้มเล่าเรื่อง" />
+  <meta property="og:description" content="คู่มือภาษีมูลค่าเพิ่ม VAT ฉบับเข้าใจง่าย สำหรับเจ้าของธุรกิจมือใหม่ ครอบคลุมตั้งแต่เกณฑ์จด ออกใบกำกับภาษี จนถึงยื่นรายเดือน" />
   <meta property="og:url" content="https://taxpaeyim.com/ebook-vat.html" />
   <meta property="og:image" content="https://taxpaeyim.com/images/paeyim.jpg" />
   <meta property="og:locale" content="th_TH" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="คู่มือภาษีมูลค่าเพิ่ม VAT Handbook — แป๊ะยิ้มเล่าเรื่อง" />
-  <meta name="twitter:description" content="คู่มือภาษีมูลค่าเพิ่ม VAT ฉบับเข้าใจง่าย สำหรับเจ้าของธุรกิจมือใหม่ โดยแป๊ะยิ้มเล่าเรื่อง" />
+  <meta name="twitter:title" content="VAT Handbook คู่มือภาษีมูลค่าเพิ่มฉบับเข้าใจง่าย — แป๊ะยิ้มเล่าเรื่อง" />
+  <meta name="twitter:description" content="คู่มือภาษีมูลค่าเพิ่ม VAT ฉบับเข้าใจง่าย สำหรับเจ้าของธุรกิจมือใหม่ ครอบคลุมตั้งแต่เกณฑ์จด ออกใบกำกับภาษี จนถึงยื่นรายเดือน" />
   <meta name="twitter:image" content="https://taxpaeyim.com/images/paeyim.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +38,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 56px;
       align-items: start;
-      padding: calc(var(--nav-height) + 56px) 0 80px;
+      padding: 0 0 80px;
     }
     .product-slider { position: sticky; top: calc(var(--nav-height) + 24px); }
     .product-img-slider {
@@ -57,17 +57,15 @@
     .badge-pdf { background: var(--dark); color: #fff; }
     .badge-sme { background: #2B6CB0; color: #fff; }
     .product-title {
-      font-size: clamp(24px, 3.5vw, 36px); font-weight: 800;
+      font-size: clamp(22px, 3.2vw, 34px); font-weight: 800;
       color: var(--dark); letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 12px;
     }
     .product-subtitle { font-size: 17px; color: var(--gray); line-height: 1.7; margin-bottom: 20px; }
-    .question-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
-    .question-list li {
-      font-size: 15px; color: var(--dark); background: var(--light-gray);
-      padding: 12px 16px; border-radius: var(--radius-sm);
-      border-left: 3px solid var(--gold);
+    .product-alert {
+      background: #EBF8FF; border: 1.5px solid #90CDF455; border-radius: var(--radius-sm);
+      padding: 14px 16px; font-size: 15px; color: #2A4365; margin-bottom: 24px; line-height: 1.6;
     }
-    .product-price-row { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+    .product-price-row { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; }
     .product-price { font-size: 40px; font-weight: 800; color: var(--gold); }
     .product-price-original { font-size: 18px; color: var(--gray); text-decoration: line-through; }
     .product-price-save {
@@ -80,14 +78,15 @@
       margin-bottom: 28px;
     }
     .product-meta-item { font-size: 14px; color: var(--gray); display: flex; align-items: center; gap: 6px; }
-    .btn-buy {
+    .btn-buy-orange {
       display: flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; padding: 18px; border-radius: var(--radius-sm);
-      background: var(--gold); color: #fff; font-size: 17px; font-weight: 700;
-      cursor: pointer; border: none; font-family: var(--font);
-      transition: background 0.2s, transform 0.2s; margin-bottom: 12px;
+      width: 100%; padding: 20px; border-radius: var(--radius-sm);
+      background: #F97316; color: #fff; font-size: 18px; font-weight: 800;
+      cursor: pointer; border: none; font-family: var(--font); text-decoration: none;
+      transition: background 0.2s, transform 0.15s; margin-bottom: 10px;
+      box-shadow: 0 4px 20px rgba(249,115,22,0.4); letter-spacing: -0.01em;
     }
-    .btn-buy:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-buy-orange:hover { background: #EA6C0A; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(249,115,22,0.5); }
     .btn-buy-note { font-size: 13px; color: var(--gray); text-align: center; }
     .detail-section { padding: 72px 0; border-top: 1px solid var(--border); }
     .detail-label {
@@ -103,15 +102,89 @@
     .detail-list li::before {
       content: '✓'; color: var(--gold); font-weight: 800; font-size: 16px; flex-shrink: 0; margin-top: 1px;
     }
+    .toc-parts { display: flex; flex-direction: column; gap: 32px; }
+    .toc-part { border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+    .toc-part-header {
+      background: var(--dark); color: #fff;
+      padding: 16px 24px; font-size: 15px; font-weight: 700;
+    }
+    .toc-part-header span { color: var(--gold); margin-right: 8px; }
+    .toc-chapter-list { list-style: none; padding: 0; margin: 0; }
+    .toc-chapter-list li {
+      padding: 12px 24px; font-size: 15px; color: var(--dark);
+      border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+    }
+    .toc-chapter-list li:last-child { border-bottom: none; }
+    .toc-chapter-list li .ch-num {
+      font-size: 11px; font-weight: 700; color: var(--gold);
+      background: var(--gold-pale); padding: 3px 8px; border-radius: 100px;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .toc-chapter-list li.toc-checklist { background: #F0FFF4; }
+    .toc-chapter-list li.toc-checklist .ch-num { color: #276749; background: #C6F6D5; }
+    .toc-chapter-list li.toc-bonus { background: #FFFBEB; }
+    .toc-chapter-list li.toc-bonus .ch-num { color: #B7791F; background: #FEFCBF; }
     .audience-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
     .audience-card {
       background: var(--light-gray); border-radius: var(--radius-sm);
       padding: 20px; display: flex; align-items: center; gap: 12px;
       font-size: 15px; font-weight: 600; color: var(--dark);
     }
+    .value-box {
+      background: var(--gold-pale); border: 1.5px solid var(--gold);
+      border-radius: var(--radius); padding: 32px; margin-top: 40px; text-align: center;
+    }
+    .value-box-title { font-size: 20px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .value-box-desc { font-size: 16px; color: var(--gray); }
+    .pain-section {
+      padding: calc(var(--nav-height) + 56px) 0 48px;
+      text-align: center;
+    }
+    .pain-label {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gray); margin-bottom: 24px;
+    }
+    .pain-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px; margin-bottom: 28px; text-align: left;
+    }
+    .pain-card {
+      background: #FFF5F5; border: 1.5px solid #FED7D7; border-radius: var(--radius-sm);
+      padding: 16px 18px; font-size: 15px; color: #742A2A; line-height: 1.6;
+    }
+    .pain-solution {
+      font-size: 18px; font-weight: 800; color: var(--dark);
+      background: var(--gold-pale); border: 1.5px solid var(--gold);
+      border-radius: var(--radius-sm); padding: 16px 24px; display: inline-block;
+    }
+    .midpage-cta {
+      background: var(--dark); border-radius: var(--radius); padding: 40px 32px;
+      text-align: center; margin: 40px 0;
+    }
+    .midpage-cta-title { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .midpage-cta-sub { font-size: 16px; color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+    .midpage-cta .btn-buy-orange { max-width: 480px; margin: 0 auto 10px; }
+    .instructor-section { padding: 72px 0; border-top: 1px solid var(--border); }
+    .instructor-card { display: flex; gap: 32px; align-items: flex-start; }
+    .instructor-img {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+      flex-shrink: 0; border: 3px solid var(--gold);
+    }
+    .instructor-name { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+    .instructor-title { font-size: 14px; color: var(--gold); font-weight: 700; margin-bottom: 14px; }
+    .instructor-bio { font-size: 16px; color: var(--dark); line-height: 1.8; }
+    .instructor-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    .instructor-badge {
+      font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px;
+      background: var(--dark); color: #fff;
+    }
     @media (max-width: 768px) {
-      .product-layout { grid-template-columns: 1fr; gap: 32px; padding-top: calc(var(--nav-height) + 32px); }
+      .product-layout { grid-template-columns: 1fr; gap: 32px; padding-top: 0; }
       .product-slider { position: static; }
+      .pain-section { padding-top: calc(var(--nav-height) + 32px); padding-bottom: 32px; }
+      .instructor-card { flex-direction: column; align-items: center; text-align: center; }
+      .instructor-badges { justify-content: center; }
+      .midpage-cta { padding: 28px 20px; }
     }
   </style>
 </head>
@@ -123,8 +196,7 @@
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">แป๊ะยิ้ม<span>เล่าเรื่อง</span></a>
     <div class="nav-links">
-      <a href="courses.html">คอร์ส & E-Book</a>
-      <a href="courses.html">คอร์ส & E-Book</a>
+      <a href="courses.html" style="color:var(--gold)">คอร์ส & E-Book</a>
       <a href="blog.html">บทความ</a>
       <a href="media-rate.html">Rate Card</a>
       <a href="consult.html">ปรึกษาส่วนตัว</a>
@@ -138,21 +210,33 @@
 
 <div class="mobile-nav" id="mobile-nav">
   <a href="courses.html">คอร์ส & E-Book</a>
-  
   <a href="blog.html">บทความ</a>
   <a href="media-rate.html">Rate Card</a>
   <a href="consult.html">ปรึกษาส่วนตัว</a>
 </div>
 
 <div class="container">
+
+  <!-- Pain Points -->
+  <div class="pain-section reveal">
+    <div class="pain-label">ก่อนอ่าน — ขอถามตรงๆ สักข้อ</div>
+    <div class="pain-grid">
+      <div class="pain-card">😰 <strong>ยังไม่รู้ว่าต้องจด VAT ไหม</strong> — ขายของมาสักพักแล้ว แต่ไม่มั่นใจว่ายอดขายตัวเองเข้าเกณฑ์ต้องจดหรือยัง?</div>
+      <div class="pain-card">😨 <strong>กลัวโดนย้อนหลัง</strong> — ถ้าจด VAT ช้าหรือไม่จดทั้งที่ควรจด จะโดนปรับหรือเรียกภาษีย้อนหลังได้ไหม?</div>
+      <div class="pain-card">😤 <strong>ออกใบกำกับภาษีไม่เป็น</strong> — ลูกค้าขอใบกำกับภาษีแต่ไม่รู้ต้องเขียนอะไรบ้าง และผิดจากนี้จะมีโทษไหม?</div>
+      <div class="pain-card">😵 <strong>ไม่รู้จะยื่น ภ.พ.30 ยังไง</strong> — รู้ว่าต้องยื่นทุกเดือน แต่ไม่รู้ขั้นตอน คำนวณยังไง และยื่นช้าโดนอะไรบ้าง?</div>
+    </div>
+    <div class="pain-solution">ถ้าตอบว่า "ใช่" แม้แต่ข้อเดียว — E-Book เล่มนี้คือทางออกของคุณ ↓</div>
+  </div>
+
   <div class="product-layout">
 
     <!-- Left: Image Slider -->
     <div class="product-slider reveal">
       <div class="product-img-slider img-slider">
         <div class="slider-track">
-          <img loading="lazy" src="images/v01.webp" alt="คู่มือภาษีมูลค่าเพิ่ม" class="slide-img" />
-          <img loading="lazy" src="images/v02.webp" alt="ตัวอย่างเนื้อหา" class="slide-img" />
+          <img loading="lazy" src="images/v01.webp" alt="VAT Handbook คู่มือภาษีมูลค่าเพิ่ม" class="slide-img" width="1200" height="1200" />
+          <img loading="lazy" src="images/v02.webp" alt="ตัวอย่างเนื้อหา VAT Handbook" class="slide-img" width="1080" height="1080" />
         </div>
         <button class="slider-btn slider-prev">&#8249;</button>
         <button class="slider-btn slider-next">&#8250;</button>
@@ -170,14 +254,12 @@
         <span class="product-badge badge-sme">🏢 สำหรับ SME</span>
       </div>
 
-      <h1 class="product-title">คู่มือภาษีมูลค่าเพิ่ม<br />(VAT Handbook)</h1>
-      <p class="product-subtitle">ฉบับเข้าใจง่าย สำหรับเจ้าของธุรกิจมือใหม่ — ตอบทุกคำถามที่คุณสงสัย</p>
+      <h1 class="product-title">เข้าใจ VAT ครบ<span style="color:var(--gold);">ไม่โดนปรับอีกต่อไป</span><span style="font-size:clamp(14px,1.8vw,18px);font-weight:600;color:var(--gray);display:block;margin-top:8px;letter-spacing:0;line-height:1.5;">จด VAT ถูกเวลา · ออกใบกำกับถูกต้อง · ยื่นภาษีรายเดือนเป็น</span></h1>
+      <p class="product-subtitle">คู่มือ VAT ฉบับเข้าใจง่าย อธิบาย<strong>เป็นภาษาคน</strong> ตั้งแต่ว่าใครต้องจด เมื่อไหร่ต้องจด วิธีออกใบกำกับภาษี ไปจนถึงการยื่น ภ.พ.30 ทุกเดือน ครบในเล่มเดียว</p>
 
-      <ul class="question-list">
-        <li>❓ ขายของออนไลน์ต้องจด VAT ไหม?</li>
-        <li>❓ ซื้อของมาแล้วเอาภาษีซื้อมาหักภาษีขายได้หรือเปล่า?</li>
-        <li>❓ โดนเรียกภาษีย้อนหลัง ทำไมต้องจ่ายเบี้ยปรับแพงขนาดนี้?</li>
-      </ul>
+      <div class="product-alert">
+        💡 <strong>รู้หรือไม่?</strong> ถ้ายอดขายเกิน 1.8 ล้านบาทต่อปีแต่ยังไม่จด VAT — อาจโดนปรับและเสียภาษีย้อนหลังพร้อมเบี้ยปรับได้ทันที อ่านคู่มือเล่มนี้ก่อนสาย
+      </div>
 
       <div class="product-price-row">
         <div class="product-price">฿250</div>
@@ -189,12 +271,13 @@
         <div class="product-meta-item">📄 ไฟล์ PDF</div>
         <div class="product-meta-item">📲 ดาวน์โหลดได้ทันที</div>
         <div class="product-meta-item">♾️ ไม่มีวันหมดอายุ</div>
+        <div class="product-meta-item">📋 มี Checklist จด VAT</div>
       </div>
 
-      <button class="btn-buy" data-payment data-product="คู่มือภาษีมูลค่าเพิ่ม (VAT)" data-price="฿250">
-        สั่งซื้อเลย — ฿250
+      <button class="btn-buy-orange" data-payment data-product="คู่มือภาษีมูลค่าเพิ่ม (VAT)" data-price="฿250" onclick="fbq('track','InitiateCheckout',{content_name:'VAT Handbook',value:250,currency:'THB'})">
+        สั่งซื้อเลย ฿250 — รับไฟล์ทันที →
       </button>
-      <p class="btn-buy-note">ส่งสลิปมาที่ LINE <strong>@wicha</strong> รับไฟล์ PDF ทันที</p>
+      <p class="btn-buy-note">โอนผ่านธนาคารหรือ QR PromptPay · ส่งสลิปทาง LINE รับไฟล์ทันที</p>
     </div>
   </div>
 </div>
@@ -203,18 +286,60 @@
 <div style="background: var(--light-gray);">
   <div class="container">
 
-    <!-- เนื้อหา -->
+    <!-- สิ่งที่จะได้ -->
     <div class="detail-section">
-      <div class="detail-label">เนื้อหาครบถ้วน</div>
-      <h2 class="detail-title">คู่มือเล่มนี้มีคำตอบ!</h2>
+      <div class="detail-label">ทำไมต้องอ่านเล่มนี้</div>
+      <h2 class="detail-title">สิ่งที่คุณจะได้จาก E-Book เล่มนี้</h2>
       <ul class="detail-list">
-        <li>ใครต้องจด VAT? และเมื่อไหร่ถึงถึงเกณฑ์ที่ต้องจด</li>
-        <li>จด VAT แบบบุคคลธรรมดาได้ไหม? อธิบายชัดทุกกรณี</li>
-        <li>รายการที่ได้รับการยกเว้น VAT มีอะไรบ้าง?</li>
-        <li>ต้องออกใบกำกับภาษียังไงให้ถูกต้อง ไม่โดนปรับ</li>
-        <li>วิธีคำนวณและยื่นภาษีรายเดือนแบบมืออาชีพ</li>
-        <li>ข้อควรระวังไม่ให้โดนปรับหรือภาษีย้อนหลัง</li>
+        <li>รู้ว่าตัวเองต้องจด VAT ไหม — เช็กรายได้เทียบกับเกณฑ์ได้ทันทีหลังอ่านจบ</li>
+        <li>เข้าใจความแตกต่างระหว่างภาษีซื้อและภาษีขาย และวิธีนำมาหักกลบกัน</li>
+        <li>วิธีออกใบกำกับภาษีที่ถูกต้องครบถ้วน ไม่โดนปฏิเสธจากลูกค้า ไม่โดนปรับจากสรรพากร</li>
+        <li>ขั้นตอนการยื่น ภ.พ.30 รายเดือนทีละขั้นตอน ทำเองได้ ไม่ต้องง้อนักบัญชี</li>
+        <li>รายการที่ได้รับการยกเว้น VAT — รู้ไว้ประหยัดภาษีได้ถูกกฎหมาย</li>
+        <li>ข้อผิดพลาดยอดฮิตที่ทำให้โดนปรับ และวิธีป้องกันตั้งแต่ต้น</li>
+        <li>Checklist ตรวจสถานะ VAT ตัวเองได้เลย — รู้ทันก่อนโดนปัญหา</li>
       </ul>
+    </div>
+
+    <!-- สารบัญ -->
+    <div class="detail-section">
+      <div class="detail-label">เนื้อหาภายใน</div>
+      <h2 class="detail-title">สารบัญ — ครบ 2 Parts อ่านจบแล้วจัดการ VAT ได้เลย</h2>
+      <div class="toc-parts">
+
+        <div class="toc-part">
+          <div class="toc-part-header"><span>Part 1</span>เข้าใจ VAT — พื้นฐานที่ต้องรู้ก่อนทำธุรกิจ</div>
+          <ul class="toc-chapter-list">
+            <li><span class="ch-num">บทที่ 1</span>VAT คืออะไร? ทำไมรัฐถึงเก็บ และใครต้องเป็นคนจ่าย</li>
+            <li><span class="ch-num">บทที่ 2</span>เมื่อไหร่ต้องจด VAT? เช็กรายได้ตัวเองเทียบกับเกณฑ์ 1.8 ล้าน</li>
+            <li><span class="ch-num">บทที่ 3</span>จด VAT แล้วได้อะไร? สิทธิ สิ่งที่ต้องทำ และโทษถ้าไม่จด</li>
+            <li><span class="ch-num">บทที่ 4</span>รายการที่ได้รับการยกเว้น VAT มีอะไรบ้าง ใช้ประโยชน์ได้ยังไง</li>
+            <li class="toc-checklist"><span class="ch-num">✅ Checklist</span>เช็กตัวเองว่าต้องจด VAT หรือยัง — ทำได้ทันที</li>
+          </ul>
+        </div>
+
+        <div class="toc-part">
+          <div class="toc-part-header"><span>Part 2</span>จัดการ VAT อย่างมืออาชีพ — ทำได้เลยไม่ต้องง้อนักบัญชี</div>
+          <ul class="toc-chapter-list">
+            <li><span class="ch-num">บทที่ 5</span>วิธีออกใบกำกับภาษีให้ถูกต้อง — รายการที่ต้องมีทุกฉบับ</li>
+            <li><span class="ch-num">บทที่ 6</span>วิธีคำนวณภาษีซื้อและภาษีขาย (Input/Output Tax) แบบเข้าใจง่าย</li>
+            <li><span class="ch-num">บทที่ 7</span>ขั้นตอนยื่น ภ.พ.30 รายเดือนทีละขั้นตอน — ทำเองได้ไม่ยาก</li>
+            <li><span class="ch-num">บทที่ 8</span>ข้อผิดพลาดที่ทำให้โดนปรับ และวิธีป้องกันตั้งแต่ต้น</li>
+            <li class="toc-bonus"><span class="ch-num">🎁 Bonus</span>FAQ คำถามยอดฮิตเรื่อง VAT จากหน้าเพจและลูกค้าที่ปรึกษา</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mid-page CTA -->
+    <div class="midpage-cta reveal">
+      <div class="midpage-cta-title">พร้อมเข้าใจ VAT ได้ครบในคืนเดียวหรือยัง?</div>
+      <div class="midpage-cta-sub">ลงทุนครั้งเดียว ฿250 — ไม่ต้องกลัวเรื่อง VAT อีกต่อไป</div>
+      <button class="btn-buy-orange" data-payment data-product="คู่มือภาษีมูลค่าเพิ่ม (VAT)" data-price="฿250" onclick="fbq('track','InitiateCheckout',{content_name:'VAT Handbook',value:250,currency:'THB'})">
+        สั่งซื้อเลย ฿250 — รับไฟล์ทันที →
+      </button>
+      <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px;">โอนผ่านธนาคารหรือ QR PromptPay · ส่งสลิปทาง LINE รับไฟล์ทันที</p>
     </div>
 
     <!-- เหมาะสำหรับ -->
@@ -222,11 +347,36 @@
       <div class="detail-label">เหมาะสำหรับ</div>
       <h2 class="detail-title">ใครควรอ่าน E-Book เล่มนี้?</h2>
       <div class="audience-grid">
-        <div class="audience-card"><span>🛒</span>พ่อค้าแม่ค้าออนไลน์</div>
-        <div class="audience-card"><span>🏪</span>เจ้าของกิจการขนาดเล็ก</div>
-        <div class="audience-card"><span>🚀</span>ผู้เริ่มต้นทำธุรกิจ</div>
-        <div class="audience-card"><span>💻</span>ฟรีแลนซ์ที่มีรายได้ประจำ</div>
-        <div class="audience-card"><span>📊</span>นักบัญชีหรือที่ปรึกษาภาษีมือใหม่</div>
+        <div class="audience-card"><span>🛒</span>พ่อค้าแม่ค้าออนไลน์ที่ยอดขายโตและไม่รู้ว่าต้องจด VAT ไหม</div>
+        <div class="audience-card"><span>🏪</span>เจ้าของกิจการมือใหม่ที่เพิ่งเริ่มต้นธุรกิจและยังไม่เข้าใจระบบ VAT</div>
+        <div class="audience-card"><span>🚀</span>ผู้ประกอบการที่กำลังขยายธุรกิจและอยากจัดการภาษีให้ถูกต้องตั้งแต่ต้น</div>
+        <div class="audience-card"><span>💻</span>ฟรีแลนซ์ที่มีรายได้สม่ำเสมอและอยากรู้ว่าตัวเองต้องจด VAT ไหม</div>
+      </div>
+
+      <div class="value-box">
+        <div class="value-box-title">💰 ลงทุนครั้งเดียว ฿250</div>
+        <div class="value-box-desc">ป้องกันค่าปรับและภาษีย้อนหลังที่อาจสูงถึงหลักแสนบาท เพียงแค่เข้าใจและจัดการ VAT ได้อย่างถูกต้องตั้งแต่ต้น</div>
+      </div>
+    </div>
+
+    <!-- ผู้เขียน -->
+    <div class="instructor-section reveal">
+      <div class="detail-label">รู้จักกับผู้เขียน</div>
+      <h2 class="detail-title">แป๊ะยิ้ม — ที่ปรึกษาภาษีมือโปร</h2>
+      <div class="instructor-card">
+        <img loading="lazy" src="images/paeyim.webp" alt="แป๊ะยิ้ม วิชา เอี่ยมผดุง" class="instructor-img" width="120" height="120" />
+        <div>
+          <div class="instructor-name">วิชา เอี่ยมผดุง (แป๊ะยิ้ม)</div>
+          <div class="instructor-title">Tax Consultant · เจ้าของเพจ "แป๊ะยิ้มเล่าเรื่อง"</div>
+          <div class="instructor-bio">
+            VAT เป็นหนึ่งในเรื่องที่ถามมาบ่อยที่สุดในทุกงาน Consult เพราะหลายคนขายของหรือทำธุรกิจมานานโดยไม่รู้ว่าตัวเองเข้าเกณฑ์ต้องจดไปแล้ว และบางคนจด VAT แล้วก็ยังออกใบกำกับผิด ยื่น ภ.พ.30 ไม่ถูก<br /><br />
+            ผมเขียน E-Book เล่มนี้เพื่ออธิบายให้เข้าใจง่ายแบบเป็นภาษาคน — อยากให้ทุกคนสามารถ<strong>จัดการ VAT ได้ด้วยตัวเองโดยไม่ต้องกลัว และไม่ต้องเสียเงินค่าปรับโดยไม่รู้ตัว</strong>
+          </div>
+          <div class="instructor-badges">
+            <span class="instructor-badge">✅ Tax Consultant มืออาชีพ</span>
+            <span class="instructor-badge">💬 ให้คำปรึกษามากกว่า 500 เคส</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -238,10 +388,11 @@
     <div class="cta-card reveal">
       <div class="cta-orb"></div>
       <div class="cta-orb cta-orb-2"></div>
-      <div class="cta-label">พร้อมแล้วหรือยัง?</div>
-      <h2 class="cta-title">เข้าใจ VAT ครบ<br />ไม่โดนปรับอีกต่อไป</h2>
+      <div class="cta-label">เข้าใจ VAT ครบจบในเล่มเดียว</div>
+      <h2 class="cta-title">จัดการ VAT ถูกต้อง<br />ไม่โดนปรับอีกต่อไป</h2>
+      <p style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:28px;">ราคาเพียง ฿250 · PDF ดาวน์โหลดได้ทันที · อ่านได้ทุกอุปกรณ์</p>
       <div class="cta-actions">
-        <button class="btn-cta-primary" data-payment data-product="คู่มือภาษีมูลค่าเพิ่ม (VAT)" data-price="฿250">สั่งซื้อเลย ฿250 →</button>
+        <button class="btn-cta-primary" style="background:#F97316;box-shadow:0 4px 20px rgba(249,115,22,0.5);font-size:18px;padding:18px 40px;" data-payment data-product="คู่มือภาษีมูลค่าเพิ่ม (VAT)" data-price="฿250" onclick="fbq('track','InitiateCheckout',{content_name:'VAT Handbook',value:250,currency:'THB'})">สั่งซื้อเลย ฿250 — รับไฟล์ทันที →</button>
       </div>
     </div>
   </div>
