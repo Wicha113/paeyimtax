@@ -191,4 +191,18 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://taxpaeyim.com/blog-shopee-lazada-tax.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://taxpaeyim.com/blog-freelance-foreign-income-tax.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
