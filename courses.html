@@ -104,6 +104,73 @@
   </div>
 </section>
 
+<!-- แพ็กเกจพิเศษ -->
+<section class="section" style="padding-top:64px;">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">แพ็กเกจพิเศษ</div>
+    <h2 style="font-size:22px;font-weight:800;color:var(--dark);margin-bottom:32px;">บันเดิลสุดคุ้ม</h2>
+
+    <div class="reveal" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);border-radius:24px;padding:40px 48px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;overflow:hidden;">
+      <!-- orb decoration -->
+      <div style="position:absolute;width:320px;height:320px;background:radial-gradient(circle,rgba(176,125,46,0.18) 0%,transparent 70%);border-radius:50%;top:-80px;right:-80px;pointer-events:none;"></div>
+
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(176,125,46,0.18);border:1px solid rgba(176,125,46,0.4);border-radius:100px;padding:6px 16px;margin-bottom:20px;">
+          <span style="color:var(--gold);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Best Value</span>
+        </div>
+        <h3 style="font-size:clamp(22px,3vw,30px);font-weight:800;color:#fff;line-height:1.4;margin-bottom:12px;">เรียนจบ จับมือทำ</h3>
+        <p style="font-size:16px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:24px;max-width:520px;">เหมาะสำหรับคนที่ดูตัวเลขธุรกิจตัวเองแล้วสับสน — เรียนพื้นฐานจากคอร์สวิดีโอก่อน แล้วลิสต์คำถามที่ติดขัดมาคุยกับแป๊ะรวดเดียว 1 ชั่วโมงเต็ม</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px;">
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:10px 16px;">
+            <span style="font-size:18px;">🎬</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#fff;">คอร์สวิดีโอ</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.5);">มูลค่า ฿990</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:10px 16px;">
+            <span style="font-size:18px;">📞</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#fff;">โทรปรึกษาส่วนตัว 1 ชม.</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.5);">มูลค่า ฿1,500</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:line-through;margin-bottom:2px;">ราคาปกติ ฿2,490</div>
+            <div style="font-size:clamp(28px,4vw,38px);font-weight:800;color:var(--gold);line-height:1;">฿1,990</div>
+          </div>
+          <button class="btn-enroll" data-payment data-product="แพ็กเกจ เรียนจบ จับมือทำ (วิดีโอ + โทรปรึกษา 1 ชม.)" data-price="฿1,990" style="background:var(--gold);color:#fff;padding:14px 28px;font-size:15px;font-weight:700;border:none;border-radius:100px;cursor:pointer;white-space:nowrap;">
+            จองแพ็กเกจนี้ →
+          </button>
+        </div>
+      </div>
+
+      <!-- badge ฝั่งขวา (ซ่อนบน mobile) -->
+      <div style="text-align:center;flex-shrink:0;" class="bundle-badge-col">
+        <div style="width:120px;height:120px;background:rgba(176,125,46,0.15);border:2px solid rgba(176,125,46,0.5);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;">
+          <div style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:600;letter-spacing:0.05em;">ประหยัด</div>
+          <div style="font-size:26px;font-weight:800;color:var(--gold);line-height:1.1;">฿500</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.55);font-weight:600;">จากราคาเต็ม</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@media (max-width: 640px) {
+  .bundle-badge-col { display: none !important; }
+  .reveal[style*="grid-template-columns:1fr auto"] {
+    grid-template-columns: 1fr !important;
+    padding: 28px 24px !important;
+  }
+}
+</style>
+
 <!-- E-Book -->
 <section class="section" style="padding-top:64px;padding-bottom:80px;">
   <div class="container">
