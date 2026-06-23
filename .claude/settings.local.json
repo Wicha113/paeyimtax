@@ -46,7 +46,9 @@
       "Bash(cwebp -q 82 -resize 480 0 e01.jpg -o e01-sm.webp)",
       "Bash(cwebp -q 82 -resize 480 0 e02.jpg -o e02-sm.webp)",
       "Bash(cwebp -q 82 -resize 480 0 v01.jpg -o v01-sm.webp)",
-      "Bash(cwebp -q 82 -resize 480 0 v02.jpg -o v02-sm.webp)"
+      "Bash(cwebp -q 82 -resize 480 0 v02.jpg -o v02-sm.webp)",
+      "Bash(grep -rn \"ebook-seller-tax\\\\|ebook-vat\\\\|ebook-epayment\\\\|ebook-investor\\\\|ebook-restaurant\\\\|ebook-freelance\\\\|consult.html\\\\|course-pnd\" --include=\"*.html\" blog-*.html)",
+      "Bash(ls blog-*.html)"
     ]
   },
   "hooks": {

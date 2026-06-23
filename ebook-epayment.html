@@ -17,6 +17,7 @@
   <meta name="twitter:title" content="ธนาคารรายงานคุณให้สรรพากรแล้ว — คุณพร้อมรับมือหรือยัง? — แป๊ะยิ้มเล่าเรื่อง" />
   <meta name="twitter:description" content="รับเงินออนไลน์บ่อยๆ ธนาคารรายงานข้อมูลให้สรรพากรโดยอัตโนมัติ คุณรู้หรือเปล่าว่าเกณฑ์คืออะไร และจัดการบัญชียังไงให้ถูกกฎหมาย ไม่ต้องกลัวอีกต่อไป" />
   <meta name="twitter:image" content="https://taxpaeyim.com/images/paeyim.jpg" />
+  <link rel="canonical" href="https://taxpaeyim.com/ebook-epayment.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -24,10 +25,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
-  <!-- Meta Pixel -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1450358026640464');fbq('track','PageView');fbq('track','ViewContent',{content_name:'E-Payment Handbook',content_ids:['epayment-handbook'],content_type:'product',value:250,currency:'THB'});</script>
-  <noscript><img loading="lazy" height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1450358026640464&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel -->
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LEGN1E3WQP"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LEGN1E3WQP');</script>
@@ -488,5 +485,15 @@
 </div>
 
 <script src="js/main.js"></script>
+<!-- Meta Pixel (deferred after page load) -->
+<script>
+  window.addEventListener('load', function() {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1450358026640464');
+    fbq('track','PageView');
+    fbq('track','ViewContent',{content_name:'E-Payment Handbook',content_ids:['epayment-handbook'],content_type:'product',value:250,currency:'THB'});
+  });
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1450358026640464&ev=PageView&noscript=1"/></noscript>
 </body>
 </html>
