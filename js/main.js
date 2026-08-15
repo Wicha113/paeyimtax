@@ -252,6 +252,46 @@ document.addEventListener('DOMContentLoaded', () => {
     dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
   });
 
+  // === Blog Filter & Search ===
+  const blogGrid = document.getElementById('blog-grid');
+  if (blogGrid) {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('blog-search');
+    const searchBtn = document.querySelector('.btn-search');
+    let activeFilter = 'all';
+    let activeQuery = '';
+
+    function applyBlogFilter() {
+      const cards = blogGrid.querySelectorAll('.blog-card');
+      cards.forEach(card => {
+        const matchCat = activeFilter === 'all' || card.dataset.category === activeFilter;
+        const text = (card.querySelector('.blog-title')?.textContent || '') +
+                     (card.querySelector('.blog-excerpt')?.textContent || '') +
+                     (card.querySelector('.blog-tag')?.textContent || '');
+        const matchSearch = activeQuery === '' || text.includes(activeQuery);
+        card.style.display = matchCat && matchSearch ? '' : 'none';
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        applyBlogFilter();
+      });
+    });
+
+    function runSearch() {
+      activeQuery = searchInput ? searchInput.value.trim() : '';
+      applyBlogFilter();
+    }
+
+    searchBtn?.addEventListener('click', runSearch);
+    searchInput?.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); });
+    searchInput?.addEventListener('input', () => { if (searchInput.value === '') { activeQuery = ''; applyBlogFilter(); } });
+  }
+
   // === Active nav link highlight ===
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .mobile-nav a[href^="#"]');
