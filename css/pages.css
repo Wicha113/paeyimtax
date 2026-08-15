@@ -80,3 +80,4 @@
 .calc-row.result .value{color:#276749;font-size:18px}
 .total-box{background:#1a1a2e;color:#fff;border-radius:14px;padding:24px 28px;margin:28px 0;font-size:17px;line-height:2}
 .total-box .total-number{font-size:clamp(28px,5vw,40px);font-weight:900;color:var(--gold)}
+@media (max-width:600px){.bundle-badge-col-home{display:none!important}}
