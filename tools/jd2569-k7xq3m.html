@@ -663,7 +663,7 @@
 
     var other = [], usedCap = [];
     for(var i=1;i<=MAXP;i++){
-      other.push(i<=people ? num("other"+i) : 0);
+      other.push(i<=people ? Math.max(0, num("other"+i)) : 0);
       usedCap.push(i<=people ? Math.min(100000, Math.max(0, num("cap"+i))) : 0);
     }
 
@@ -934,6 +934,10 @@
     }
     if(!m.isSme){
       flags.push('<div class="flag info"><b>ไม่ใช่ SME</b> เสียภาษีนิติบุคคล 20% ตั้งแต่บาทแรก ไม่มียกเว้นกำไร 300,000 แรก ทางเลือก ง. จึงไม่คุ้มอีกต่อไป</div>');
+    }
+    var rawPeople = Math.round(num("people"));
+    if(rawPeople < 1 || rawPeople > 5){
+      flags.push('<div class="flag warn"><b>จำนวนคนต้องอยู่ระหว่าง 1 ถึง 5</b> ระบบกำลังคำนวณด้วย ' + m.people + ' คน ถ้าทีมมีมากกว่า 5 คน โครงสร้างจะซับซ้อนเกินกว่าที่ไฟล์นี้ครอบคลุม ควรปรึกษาผู้ทำบัญชี</div>');
     }
     if(m.profit <= 0){
       flags.push('<div class="flag warn"><b>กำไรติดลบหรือเป็นศูนย์</b> ผลลัพธ์ด้านขวาจะไม่มีความหมาย ตรวจตัวเลขรายได้และต้นทุนอีกครั้ง</div>');
