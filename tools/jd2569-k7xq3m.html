@@ -25,6 +25,7 @@
     --warn:#96650A;
     --warn-soft:#FBF0DA;
     --bad:#9D3427;
+    --bad-soft:#FBE8E4;
     --field:#FFFAE8;
     --field-line:#E3D6A6;
     --shadow:0 1px 2px rgba(14,32,51,.06), 0 8px 24px rgba(14,32,51,.06);
@@ -32,56 +33,35 @@
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --ink:#E7EEF5;
-      --ink-2:#BCCBD9;
-      --muted:#8CA1B4;
-      --hair:#2B3D4F;
-      --hair-soft:#22323F;
-      --paper:#0D1720;
-      --surface:#141F2A;
-      --surface-2:#19262F;
-      --accent:#6FB2E8;
-      --accent-soft:#17303F;
-      --good:#6ED3A2;
-      --good-soft:#12302A;
-      --warn:#E1B155;
-      --warn-soft:#332A16;
-      --bad:#EE8F7F;
-      --field:#22291C;
-      --field-line:#4A5230;
+      --ink:#E7EEF5; --ink-2:#BCCBD9; --muted:#8CA1B4;
+      --hair:#2B3D4F; --hair-soft:#22323F;
+      --paper:#0D1720; --surface:#141F2A; --surface-2:#19262F;
+      --accent:#6FB2E8; --accent-soft:#17303F;
+      --good:#6ED3A2; --good-soft:#12302A;
+      --warn:#E1B155; --warn-soft:#332A16;
+      --bad:#EE8F7F; --bad-soft:#3A201C;
+      --field:#22291C; --field-line:#4A5230;
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
       color-scheme: dark;
     }
   }
   :root[data-theme="dark"]{
-    --ink:#E7EEF5;
-    --ink-2:#BCCBD9;
-    --muted:#8CA1B4;
-    --hair:#2B3D4F;
-    --hair-soft:#22323F;
-    --paper:#0D1720;
-    --surface:#141F2A;
-    --surface-2:#19262F;
-    --accent:#6FB2E8;
-    --accent-soft:#17303F;
-    --good:#6ED3A2;
-    --good-soft:#12302A;
-    --warn:#E1B155;
-    --warn-soft:#332A16;
-    --bad:#EE8F7F;
-    --field:#22291C;
-    --field-line:#4A5230;
+    --ink:#E7EEF5; --ink-2:#BCCBD9; --muted:#8CA1B4;
+    --hair:#2B3D4F; --hair-soft:#22323F;
+    --paper:#0D1720; --surface:#141F2A; --surface-2:#19262F;
+    --accent:#6FB2E8; --accent-soft:#17303F;
+    --good:#6ED3A2; --good-soft:#12302A;
+    --warn:#E1B155; --warn-soft:#332A16;
+    --bad:#EE8F7F; --bad-soft:#3A201C;
+    --field:#22291C; --field-line:#4A5230;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
     color-scheme: dark;
   }
 
   body{
-    background:var(--paper);
-    color:var(--ink);
+    background:var(--paper); color:var(--ink);
     font-family:"IBM Plex Sans Thai","Sarabun",system-ui,-apple-system,"Segoe UI",sans-serif;
-    font-size:15px;
-    line-height:1.6;
-    -webkit-text-size-adjust:100%;
+    font-size:15px; line-height:1.6; -webkit-text-size-adjust:100%;
   }
   *{box-sizing:border-box}
   h1,h2,h3{margin:0;font-family:"Noto Serif Thai","IBM Plex Sans Thai",serif;font-weight:700;text-wrap:balance;line-height:1.3}
@@ -89,31 +69,12 @@
   .num{font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono","IBM Plex Sans Thai",monospace}
 
   /* ---------- gate ---------- */
-  .gate{
-    min-height:88vh;
-    display:flex;align-items:center;justify-content:center;
-    padding:32px 16px;
-  }
-  .gate-card{
-    width:100%;max-width:520px;
-    background:var(--surface);
-    border:1px solid var(--hair);
-    border-radius:4px;
-    box-shadow:var(--shadow);
-    overflow:hidden;
-  }
-  .gate-top{
-    background:var(--ink);
-    color:#F2F6FA;
-    padding:26px 28px 22px;
-  }
-  :root[data-theme="dark"] .gate-top,
-  :root:not([data-theme="light"]) .gate-top{background:#08131C}
-  @media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .gate-top{background:#0E2033}}
-  .brandline{
-    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-    color:#8FB4D4;margin-bottom:12px;font-weight:600;
-  }
+  .gate{min-height:88vh;display:flex;align-items:center;justify-content:center;padding:32px 16px}
+  .gate-card{width:100%;max-width:520px;background:var(--surface);border:1px solid var(--hair);border-radius:4px;box-shadow:var(--shadow);overflow:hidden}
+  .gate-top{background:#0E2033;color:#F2F6FA;padding:26px 28px 22px}
+  :root[data-theme="dark"] .gate-top{background:#08131C}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .gate-top{background:#08131C}}
+  .brandline{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FB4D4;margin-bottom:12px;font-weight:600}
   .gate-top h1{color:#FFFFFF;font-size:27px}
   .gate-top .sub{color:#B7CBDC;font-size:14px;margin-top:8px}
   .gate-body{padding:24px 28px 28px;display:flex;flex-direction:column;gap:18px}
@@ -121,23 +82,11 @@
   .gate-list li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-2)}
   .gate-list li::before{content:"";flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px}
   .pw-row{display:flex;gap:8px;flex-wrap:wrap}
-  .pw-row input{
-    flex:1 1 180px;min-width:0;
-    padding:11px 13px;font-size:16px;
-    font-family:inherit;
-    background:var(--field);
-    border:1px solid var(--field-line);
-    border-radius:3px;color:var(--ink);
-  }
+  .pw-row input{flex:1 1 180px;min-width:0;padding:11px 13px;font-size:16px;font-family:inherit;background:var(--field);border:1px solid var(--field-line);border-radius:3px;color:var(--ink)}
   button{font-family:inherit;cursor:pointer}
-  .btn{
-    padding:11px 20px;font-size:15px;font-weight:600;
-    background:var(--accent);color:#fff;border:1px solid var(--accent);
-    border-radius:3px;
-  }
-  :root[data-theme="dark"] .btn,
-  :root:not([data-theme="light"]) .btn{color:#08131C}
-  @media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .btn{color:#fff}}
+  .btn{padding:11px 20px;font-size:15px;font-weight:600;background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:3px}
+  :root[data-theme="dark"] .btn{color:#08131C}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#08131C}}
   .btn:hover{filter:brightness(1.08)}
   .gate-err{color:var(--bad);font-size:13.5px;font-weight:600;margin-top:8px}
   .pw-aux{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-top:8px;font-size:12.5px;color:var(--muted)}
@@ -147,63 +96,56 @@
 
   /* ---------- app shell ---------- */
   .wrap{max-width:1180px;margin:0 auto;padding:0 16px 56px}
-  .masthead{
-    display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;
-    padding:22px 0 16px;border-bottom:2px solid var(--ink);margin-bottom:22px;
-  }
+  .masthead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;padding:22px 0 16px;border-bottom:2px solid var(--ink);margin-bottom:22px}
   .masthead h1{font-size:23px}
   .masthead .meta{font-size:12px;color:var(--muted);letter-spacing:.04em;text-align:right}
-  .cols{display:grid;grid-template-columns:352px minmax(0,1fr);gap:22px;align-items:start}
+  .cols{display:grid;grid-template-columns:372px minmax(0,1fr);gap:22px;align-items:start}
   .cols > *{min-width:0}
-  @media (max-width:900px){.cols{grid-template-columns:minmax(0,1fr)}}
+  @media (max-width:940px){.cols{grid-template-columns:minmax(0,1fr)}}
 
-  .panel{
-    background:var(--surface);border:1px solid var(--hair);border-radius:4px;
-    box-shadow:var(--shadow);
-  }
+  .panel{background:var(--surface);border:1px solid var(--hair);border-radius:4px;box-shadow:var(--shadow)}
   .panel + .panel{margin-top:18px}
-  .panel-hd{
-    padding:13px 16px;border-bottom:1px solid var(--hair-soft);
-    display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;
-  }
+  .panel-hd{padding:13px 16px;border-bottom:1px solid var(--hair-soft);display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
   .panel-hd h2{font-size:16px}
   .panel-hd .tag{font-size:11.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
   .panel-bd{padding:16px}
 
-  form.inputs{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 12px)}
-  @media (max-width:900px){form.inputs{position:static}}
+  form.inputs{max-height:calc(100vh - 40px);overflow-y:auto;position:sticky;top:calc(env(safe-area-inset-top, 0px) + 12px)}
+  @media (max-width:940px){form.inputs{position:static;max-height:none;overflow:visible}}
   .group{margin:0;padding:0;border:0}
   .group + .group{margin-top:18px;padding-top:16px;border-top:1px solid var(--hair-soft)}
-  .group legend{
-    padding:0;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:11px;
-  }
+  .group legend{padding:0;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:11px}
   .fld{display:flex;flex-direction:column;gap:4px}
   .fld + .fld{margin-top:12px}
   .fld label{font-size:13.5px;font-weight:500;color:var(--ink-2)}
   .fld .hint{font-size:11.5px;color:var(--muted);line-height:1.45}
   .inp{display:flex;align-items:stretch;border:1px solid var(--field-line);border-radius:3px;background:var(--field);overflow:hidden}
-  .inp input{
-    flex:1 1 auto;min-width:0;border:0;background:transparent;color:var(--ink);
-    font-family:"IBM Plex Mono","IBM Plex Sans Thai",monospace;font-variant-numeric:tabular-nums;
-    font-size:15px;padding:8px 10px;text-align:right;
-  }
+  .inp input{flex:1 1 auto;min-width:0;border:0;background:transparent;color:var(--ink);font-family:"IBM Plex Mono","IBM Plex Sans Thai",monospace;font-variant-numeric:tabular-nums;font-size:15px;padding:8px 10px;text-align:right}
   .inp input:focus{outline:none}
   .inp:focus-within{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
-  .inp .unit{
-    flex:0 0 auto;display:flex;align-items:center;padding:0 9px;font-size:12px;color:var(--muted);
-    background:var(--surface-2);border-left:1px solid var(--field-line);
-  }
+  .inp .unit{flex:0 0 auto;display:flex;align-items:center;padding:0 9px;font-size:12px;color:var(--muted);background:var(--surface-2);border-left:1px solid var(--field-line)}
+  .inp.off{opacity:.45;pointer-events:none}
   .seg{display:flex;border:1px solid var(--hair);border-radius:3px;overflow:hidden}
-  .seg button{
-    flex:1;padding:8px 6px;font-size:13px;font-weight:600;border:0;
-    background:var(--surface-2);color:var(--muted);
-  }
+  .seg button{flex:1;padding:8px 6px;font-size:13px;font-weight:600;border:0;background:var(--surface-2);color:var(--muted)}
   .seg button + button{border-left:1px solid var(--hair)}
   .seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
-  :root[data-theme="dark"] .seg button[aria-pressed="true"],
-  :root:not([data-theme="light"]) .seg button[aria-pressed="true"]{color:#08131C}
-  @media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .seg button[aria-pressed="true"]{color:#fff}}
+  :root[data-theme="dark"] .seg button[aria-pressed="true"]{color:#08131C}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{color:#08131C}}
+
+  details.adv{margin-top:18px;padding-top:16px;border-top:1px solid var(--hair-soft)}
+  details.adv > summary{cursor:pointer;list-style:none;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:7px}
+  details.adv > summary::-webkit-details-marker{display:none}
+  details.adv > summary::before{content:"▸";font-size:13px;transition:transform .15s}
+  details.adv[open] > summary::before{transform:rotate(90deg)}
+  details.adv > summary span{color:var(--muted);font-weight:500;letter-spacing:0;text-transform:none;font-size:11.5px}
+  .adv-body{margin-top:13px}
+
+  .ptable{width:100%;border-collapse:collapse;font-size:12px}
+  .ptable th{font-size:11px;font-weight:600;color:var(--muted);padding:0 0 5px;text-align:right;line-height:1.3}
+  .ptable th:first-child{text-align:left;min-width:52px}
+  .ptable td{padding:3px 0 3px 6px}
+  .ptable td:first-child{padding-left:0;font-size:12.5px;color:var(--ink-2)}
+  .ptable .inp input{font-size:13px;padding:6px 7px}
 
   .flags{display:flex;flex-direction:column;gap:7px;margin-top:14px}
   .flag{font-size:12.5px;line-height:1.5;padding:8px 10px;border-radius:3px}
@@ -211,16 +153,12 @@
   .flag.ok{background:var(--good-soft);color:var(--good)}
   .flag.warn{background:var(--warn-soft);color:var(--warn)}
   .flag.info{background:var(--accent-soft);color:var(--accent)}
+  .flag.bad{background:var(--bad-soft);color:var(--bad)}
 
   /* ---------- verdict ---------- */
-  .verdict{
-    background:var(--ink);color:#EEF4F9;border-radius:4px;padding:20px 22px;
-    display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;align-items:center;
-    box-shadow:var(--shadow);
-  }
-  :root[data-theme="dark"] .verdict,
-  :root:not([data-theme="light"]) .verdict{background:#08131C;border:1px solid var(--hair)}
-  @media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .verdict{background:#0E2033;border:0}}
+  .verdict{background:#0E2033;color:#EEF4F9;border-radius:4px;padding:20px 22px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;align-items:center;box-shadow:var(--shadow)}
+  :root[data-theme="dark"] .verdict{background:#08131C;border:1px solid var(--hair)}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .verdict{background:#08131C;border:1px solid var(--hair)}}
   @media (max-width:640px){.verdict{grid-template-columns:1fr;gap:14px}}
   .verdict .kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FB4D4;font-weight:600}
   .verdict .name{font-family:"Noto Serif Thai",serif;font-weight:700;font-size:22px;color:#fff;margin-top:6px;line-height:1.3}
@@ -231,28 +169,27 @@
 
   /* ---------- tables ---------- */
   .scroll{overflow-x:auto}
-  table{border-collapse:collapse;width:100%;font-size:13.5px}
-  th,td{padding:8px 10px;text-align:right;white-space:nowrap}
-  th:first-child,td:first-child{text-align:left;white-space:normal;min-width:180px}
-  thead th{
-    font-size:11.5px;font-weight:700;letter-spacing:.05em;color:var(--muted);
-    border-bottom:1px solid var(--hair);text-transform:uppercase;vertical-align:bottom;
-  }
-  tbody tr + tr td{border-top:1px solid var(--hair-soft)}
-  tbody td.v{font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono","IBM Plex Sans Thai",monospace}
-  tr.best td{background:var(--good-soft)}
-  tr.best td:first-child{font-weight:700;box-shadow:inset 3px 0 0 var(--good)}
+  table.data{border-collapse:collapse;width:100%;font-size:13.5px}
+  table.data th,table.data td{padding:8px 10px;text-align:right;white-space:nowrap}
+  table.data th:first-child,table.data td:first-child{text-align:left;white-space:normal;min-width:180px}
+  table.data thead th{font-size:11.5px;font-weight:700;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--hair);text-transform:uppercase;vertical-align:bottom}
+  table.data tbody tr + tr td{border-top:1px solid var(--hair-soft)}
+  table.data tbody td.v{font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono","IBM Plex Sans Thai",monospace}
+  table.data tr.best td{background:var(--good-soft)}
+  table.data tr.best td:first-child{font-weight:700;box-shadow:inset 3px 0 0 var(--good)}
   .rank{display:inline-block;min-width:22px;font-weight:700;color:var(--muted)}
   tr.best .rank{color:var(--good)}
-
-  .bartable td.bar-cell{width:34%;min-width:110px}
-  .bar{display:block;position:relative;height:9px;background:var(--surface-2);border:1px solid var(--hair-soft);border-radius:2px;overflow:hidden}
-  .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:1px;display:block}
+  td.pos{color:var(--good);font-weight:600}
+  td.neg{color:var(--bad);font-weight:600}
 
   table.dense{font-size:12.5px}
   table.dense th,table.dense td{padding:7px 7px}
   table.dense th:first-child,table.dense td:first-child{min-width:146px;max-width:220px}
   table.dense thead th{white-space:normal;line-height:1.3}
+
+  .bartable td.bar-cell{width:34%;min-width:110px}
+  .bar{display:block;position:relative;height:9px;background:var(--surface-2);border:1px solid var(--hair-soft);border-radius:2px;overflow:hidden}
+  .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:1px;display:block}
   tr.best .bar i{background:var(--good)}
 
   .notes{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
@@ -267,10 +204,9 @@
   .kpi .v.neg{color:var(--bad)}
   .kpi .d{font-size:12px;color:var(--muted);margin-top:2px}
 
-  .cta{
-    margin-top:22px;background:var(--surface);border:1px solid var(--hair);border-left:3px solid var(--accent);
-    border-radius:4px;padding:20px 22px;box-shadow:var(--shadow);
-  }
+  .offnote{padding:14px 16px;background:var(--surface-2);border-radius:3px;font-size:13px;color:var(--muted);line-height:1.55}
+
+  .cta{margin-top:22px;background:var(--surface);border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:4px;padding:20px 22px;box-shadow:var(--shadow)}
   .cta h2{font-size:18px}
   .cta p{margin-top:8px;font-size:14px;color:var(--ink-2);max-width:62ch}
   .cta .lines{margin-top:14px;display:flex;flex-direction:column;gap:5px;font-size:13.5px}
@@ -291,8 +227,8 @@
     <div class="gate-body">
       <ul class="gate-list">
         <li>เทียบ 9 ทางเลือก บุคคลธรรมดา 3 แบบ บริษัท 5 แบบ และ หจก. ในหน้าเดียว</li>
-        <li>คำนวณ VAT ตามสัดส่วนใบกำกับภาษีซื้อที่มีจริง</li>
-        <li>บอกเพดานเงินเดือนกรรมการที่ยังคุ้มกว่าการจ่ายปันผล</li>
+        <li>รองรับทั้งกิจการที่จด VAT และยังไม่จด</li>
+        <li>คิดเงินได้อื่นของแต่ละคน และภาษีที่ถูกหัก ณ ที่จ่ายระหว่างปีให้ด้วย</li>
       </ul>
       <div>
         <label for="pw" style="font-size:13.5px;font-weight:600;display:block;margin-bottom:6px">กรอกรหัสผ่านจากหน้าสุดท้ายของ ebook</label>
@@ -306,11 +242,11 @@
         </div>
         <p class="gate-err" id="pwErr" hidden>รหัสผ่านไม่ถูกต้อง — กด “แสดงรหัสที่พิมพ์” เพื่อดูว่าพิมพ์อะไรไป</p>
       </div>
-      <noscript>
-        <p class="gate-err">หน้านี้ต้องเปิดด้วยเบราว์เซอร์ (Chrome, Safari, Edge) — ถ้าเปิดจากหน้าพรีวิวของ Google Drive หรือแอปไฟล์ ปุ่มจะกดไม่ติด ให้ดาวน์โหลดไฟล์ลงเครื่องก่อน แล้วเปิดด้วยเบราว์เซอร์</p>
-      </noscript>
       <p class="gate-note">ไฟล์นี้เป็นของผู้ซื้อ ebook เท่านั้น ห้ามเผยแพร่ต่อ · เป็นเครื่องมือประมาณการเบื้องต้น มิใช่คำแนะนำทางภาษีเฉพาะราย</p>
     </div>
+    <noscript>
+      <p class="gate-err" style="padding:0 28px 24px">หน้านี้ต้องเปิดด้วยเบราว์เซอร์ (Chrome, Safari, Edge) ถ้าเปิดจากหน้าพรีวิวของ Google Drive หรือแอปไฟล์ ปุ่มจะกดไม่ติด</p>
+    </noscript>
   </div>
 </section>
 
@@ -320,13 +256,13 @@
       <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:4px">แป๊ะยิ้มเล่าเรื่อง</div>
       <h1>จดบริษัทคุ้มไหม และควรดึงเงินออกทางไหน</h1>
     </div>
-    <div class="meta">เวอร์ชัน 1.3 · ปีภาษี 2569<br>อัตราตาม ม.48 และ พ.ร.ฎ. (ฉบับที่ 530)</div>
+    <div class="meta">เวอร์ชัน 2.0 · ปีภาษี 2569<br>อัตราตาม ม.48 และ พ.ร.ฎ. (ฉบับที่ 530)</div>
   </header>
 
   <div class="cols">
     <!-- ============ INPUTS ============ -->
     <form class="inputs panel" id="form" autocomplete="off">
-      <div class="panel-hd"><h2>กรอกข้อมูลกิจการ</h2><span class="tag">14 ช่อง</span></div>
+      <div class="panel-hd"><h2>กรอกข้อมูลกิจการ</h2><span class="tag">เริ่มที่ 8 ช่อง</span></div>
       <div class="panel-bd">
 
         <fieldset class="group">
@@ -334,16 +270,17 @@
           <div class="fld">
             <label for="revenue">รายได้ทั้งปี (ราคาก่อน VAT)</label>
             <div class="inp"><input id="revenue" type="number" min="0" step="10000" value="10000000"><span class="unit">บาท</span></div>
+            <span class="hint">ยอดขายหรือค่าบริการรวมทั้งปี ถ้าจด VAT แล้วให้ใส่ราคาก่อนบวก VAT</span>
           </div>
           <div class="fld">
             <label for="cost">ต้นทุนและค่าใช้จ่ายทั้งปี</label>
             <div class="inp"><input id="cost" type="number" min="0" step="10000" value="8000000"><span class="unit">บาท</span></div>
-            <span class="hint">รวมทุกอย่าง ยกเว้นเงินที่จ่ายให้เจ้าของเอง</span>
+            <span class="hint">รวมทุกอย่างที่จ่ายจริง ยกเว้นเงินที่จ่ายให้เจ้าของหรือกรรมการ เพราะไฟล์จะคำนวณส่วนนั้นให้เอง</span>
           </div>
           <div class="fld">
             <label for="deemed">อัตราหักค่าใช้จ่ายเหมา</label>
             <div class="inp"><input id="deemed" type="number" min="0" max="100" step="1" value="60"><span class="unit">%</span></div>
-            <span class="hint">ตามประเภทกิจการ พ.ร.ฎ. (ฉบับที่ 11) ม.8</span>
+            <span class="hint">ใช้เฉพาะกรณีบุคคลธรรมดาเลือกหักเหมา อัตราตามประเภทกิจการ พ.ร.ฎ. (ฉบับที่ 11) ม.8 ส่วนใหญ่ขายของและผลิตสินค้าคือ 60%</span>
           </div>
         </fieldset>
 
@@ -352,27 +289,37 @@
           <div class="fld">
             <label for="people">จำนวนคนที่ทำงานจริงและรับค่าตอบแทน</label>
             <div class="inp"><input id="people" type="number" min="1" max="5" step="1" value="3"><span class="unit">คน</span></div>
-            <span class="hint">1–5 คน (รวมเจ้าของ) อายุ 20 ปีขึ้นไป</span>
+            <span class="hint">1–5 คน รวมเจ้าของ ต้องอายุ 20 ปีขึ้นไปและทำงานจริง ใส่เกินจำนวนคนที่ทำงานจริงไม่ได้ เป็นรายจ่ายต้องห้ามตาม ม.65 ตรี (8)</span>
           </div>
           <div class="fld">
             <label for="deduct">ค่าลดหย่อนรวมต่อคน</label>
             <div class="inp"><input id="deduct" type="number" min="0" step="1000" value="60000"><span class="unit">บาท</span></div>
-            <span class="hint">ส่วนตัว 60,000 บวกลดหย่อนอื่นที่ใช้ได้จริง</span>
+            <span class="hint">ส่วนตัว 60,000 บวกลดหย่อนอื่นที่ใช้ได้จริง เช่น ประกันชีวิต บิดามารดา บุตร ดอกเบี้ยบ้าน RMF ไฟล์ใช้ตัวเลขนี้กับทุกคนเท่ากัน</span>
           </div>
         </fieldset>
 
         <fieldset class="group">
           <legend>ภาษีมูลค่าเพิ่ม</legend>
           <div class="fld">
+            <label for="vatreg">จดทะเบียน VAT หรือไม่</label>
+            <div class="seg" id="vatreg" role="group">
+              <button type="button" data-v="1" aria-pressed="true">จดแล้ว</button>
+              <button type="button" data-v="0" aria-pressed="false">ยังไม่จด</button>
+            </div>
+            <span class="hint">รายได้เกิน 1.8 ล้านบาทต่อปี กฎหมายบังคับให้จดภายใน 30 วันนับแต่วันที่รายรับถึงเกณฑ์ ตาม ม.85/1 เลือก “ยังไม่จด” ได้เฉพาะกรณีรายได้ยังไม่ถึงเกณฑ์</span>
+          </div>
+          <div class="fld" id="wrapInv">
             <label for="invshare">สัดส่วนต้นทุนที่มีใบกำกับภาษีเต็มรูป</label>
             <div class="inp"><input id="invshare" type="number" min="0" max="100" step="5" value="0"><span class="unit">%</span></div>
+            <span class="hint">ต้นทุนส่วนที่ได้ใบกำกับภาษีแบบเต็มรูปเท่านั้นจึงนำภาษีซื้อมาเครดิตได้ ซื้อจากร้านที่ไม่จด VAT ไม่นับ</span>
           </div>
-          <div class="fld">
+          <div class="fld" id="wrapRaise">
             <label for="raise">ขึ้นราคาชดเชย VAT 7% ได้หรือไม่</label>
             <div class="seg" id="raise" role="group">
               <button type="button" data-v="1" aria-pressed="true">ขึ้นราคาได้</button>
               <button type="button" data-v="0" aria-pressed="false">ขึ้นไม่ได้</button>
             </div>
+            <span class="hint">ถ้าขึ้นราคาไม่ได้ เท่ากับต้องแบก VAT เอง รายได้ที่กิจการเก็บได้จริงจะเหลือ 100/107 ของยอดขาย</span>
           </div>
         </fieldset>
 
@@ -381,45 +328,96 @@
           <div class="fld">
             <label for="sso">กรรมการต้องเข้าประกันสังคมหรือไม่</label>
             <div class="seg" id="sso" role="group">
-              <button type="button" data-v="0" aria-pressed="true">ไม่เข้า (40(2))</button>
-              <button type="button" data-v="1" aria-pressed="false">เข้า (ลูกจ้าง)</button>
+              <button type="button" data-v="0" aria-pressed="true">ไม่เข้า</button>
+              <button type="button" data-v="1" aria-pressed="false">เข้า</button>
             </div>
+            <span class="hint">กรรมการที่รับค่าตอบแทนตาม ม.40(2) ไม่ถือเป็นลูกจ้าง ไม่ต้องเข้าประกันสังคม แต่ถ้ารับเป็นเงินเดือนในฐานะลูกจ้างตาม ม.40(1) ต้องเข้า</span>
           </div>
           <div class="fld">
             <label for="ssoamt">เงินสมทบประกันสังคมต่อคนต่อปี</label>
             <div class="inp"><input id="ssoamt" type="number" min="0" step="1000" value="18000"><span class="unit">บาท</span></div>
-            <span class="hint">รวมส่วนนายจ้างและลูกจ้าง</span>
+            <span class="hint">รวมส่วนนายจ้างและลูกจ้าง ใช้กับกรณีบริษัทเมื่อเลือก “เข้า” และใช้กับลูกจ้างในกรณีบุคคลธรรมดาเสมอ</span>
           </div>
           <div class="fld">
-            <label for="acctP">ค่าทำบัญชี บุคคลธรรมดาที่จด VAT</label>
+            <label for="acctP">ค่าทำบัญชี บุคคลธรรมดา</label>
             <div class="inp"><input id="acctP" type="number" min="0" step="1000" value="30000"><span class="unit">บาท/ปี</span></div>
+            <span class="hint">ถ้าจด VAT ต้องทำรายงานภาษีซื้อ-ขายตาม ม.87 ค่าบริการสูงกว่า ถ้ายังไม่จด ทำแค่รายงานเงินสดรับ-จ่ายตามประกาศอธิบดีฯ ฉบับที่ 161 ถูกกว่ามาก ให้ใส่ตัวเลขที่ตรงกับกรณีของท่าน</span>
           </div>
           <div class="fld">
             <label for="acctL">ค่าทำบัญชีและสอบบัญชี หจก.</label>
             <div class="inp"><input id="acctL" type="number" min="0" step="1000" value="30000"><span class="unit">บาท/ปี</span></div>
+            <span class="hint">ใช้ใบเสนอราคาจริง หจก. ขนาดเล็กอาจใช้ผู้สอบบัญชีภาษีอากรแทนผู้สอบบัญชีรับอนุญาตได้ ค่าใช้จ่ายจึงถูกกว่าบริษัท</span>
           </div>
           <div class="fld">
             <label for="acctC">ค่าทำบัญชีและสอบบัญชี บริษัท</label>
             <div class="inp"><input id="acctC" type="number" min="0" step="1000" value="45000"><span class="unit">บาท/ปี</span></div>
+            <span class="hint">บริษัทจำกัดต้องใช้ผู้สอบบัญชีรับอนุญาตทุกกรณี ไม่มีข้อยกเว้นตามขนาด</span>
           </div>
         </fieldset>
 
-        <fieldset class="group">
-          <legend>ทางเลือกกำหนดเอง</legend>
-          <div class="fld">
-            <label for="custom">ค่าตอบแทนรวมทั้งปีที่อยากลอง</label>
-            <div class="inp"><input id="custom" type="number" min="0" step="10000" value="1500000"><span class="unit">บาท</span></div>
-            <span class="hint">ใช้กับทางเลือก จ. ในตารางบริษัท</span>
+        <!-- ================= ADVANCED ================= -->
+        <details class="adv" id="advOther">
+          <summary>เงินได้อื่นของแต่ละคน <span>ไม่มีก็ข้ามได้</span></summary>
+          <div class="adv-body">
+            <p class="hint" style="margin-bottom:10px">
+              กรอกเฉพาะเงินได้จากแหล่งอื่นนอกกิจการนี้ เช่น เงินเดือนประจำ ค่าเช่า ดอกเบี้ย รับจ้างอื่น
+              <b>ให้หักค่าใช้จ่ายของเงินได้ก้อนนั้นมาก่อนแล้ว แต่ยังไม่ต้องหักค่าลดหย่อน</b>
+              เพราะค่าลดหย่อนมีช่องแยกอยู่แล้วด้านบน
+            </p>
+            <p class="hint" style="margin-bottom:12px">
+              ตัวอย่าง มีบ้านให้เช่าปีละ 240,000 บาท เป็นเงินได้ ม.40(5) หักเหมาได้ 30% เหลือ 168,000 ให้กรอก 168,000
+            </p>
+            <table class="ptable">
+              <thead><tr><th></th><th>เงินได้อื่น (บาท/ปี)</th><th>ค่าใช้จ่ายเหมา 40(1)(2)<br>ที่ใช้ไปแล้ว</th></tr></thead>
+              <tbody id="personRows"></tbody>
+            </table>
+            <p class="hint" style="margin-top:11px">
+              ช่องขวา ใส่เฉพาะกรณีเงินได้อื่นเป็น <b>เงินเดือนหรือค่าตอบแทนกรรมการจากที่อื่น</b>
+              เพราะค่าใช้จ่ายเหมา 50% เพดาน 100,000 บาท ของเงินได้ ม.40(1) และ ม.40(2)
+              เป็นเพดาน<b>รวมทุกแหล่ง</b> ไม่ใช่แหล่งละแสน ถ้าใช้ไปหมดแล้วให้ใส่ 100,000
+              ถ้าเงินได้อื่นเป็นค่าเช่า ดอกเบี้ย หรือรายได้จากธุรกิจ ให้ใส่ 0
+            </p>
           </div>
-          <div class="fld">
-            <label for="sme">บริษัทเข้าเกณฑ์ SME หรือไม่</label>
-            <div class="seg" id="sme" role="group">
-              <button type="button" data-v="1" aria-pressed="true">เข้าเกณฑ์</button>
-              <button type="button" data-v="0" aria-pressed="false">ไม่เข้าเกณฑ์</button>
+        </details>
+
+        <details class="adv" id="advWht">
+          <summary>ภาษีถูกหัก ณ ที่จ่าย <span>ไม่โดนหักก็ข้ามได้</span></summary>
+          <div class="adv-body">
+            <p class="hint" style="margin-bottom:12px">
+              ภาษีหัก ณ ที่จ่าย <b>ไม่ใช่ต้นทุนเพิ่ม</b> เป็นภาษีที่จ่ายล่วงหน้า นำไปเครดิตกับภาษีปลายปีได้เต็มจำนวน
+              จึงไม่กระทบตารางเปรียบเทียบด้านขวา แต่มีผลกับกระแสเงินสดและการขอคืน
+            </p>
+            <div class="fld">
+              <label for="whtshare">สัดส่วนรายได้ที่ถูกหัก ณ ที่จ่าย</label>
+              <div class="inp"><input id="whtshare" type="number" min="0" max="100" step="5" value="0"><span class="unit">%</span></div>
+              <span class="hint">ขายของให้ลูกค้าทั่วไปมักไม่ถูกหัก ส่วนงานบริการหรือรับจ้างที่ลูกค้าเป็นบริษัทหรือหน่วยงานรัฐมักถูกหักเกือบทั้งหมด</span>
             </div>
-            <span class="hint">SME = ทุนชำระแล้วไม่เกิน 5 ล้าน <b>และ</b> รายได้ไม่เกิน 30 ล้านต่อปี</span>
+            <div class="fld">
+              <label for="whtrate">อัตราที่ถูกหัก</label>
+              <div class="inp"><input id="whtrate" type="number" min="0" max="10" step="0.5" value="3"><span class="unit">%</span></div>
+              <span class="hint">ค่าบริการ ค่าจ้างทำของ และค่าโฆษณา ส่วนใหญ่ 3% ค่าเช่าอสังหาริมทรัพย์ 5% ค่าขนส่ง 1%</span>
+            </div>
           </div>
-        </fieldset>
+        </details>
+
+        <details class="adv" id="advSme">
+          <summary>ทางเลือกกำหนดเองและสถานะ SME <span>ปกติไม่ต้องแก้</span></summary>
+          <div class="adv-body">
+            <div class="fld">
+              <label for="custom">ค่าตอบแทนรวมทั้งปีที่อยากลอง</label>
+              <div class="inp"><input id="custom" type="number" min="0" step="10000" value="1500000"><span class="unit">บาท</span></div>
+              <span class="hint">ใช้กับทางเลือก จ. ในตารางบริษัท ใส่ตัวเลขที่อยากทดลองแล้วดูว่าเหลือเงินถึงมือเท่าไหร่</span>
+            </div>
+            <div class="fld">
+              <label for="sme">บริษัทเข้าเกณฑ์ SME หรือไม่</label>
+              <div class="seg" id="sme" role="group">
+                <button type="button" data-v="1" aria-pressed="true">เข้าเกณฑ์</button>
+                <button type="button" data-v="0" aria-pressed="false">ไม่เข้าเกณฑ์</button>
+              </div>
+              <span class="hint">SME ต้องเข้าเงื่อนไข 2 ข้อพร้อมกัน คือทุนชำระแล้วไม่เกิน 5 ล้านบาท <b>และ</b> รายได้ไม่เกิน 30 ล้านบาทต่อปี ถ้าไม่เข้าเกณฑ์จะเสียภาษี 20% ตั้งแต่บาทแรก ไม่มียกเว้นกำไร 300,000 แรก สถานะนี้ดูเป็นรายรอบบัญชี ควรทบทวนทุกปี</span>
+            </div>
+          </div>
+        </details>
 
         <div class="flags" id="flags"></div>
       </div>
@@ -441,10 +439,10 @@
 
       <div class="panel" style="margin-top:18px">
         <div class="kpi-row">
-          <div class="kpi"><div class="k">กำไรก่อนจ่ายเจ้าของ</div><div class="v num" id="kProfit">—</div><div class="d" id="kProfitD">รายได้ทางภาษี − ต้นทุนสุทธิ</div></div>
+          <div class="kpi"><div class="k">กำไรก่อนจ่ายเจ้าของ</div><div class="v num" id="kProfit">—</div><div class="d" id="kProfitD">—</div></div>
           <div class="kpi"><div class="k">นิติบุคคล − บุคคลธรรมดา</div><div class="v num" id="kGap">—</div><div class="d" id="kGapD">—</div></div>
           <div class="kpi"><div class="k">ห่างจากทางที่แย่ที่สุด</div><div class="v num" id="kSpread">—</div><div class="d">เลือกผิดทาง เสียเท่านี้ต่อปี</div></div>
-          <div class="kpi"><div class="k">VAT นำส่งต่อปี</div><div class="v num" id="kVat">—</div><div class="d">เท่ากันทุกทางเลือก</div></div>
+          <div class="kpi"><div class="k">VAT นำส่งต่อปี</div><div class="v num" id="kVat">—</div><div class="d" id="kVatD">เท่ากันทุกทางเลือก</div></div>
         </div>
       </div>
 
@@ -452,11 +450,16 @@
         <div class="panel-hd"><h2>เรียงลำดับทั้ง 9 ทางเลือก</h2><span class="tag">เงินเหลือถึงมือ / ปี</span></div>
         <div class="panel-bd">
           <div class="scroll">
-            <table class="bartable">
-              <thead><tr><th>ทางเลือก</th><th style="text-align:right">เงินเหลือถึงมือ</th><th class="bar-cell"></th><th style="text-align:right">อันดับ</th></tr></thead>
+            <table class="data bartable">
+              <thead><tr><th>ทางเลือก</th><th>เงินเหลือถึงมือ</th><th class="bar-cell"></th><th>อันดับ</th></tr></thead>
               <tbody id="rankBody"></tbody>
             </table>
           </div>
+          <ul class="notes">
+            <li>ตัวเลขนี้ยังไม่ได้หักภาษีที่ถูกหัก ณ ที่จ่าย เพราะภาษีส่วนนั้นเครดิตคืนได้ ไม่ใช่ต้นทุน ดูผลกระแสเงินสดที่ตารางด้านล่าง</li>
+            <li>บริษัทนำผลขาดทุนไปหักกำไรปีถัดไปได้ไม่เกิน 5 รอบบัญชีตาม ม.65 ตรี (12) ส่วนบุคคลธรรมดาทำไม่ได้ ธุรกิจที่ปีแรกขาดทุนหนัก ข้อนี้อาจสำคัญกว่าส่วนต่างภาษีในปีเดียว</li>
+            <li>ยังไม่รวมค่าใช้จ่ายครั้งเดียวตอนจดทะเบียนและตอนเลิกกิจการ ซึ่งฝั่งนิติบุคคลสูงกว่าบุคคลธรรมดามาก</li>
+          </ul>
         </div>
       </div>
 
@@ -464,7 +467,7 @@
         <div class="panel-hd"><h2>บริษัท — 5 วิธีดึงเงินออก</h2><span class="tag">แบ่งค่าตอบแทนเท่ากันทุกคน</span></div>
         <div class="panel-bd">
           <div class="scroll">
-            <table class="dense">
+            <table class="data dense">
               <thead><tr>
                 <th>ทางเลือก</th><th>ค่าตอบแทน<br>รวม</th><th>ต่อคน<br>ต่อเดือน</th><th>ภาษี<br>นิติบุคคล</th>
                 <th>ภาษีปันผล<br>หัก ณ ที่จ่าย</th><th>ภาษีบุคคล<br>สุทธิ</th><th>รวม<br>ภาษี</th><th>ประกัน<br>สังคม</th><th>เงินเหลือ<br>ถึงมือ</th>
@@ -482,20 +485,25 @@
       </div>
 
       <div class="panel">
-        <div class="panel-hd"><h2>บุคคลธรรมดา — 3 แบบ</h2><span class="tag">จด VAT แล้ว</span></div>
+        <div class="panel-hd"><h2>บุคคลธรรมดา — 3 แบบ</h2><span class="tag" id="peTag">—</span></div>
         <div class="panel-bd">
           <div class="scroll">
-            <table>
+            <table class="data">
               <thead><tr><th>รายการ</th><th>ก. หักเหมา</th><th>ข. ตามจริง คนเดียว</th><th>ค. ตามจริง + จ้างคนที่เหลือ</th></tr></thead>
               <tbody id="peBody"></tbody>
             </table>
           </div>
           <ul class="notes">
-            <li>ภาษีขั้นต่ำ 0.5% ของรายได้ตาม ม.48(2) ใช้กับเจ้าของ แม้กำไรจะต่ำ</li>
+            <li>ภาษีขั้นต่ำ 0.5% ของรายได้ตาม ม.48(2) ใช้กับเจ้าของ แม้กำไรจะต่ำ ยกเว้นคำนวณแล้วไม่เกิน 5,000 บาท</li>
             <li>ลูกจ้างทุกคนต้องทำงานจริง ขึ้นทะเบียนประกันสังคม และยื่น ภ.ง.ด.1 ทุกเดือน</li>
-            <li>หักตามจริง: ถ้ายังไม่จด VAT ทำรายงานเงินสดรับ-จ่ายตามประกาศอธิบดีฯ ฉบับที่ 161 / ถ้าจด VAT แล้ว ทำรายงานภาษีซื้อ-ขายตาม ม.87 แทน</li>
+            <li id="bookNote">—</li>
           </ul>
         </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-hd"><h2>ภาษีถูกหัก ณ ที่จ่าย — จ่ายเพิ่มหรือขอคืน</h2><span class="tag" id="whtTag">—</span></div>
+        <div class="panel-bd" id="whtBox"></div>
       </div>
 
       <div class="panel">
@@ -507,38 +515,27 @@
             <div class="kpi"><div class="k">เพดานเงินเดือนต่อคน</div><div class="v num" id="sCeil" style="font-size:19px">—</div><div class="d" id="sCeilM">—</div></div>
           </div>
           <div class="scroll">
-            <table>
+            <table class="data">
               <thead><tr><th>ขั้นภาษีบุคคล</th><th>เงินได้สุทธิสูงสุด</th><th>เงินเดือนสูงสุดต่อปี</th><th>ต่อเดือน</th></tr></thead>
               <tbody id="salBody"></tbody>
             </table>
           </div>
           <ul class="notes">
-            <li>ตารางใช้ค่าลดหย่อนตามที่กรอก และสมมติหักค่าใช้จ่ายเงินเดือนเต็มเพดาน 100,000 บาท ตาม ม.42 ทวิ</li>
+            <li>ตารางใช้ค่าลดหย่อนตามที่กรอก และสมมติหักค่าใช้จ่ายเงินเดือนเต็มเพดาน 100,000 บาท ตาม ม.42 ทวิ ไม่ได้รวมเงินได้อื่นรายคน</li>
           </ul>
         </div>
       </div>
 
       <div class="panel">
         <div class="panel-hd"><h2>VAT และผลของใบกำกับภาษีซื้อ</h2><span class="tag">ผลเท่ากันทั้งบุคคลและนิติบุคคล</span></div>
-        <div class="panel-bd">
-          <div class="scroll">
-            <table>
-              <thead><tr><th>ใบกำกับภาษีซื้อที่มี</th><th>VAT ที่ต้องนำส่ง</th><th>กำไรก่อนจ่ายเจ้าของ</th></tr></thead>
-              <tbody id="vatBody"></tbody>
-            </table>
-          </div>
-          <ul class="notes">
-            <li>ทุก 10% ของต้นทุนที่ได้ใบกำกับเต็มรูปเพิ่ม กำไรเพิ่มขึ้นเท่ากับภาษีซื้อที่ได้คืน</li>
-            <li>หากขึ้นราคาไม่ได้ รายได้ที่กิจการเก็บได้จริงจะลดลงเหลือ 100/107 ของยอดขาย</li>
-          </ul>
-        </div>
+        <div class="panel-bd" id="vatBox"></div>
       </div>
 
       <div class="panel">
         <div class="panel-hd"><h2>หจก. เทียบ บริษัทจำกัด</h2><span class="tag">ภาษีเท่ากัน ต่างที่ค่าสอบบัญชีและความรับผิด</span></div>
         <div class="panel-bd">
           <div class="scroll">
-            <table>
+            <table class="data">
               <thead><tr><th>รายการ</th><th>หจก.</th><th>บริษัทจำกัด</th></tr></thead>
               <tbody id="lpBody"></tbody>
             </table>
@@ -552,7 +549,7 @@
 
       <div class="cta">
         <h2>ตัวเลขออกมาแล้ว ขั้นต่อไปคือทำให้เอกสารรองรับได้จริง</h2>
-        <p>เครื่องมือนี้ตอบว่า “ทางไหนคุ้มที่สุด” แต่ไม่ได้ตอบว่าบ้านเลขที่ สัญญา มติที่ประชุม และใบสำคัญจ่ายของคุณพร้อมให้สรรพากรตรวจหรือยัง ถ้าอยากให้ดูตัวเลขจริงของกิจการคุณ</p>
+        <p>เครื่องมือนี้ตอบว่า “ทางไหนคุ้มที่สุด” แต่ไม่ได้ตอบว่าสัญญา มติที่ประชุม และใบสำคัญจ่ายของคุณพร้อมให้สรรพากรตรวจหรือยัง ถ้าอยากให้ดูตัวเลขจริงของกิจการคุณ</p>
         <div class="lines">
           <div><b>1,500</b><span>ปรึกษาทางโทรศัพท์ 1 ชั่วโมง ตอบคำถามเฉพาะหน้า</span></div>
           <div><b>4,900</b><span>ปรึกษา + รายงานวิเคราะห์เปรียบเทียบโครงสร้างภาษีของกิจการคุณ</span></div>
@@ -573,7 +570,6 @@
   "use strict";
 
   /* ---------- password gate ---------- */
-  /* เปลี่ยนรหัสผ่าน: แทนค่าด้วย btoa("รหัสใหม่") ที่เป็นอักษรอังกฤษ/ตัวเลข */
   var KEY = "cGFleWltMjU2OQ==";              // paeyim2569
   var STORE = "pyj-calc-unlocked-v1";
   var gate = document.getElementById("gate");
@@ -582,32 +578,24 @@
   var pwErr= document.getElementById("pwErr");
 
   function unlock(remember){
-    gate.hidden = true;
-    app.hidden = false;
+    gate.hidden = true; app.hidden = false;
     if(remember){ try{ localStorage.setItem(STORE,"1"); }catch(e){} }
     recalc();
   }
-  /* แป้นพิมพ์ไทย (เกษมณี) -> อังกฤษ เผื่อผู้ใช้ลืมสลับภาษา */
   var THAI_KEY = {"ๆ":"q","ไ":"w","ำ":"e","พ":"r","ะ":"t","ั":"y","ี":"u","ร":"i","น":"o","ย":"p",
     "ฟ":"a","ห":"s","ก":"d","ด":"f","เ":"g","้":"h","่":"j","า":"k","ส":"l","ว":";",
     "ผ":"z","ป":"x","แ":"c","อ":"v","ิ":"b","ื":"n","ท":"m","ม":",","ใ":".","ฝ":"/",
     "ๅ":"1","/":"2","_":"3","ภ":"4","ถ":"5","ุ":"6","ึ":"7","ค":"8","ต":"9","จ":"0"};
-
   function clean(s){ return (s||"").replace(/\s+/g,"").toLowerCase(); }
-  function fromThai(s){
-    var out = "";
-    for(var i=0;i<s.length;i++){ var c = s.charAt(i); out += (THAI_KEY[c] !== undefined ? THAI_KEY[c] : c); }
-    return out;
-  }
-  function matches(s){
-    try{ return btoa(s) === KEY; }catch(e){ return false; }
-  }
+  function fromThai(s){ var o=""; for(var i=0;i<s.length;i++){ var c=s.charAt(i); o += (THAI_KEY[c]!==undefined?THAI_KEY[c]:c); } return o; }
+  function matches(s){ try{ return btoa(s)===KEY; }catch(e){ return false; } }
   function tryUnlock(){
     var raw = clean(pw.value);
-    var ok = matches(raw) || matches(clean(fromThai(raw)));
-    if(ok){ pwErr.hidden = true; unlock(true); }
+    if(matches(raw) || matches(clean(fromThai(raw)))){ pwErr.hidden = true; unlock(true); }
     else { pwErr.hidden = false; pw.select(); }
   }
+  document.getElementById("pwBtn").addEventListener("click", tryUnlock);
+  pw.addEventListener("keydown", function(e){ if(e.key==="Enter"){ e.preventDefault(); tryUnlock(); } });
   document.getElementById("pwShow").addEventListener("click", function(){
     var shown = pw.type === "text";
     pw.type = shown ? "password" : "text";
@@ -615,16 +603,26 @@
     this.textContent = shown ? "แสดงรหัสที่พิมพ์" : "ซ่อนรหัส";
     pw.focus();
   });
-  document.getElementById("pwBtn").addEventListener("click", tryUnlock);
-  pw.addEventListener("keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); tryUnlock(); } });
 
   /* ---------- helpers ---------- */
   var f0 = new Intl.NumberFormat("th-TH",{maximumFractionDigits:0});
   function money(n){ if(!isFinite(n)) n = 0; return f0.format(Math.round(n)); }
-  function signed(n){ var s = money(Math.abs(n)); return (n < 0 ? "−" : "+") + s; }
-  function num(id){ var el = document.getElementById(id); var v = parseFloat(el.value); return isFinite(v) ? v : 0; }
+  function signed(n){ return (n < 0 ? "−" : "+") + money(Math.abs(n)); }
+  function num(id){ var el = document.getElementById(id); if(!el) return 0; var v = parseFloat(el.value); return isFinite(v) ? v : 0; }
 
-  var segState = {raise:1, sso:0, sme:1};
+  /* per-person rows */
+  var MAXP = 5;
+  (function buildRows(){
+    var html = "";
+    for(var i=1;i<=MAXP;i++){
+      html += '<tr id="prow'+i+'"><td>คนที่ '+i+'</td>'+
+        '<td><span class="inp"><input id="other'+i+'" type="number" min="0" step="10000" value="0"></span></td>'+
+        '<td><span class="inp"><input id="cap'+i+'" type="number" min="0" max="100000" step="10000" value="0"></span></td></tr>';
+    }
+    document.getElementById("personRows").innerHTML = html;
+  })();
+
+  var segState = {raise:1, sso:0, sme:1, vatreg:1};
   function wireSeg(id){
     var box = document.getElementById(id);
     box.addEventListener("click", function(e){
@@ -636,10 +634,10 @@
       recalc();
     });
   }
-  ["raise","sso","sme"].forEach(wireSeg);
+  ["raise","sso","sme","vatreg"].forEach(wireSeg);
   document.getElementById("form").addEventListener("input", recalc);
 
-  /* ---------- tax engine (mirrors the verified workbook) ---------- */
+  /* ---------- tax engine ---------- */
   var PIT_BASE = [0,150000,300000,500000,750000,1000000,2000000,5000000];
   var PIT_DIFF = [0,0.05,0.05,0.05,0.05,0.05,0.05,0.05];
   var CIT_BASE = [0,300000,3000000];
@@ -655,49 +653,67 @@
 
   function model(){
     var revenue = num("revenue"), cost = num("cost");
-    var deemed  = num("deemed")/100, people = Math.max(1, Math.round(num("people")));
+    var deemed  = num("deemed")/100, people = Math.min(MAXP, Math.max(1, Math.round(num("people"))));
     var deduct  = num("deduct"), invShare = num("invshare")/100;
     var ssoAmt  = num("ssoamt"), acctP = num("acctP"), acctL = num("acctL"), acctC = num("acctC");
     var custom  = num("custom");
-    var canRaise = segState.raise, ssoFlag = segState.sso, isSme = segState.sme === 1;
+    var canRaise = segState.raise, ssoFlag = segState.sso;
+    var isSme = segState.sme === 1, vatReg = segState.vatreg === 1;
+    var whtShare = num("whtshare")/100, whtRate = num("whtrate")/100;
 
-    var inputVat   = cost * invShare * 7/107;
-    var taxRevenue = canRaise === 1 ? revenue : revenue * 100/107;
+    var other = [], usedCap = [];
+    for(var i=1;i<=MAXP;i++){
+      other.push(i<=people ? num("other"+i) : 0);
+      usedCap.push(i<=people ? Math.min(100000, Math.max(0, num("cap"+i))) : 0);
+    }
+
+    var inputVat   = vatReg ? cost * invShare * 7/107 : 0;
+    var taxRevenue = vatReg ? (canRaise === 1 ? revenue : revenue * 100/107) : revenue;
     var profit     = taxRevenue - (cost - inputVat);
     var minTax     = (taxRevenue * 0.005 > 5000) ? taxRevenue * 0.005 : 0;
+    var wht        = taxRevenue * whtShare * whtRate;
+
+    /* expense deduction for employment-type income, respecting the shared 100,000 cap */
+    function empDeduct(amount, i){
+      return Math.min(amount * 0.5, Math.max(0, 100000 - usedCap[i]));
+    }
 
     /* ----- personal ----- */
-    function personal(net, empWage, empCount){
-      var ownTax = Math.max(PIT(net), minTax);
-      var empTax = empCount > 0
-        ? empCount * PIT(Math.max(0, empWage - Math.min(empWage*0.5, 100000) - deduct))
-        : 0;
+    function personal(ownBase, empWage, empCount){
+      var ownTax = Math.max(PIT(ownBase), minTax);
+      var empTax = 0;
+      for(var i=1;i<=empCount;i++){
+        empTax += PIT(Math.max(0, empWage - empDeduct(empWage, i) + other[i] - deduct));
+      }
       var total = ownTax + empTax;
       var sso   = empCount * ssoAmt;
-      return {net:net, ownTax:ownTax, empTax:empTax, total:total, acct:acctP, sso:sso,
+      return {ownBase:ownBase, ownTax:ownTax, empTax:empTax, total:total, acct:acctP, sso:sso,
               wage:empWage, take: profit - total - acctP - sso};
     }
-    var peA = personal(Math.max(0, taxRevenue - taxRevenue*deemed - deduct), 0, 0);
-    var peB = personal(Math.max(0, profit - deduct), 0, 0);
+    var peA = personal(Math.max(0, taxRevenue - taxRevenue*deemed + other[0] - deduct), 0, 0);
+    var peB = personal(Math.max(0, profit + other[0] - deduct), 0, 0);
     var wageC = people > 1 ? profit / people : 0;
-    var peC = personal(Math.max(0, profit - (people-1)*wageC - deduct), wageC, people-1);
+    var peC = personal(Math.max(0, profit - (people-1)*wageC + other[0] - deduct), wageC, people-1);
 
     /* ----- company ----- */
     function co(label, remun, mode){
       var cit = CIT(profit - remun, isSme);
-      var wht, pit;
-      if(mode === "a"){ wht = (profit - cit) * 0.1; pit = 0; }
-      else if(mode === "b"){
-        wht = 0;
-        pit = people * PIT(Math.max(0, profit/people - deduct)) - cit;
+      var wht2, pit = 0, i;
+      if(mode === "a"){
+        wht2 = (profit - cit) * 0.1;
+        for(i=0;i<people;i++){ pit += PIT(Math.max(0, other[i] - deduct)); }
+      } else if(mode === "b"){
+        wht2 = 0;
+        for(i=0;i<people;i++){ pit += PIT(Math.max(0, profit/people + other[i] - deduct)); }
+        pit -= cit;
       } else {
-        wht = Math.max(0, (profit - remun - cit) * 0.1);
+        wht2 = Math.max(0, (profit - remun - cit) * 0.1);
         var per = remun / people;
-        pit = people * PIT(Math.max(0, per - Math.min(per*0.5, 100000) - deduct));
+        for(i=0;i<people;i++){ pit += PIT(Math.max(0, per - empDeduct(per, i) + other[i] - deduct)); }
       }
-      var total = cit + wht + pit;
+      var total = cit + wht2 + pit;
       var sso = remun > 0 ? people * ssoAmt * ssoFlag : 0;
-      return {label:label, remun:remun, perMonth: remun/people/12, cit:cit, wht:wht, pit:pit,
+      return {label:label, remun:remun, perMonth: remun/people/12, cit:cit, wht:wht2, pit:pit,
               total:total, sso:sso, take: profit - total - sso - acctC};
     }
     var rows = [
@@ -716,7 +732,7 @@
     var cc = {base:lpBase, fee:acctC, take:lpBase - acctC};
 
     /* ----- VAT ----- */
-    var outputVat = canRaise === 1 ? revenue * 0.07 : revenue * 7/107;
+    var outputVat = vatReg ? (canRaise === 1 ? revenue * 0.07 : revenue * 7/107) : 0;
     var vatDue = outputVat - inputVat;
     var vatRows = [0,0.3,0.5,0.7,0.9].map(function(s){
       var credit = cost * s * 7/107;
@@ -732,6 +748,16 @@
     else if(profit <= 3000000){ bracketLabel = "15%"; burden = "23.5%"; ceilIdx = 4; }
     else { bracketLabel = "20%"; burden = "28%"; ceilIdx = 5; }
 
+    /* ----- WHT settlement -----
+       company side: credit against CIT only
+       personal side: credit against the individual's own tax          */
+    var whtRows = [
+      {name:"บุคคลธรรมดา หักเหมา", tax: peA.total, kind:"p"},
+      {name:"บุคคลธรรมดา หักตามจริง คนเดียว", tax: peB.total, kind:"p"},
+      {name:"บุคคลธรรมดา ตามจริง + จ้างคนที่เหลือ", tax: peC.total, kind:"p"}
+    ].concat(rows.map(function(r){ return {name:"บริษัท "+r.label.slice(0,2)+" "+r.label.slice(3), tax:r.cit, kind:"c"}; }));
+    whtRows.forEach(function(r){ r.wht = wht; r.net = r.tax - wht; });
+
     /* ----- summary ----- */
     var summary = [
       {name:"บุคคลธรรมดา หักเหมา", take: peA.take, kind:"p"},
@@ -746,30 +772,36 @@
     ];
 
     return {revenue:revenue, cost:cost, people:people, profit:profit, taxRevenue:taxRevenue,
-            inputVat:inputVat, isSme:isSme, canRaise:canRaise,
+            inputVat:inputVat, isSme:isSme, vatReg:vatReg, canRaise:canRaise, wht:wht,
+            whtShare:whtShare, whtRate:whtRate,
             peA:peA, peB:peB, peC:peC, coRows:rows, bestCo:bestCo, refundB:refundB,
-            lp:lp, cc:cc, outputVat:outputVat, vatDue:vatDue, vatRows:vatRows,
+            lp:lp, cc:cc, outputVat:outputVat, vatDue:vatDue, vatRows:vatRows, whtRows:whtRows,
             salRows:salRows, bracketLabel:bracketLabel, burden:burden, ceilIdx:ceilIdx,
             summary:summary};
   }
 
   /* ---------- rendering ---------- */
   function tr(cells, cls){
-    return "<tr" + (cls ? ' class="' + cls + '"' : "") + ">" +
-      cells.map(function(c,i){
-        return "<td" + (i === 0 ? "" : ' class="v"') + ">" + c + "</td>";
-      }).join("") + "</tr>";
+    return "<tr" + (cls ? ' class="'+cls+'"' : "") + ">" +
+      cells.map(function(c,i){ return "<td"+(i===0?"":' class="v"')+">"+c+"</td>"; }).join("") + "</tr>";
   }
 
   function recalc(){
     if(app.hidden) return;
     var m = model();
 
-    /* summary ranking */
+    /* show only the rows for the people who exist */
+    for(var i=1;i<=5;i++){
+      var row = document.getElementById("prow"+i);
+      if(row) row.hidden = (i > m.people);
+    }
+    /* VAT-dependent fields */
+    document.getElementById("wrapInv").style.display  = m.vatReg ? "" : "none";
+    document.getElementById("wrapRaise").style.display = m.vatReg ? "" : "none";
+
     var sorted = m.summary.slice().sort(function(a,b){ return b.take - a.take; });
     var best = sorted[0], worst = sorted[sorted.length-1];
-    var lo = Math.min(0, worst.take), hi = Math.max(1, best.take);
-    var span = hi - lo || 1;
+    var lo = Math.min(0, worst.take), hi = Math.max(1, best.take), span = (hi - lo) || 1;
 
     document.getElementById("bestName").textContent = best.name;
     document.getElementById("bestAmt").textContent  = money(best.take) + " บาท";
@@ -788,38 +820,67 @@
     kGap.className = "v num " + (gap > 0 ? "pos" : "neg");
     document.getElementById("kGapD").textContent = gap > 0 ? "นิติบุคคลได้มากกว่า" : "บุคคลธรรมดาได้มากกว่า";
     document.getElementById("kSpread").textContent = money(best.take - worst.take);
-    document.getElementById("kVat").textContent = money(m.vatDue);
+    document.getElementById("kVat").textContent = m.vatReg ? money(m.vatDue) : "—";
+    document.getElementById("kVatD").textContent = m.vatReg ? "เท่ากันทุกทางเลือก" : "ยังไม่จด VAT";
 
     document.getElementById("rankBody").innerHTML = sorted.map(function(s, i){
       var w = Math.max(0, (s.take - lo) / span * 100);
-      return "<tr" + (i === 0 ? ' class="best"' : "") + ">" +
-        "<td>" + s.name + "</td>" +
-        '<td class="v">' + money(s.take) + "</td>" +
-        '<td class="bar-cell"><span class="bar"><i style="width:' + w.toFixed(1) + '%"></i></span></td>' +
-        '<td class="v"><span class="rank">' + (i+1) + "</span></td></tr>";
+      return "<tr"+(i===0?' class="best"':"")+">"+
+        "<td>"+s.name+"</td>"+
+        '<td class="v">'+money(s.take)+"</td>"+
+        '<td class="bar-cell"><span class="bar"><i style="width:'+w.toFixed(1)+'%"></i></span></td>'+
+        '<td class="v"><span class="rank">'+(i+1)+"</span></td></tr>";
     }).join("");
 
-    /* company table */
     document.getElementById("coBody").innerHTML = m.coRows.map(function(r){
-      var isBest = r === m.bestCo;
       return tr([r.label, money(r.remun), money(r.perMonth), money(r.cit), money(r.wht),
                  money(r.pit), money(r.total), money(r.sso), money(r.take)],
-                isBest ? "best" : "");
+                r === m.bestCo ? "best" : "");
     }).join("");
     document.getElementById("creditNote").textContent =
       "ทางเลือก ข. ผู้ถือหุ้นแต่ละคนจะได้เงินคืนจากเครดิตภาษีเงินปันผลประมาณ " +
       money(m.refundB) + " บาทต่อคนต่อปี (ภาษีบุคคลติดลบ = ได้คืน)";
 
-    /* personal table */
-    var P = [["กำไรก่อนจ่ายเจ้าของ","profitRow"],["เงินได้สุทธิของเจ้าของ","net"],["ภาษีเจ้าของที่ต้องเสีย","ownTax"],
+    var P = [["กำไรก่อนจ่ายเจ้าของ","profitRow"],["เงินได้สุทธิของเจ้าของ","ownBase"],["ภาษีเจ้าของที่ต้องเสีย","ownTax"],
              ["ค่าจ้างต่อคนที่จ่ายลูกจ้าง","wage"],["ภาษีลูกจ้างรวม","empTax"],["รวมภาษีทั้งหมด","total"],
              ["ค่าทำบัญชี","acct"],["ประกันสังคมลูกจ้าง","sso"],["เงินเหลือถึงมือ","take"]];
     var cols = [m.peA, m.peB, m.peC];
     document.getElementById("peBody").innerHTML = P.map(function(row){
       var k = row[1];
-      var vals = cols.map(function(c){ return money(k === "profitRow" ? m.profit : c[k]); });
-      return tr([row[0]].concat(vals), k === "take" ? "best" : "");
+      return tr([row[0]].concat(cols.map(function(c){ return money(k === "profitRow" ? m.profit : c[k]); })),
+                k === "take" ? "best" : "");
     }).join("");
+    document.getElementById("peTag").textContent = m.vatReg ? "จด VAT แล้ว" : "ยังไม่จด VAT";
+    document.getElementById("bookNote").textContent = m.vatReg
+      ? "จด VAT แล้ว ต้องทำรายงานภาษีซื้อและภาษีขายตาม ม.87 ประกาศอธิบดีฯ ฉบับที่ 161 ไม่ใช้กับผู้ประกอบการจดทะเบียน VAT"
+      : "ยังไม่จด VAT ถ้าหักค่าใช้จ่ายตามจริง ต้องจัดทำรายงานเงินสดรับ-จ่ายตามประกาศอธิบดีฯ ฉบับที่ 161 และเก็บเอกสารประกอบทุกรายการ";
+
+    /* WHT */
+    var whtBox = document.getElementById("whtBox");
+    document.getElementById("whtTag").textContent = m.wht > 0
+      ? "ถูกหักไว้ " + money(m.wht) + " บาท/ปี" : "ยังไม่ได้กรอก";
+    if(m.wht <= 0){
+      whtBox.innerHTML = '<div class="offnote">ยังไม่ได้กรอกภาษีถูกหัก ณ ที่จ่าย เปิดกลุ่ม “ภาษีถูกหัก ณ ที่จ่าย” ในช่องกรอกด้านซ้ายแล้วใส่สัดส่วนรายได้ที่ถูกหักและอัตราที่ถูกหัก ระบบจะคำนวณให้ว่าแต่ละทางเลือกต้องจ่ายภาษีเพิ่มหรือขอคืนเท่าไหร่</div>';
+    } else {
+      whtBox.innerHTML =
+        '<div class="scroll"><table class="data"><thead><tr><th>ทางเลือก</th><th>ภาษีที่เครดิตได้</th><th>ถูกหักไว้แล้ว</th><th>ผล</th></tr></thead><tbody>' +
+        m.whtRows.map(function(r){
+          var txt;
+          if(r.net > 0) txt = "จ่ายเพิ่ม " + money(r.net);
+          else if(r.net < 0) txt = "ขอคืน " + money(-r.net);
+          else txt = "พอดี";
+          return "<tr><td>"+r.name+"</td>"+
+                 '<td class="v">'+money(r.tax)+"</td>"+
+                 '<td class="v">'+money(r.wht)+"</td>"+
+                 '<td class="v" style="font-weight:600">'+txt+"</td></tr>";
+        }).join("") + "</tbody></table></div>" +
+        '<ul class="notes">' +
+        '<li>ฝั่งบริษัท ภาษีที่ถูกหักเป็นของบริษัท เครดิตได้กับภาษีเงินได้นิติบุคคลเท่านั้น นำไปหักภาษีเงินเดือนกรรมการไม่ได้</li>' +
+        '<li>ฝั่งบุคคลธรรมดา เครดิตกับภาษีเงินได้บุคคลธรรมดาของเจ้าของได้โดยตรง</li>' +
+        '<li>ยอดขอคืนก้อนใหญ่มักตามมาด้วยการถูกขอเอกสารเพิ่ม และเงินจะจมอยู่กับกรมสรรพากรข้ามปี ควรนำมาคิดเป็นต้นทุนกระแสเงินสดด้วย</li>' +
+        '<li>ต้องเก็บหนังสือรับรองการหักภาษี ณ ที่จ่ายตาม ม.50 ทวิ ไว้ทุกใบ ไม่มีใบรับรองคือเครดิตไม่ได้</li>' +
+        '</ul>';
+    }
 
     /* salary ceiling */
     document.getElementById("sBracket").textContent = m.bracketLabel;
@@ -831,13 +892,25 @@
     }).join("");
 
     /* VAT */
-    document.getElementById("vatBody").innerHTML =
-      tr(["ภาษีขาย", money(m.outputVat), ""]) +
-      tr(["ภาษีซื้อที่เครดิตได้", money(m.inputVat), ""]) +
-      tr(["VAT ที่ต้องนำส่งต่อปี", money(m.vatDue), ""], "best") +
-      m.vatRows.map(function(r){
-        return tr(["มีใบกำกับ " + Math.round(r.share*100) + "% ของต้นทุน", money(r.due), money(r.profit)]);
-      }).join("");
+    var vatBox = document.getElementById("vatBox");
+    if(!m.vatReg){
+      vatBox.innerHTML = '<div class="offnote">กิจการยังไม่ได้จดทะเบียน VAT จึงไม่มีภาษีขายให้นำส่ง และไม่สามารถนำภาษีซื้อมาเครดิตได้ ภาษีซื้อที่จ่ายไปกลายเป็นต้นทุนเต็มจำนวน<br><br>เมื่อรายได้เกิน 1.8 ล้านบาทต่อปีเมื่อใด ต้องยื่นคำขอจดทะเบียนภายใน 30 วันนับแต่วันที่รายรับถึงเกณฑ์ ตาม ม.85/1 แล้วกลับมาเปลี่ยนสวิตช์เป็น “จดแล้ว” เพื่อดูผลเปรียบเทียบ</div>';
+    } else {
+      vatBox.innerHTML =
+        '<div class="scroll"><table class="data"><thead><tr><th>ใบกำกับภาษีซื้อที่มี</th><th>VAT ที่ต้องนำส่ง</th><th>กำไรก่อนจ่ายเจ้าของ</th></tr></thead><tbody>' +
+        tr(["ภาษีขาย", money(m.outputVat), ""]) +
+        tr(["ภาษีซื้อที่เครดิตได้", money(m.inputVat), ""]) +
+        tr(["VAT ที่ต้องนำส่งต่อปี", money(m.vatDue), ""], "best") +
+        m.vatRows.map(function(r){
+          return tr(["มีใบกำกับ " + Math.round(r.share*100) + "% ของต้นทุน", money(r.due), money(r.profit)]);
+        }).join("") +
+        "</tbody></table></div>" +
+        '<ul class="notes">' +
+        '<li>ทุก 10% ของต้นทุนที่ได้ใบกำกับเต็มรูปเพิ่ม กำไรเพิ่มขึ้นเท่ากับภาษีซื้อที่ได้คืน</li>' +
+        '<li>หากขึ้นราคาไม่ได้ รายได้ที่กิจการเก็บได้จริงจะลดลงเหลือ 100/107 ของยอดขาย</li>' +
+        '<li>ผลของ VAT เท่ากันทุกทางเลือก ไม่ว่าจะเป็นบุคคลธรรมดาหรือนิติบุคคล จึงไม่นำมารวมในตารางเปรียบเทียบ</li>' +
+        '</ul>';
+    }
 
     /* LP vs Co */
     document.getElementById("lpBody").innerHTML =
@@ -849,19 +922,24 @@
 
     /* flags */
     var flags = [];
-    if(m.revenue > 1800000){
-      flags.push('<div class="flag warn"><b>ต้องจด VAT</b> รายได้เกิน 1.8 ล้านบาทตาม ม.85/1 ต้องยื่นคำขอภายใน 30 วันนับแต่วันที่รายได้ถึงเกณฑ์</div>');
+    if(m.revenue > 1800000 && !m.vatReg){
+      flags.push('<div class="flag bad"><b>ต้องจด VAT แล้ว</b> รายได้เกิน 1.8 ล้านบาท กฎหมายบังคับให้ยื่นคำขอภายใน 30 วันนับแต่วันที่รายรับถึงเกณฑ์ ตาม ม.85/1 การเลือก “ยังไม่จด” ที่รายได้ระดับนี้ไม่ใช่ทางเลือกที่ทำได้</div>');
+    } else if(m.revenue > 1800000){
+      flags.push('<div class="flag ok"><b>อยู่ในระบบ VAT ถูกต้อง</b> รายได้เกิน 1.8 ล้านบาทและจดทะเบียนแล้ว</div>');
     } else {
-      flags.push('<div class="flag ok"><b>ยังไม่ถึงเกณฑ์ VAT</b> รายได้ยังไม่เกิน 1.8 ล้านบาทต่อปี</div>');
+      flags.push('<div class="flag ok"><b>ยังไม่ถึงเกณฑ์ VAT</b> รายได้ยังไม่เกิน 1.8 ล้านบาทต่อปี จะจดโดยสมัครใจก็ได้ถ้าลูกค้าส่วนใหญ่ต้องการใบกำกับภาษี</div>');
     }
     if(m.isSme && m.revenue > 30000000){
-      flags.push('<div class="flag warn"><b>รายได้เกิน 30 ล้าน</b> ไม่เข้าเกณฑ์ SME แล้ว ให้เปลี่ยนเป็น “ไม่เข้าเกณฑ์” เพื่อให้คิด 20% ทุกช่วง</div>');
+      flags.push('<div class="flag warn"><b>รายได้เกิน 30 ล้าน</b> ไม่เข้าเกณฑ์ SME แล้ว ให้เปลี่ยนสวิตช์เป็น “ไม่เข้าเกณฑ์” ในกลุ่มขั้นสูง เพื่อให้คิดภาษี 20% ทุกช่วง</div>');
     }
     if(!m.isSme){
       flags.push('<div class="flag info"><b>ไม่ใช่ SME</b> เสียภาษีนิติบุคคล 20% ตั้งแต่บาทแรก ไม่มียกเว้นกำไร 300,000 แรก ทางเลือก ง. จึงไม่คุ้มอีกต่อไป</div>');
     }
     if(m.profit <= 0){
-      flags.push('<div class="flag warn"><b>กำไรติดลบหรือเป็นศูนย์</b> ผลลัพธ์ด้านล่างจะไม่มีความหมาย ตรวจตัวเลขรายได้และต้นทุนอีกครั้ง</div>');
+      flags.push('<div class="flag warn"><b>กำไรติดลบหรือเป็นศูนย์</b> ผลลัพธ์ด้านขวาจะไม่มีความหมาย ตรวจตัวเลขรายได้และต้นทุนอีกครั้ง</div>');
+    }
+    if(m.wht > 0){
+      flags.push('<div class="flag info"><b>ถูกหัก ณ ที่จ่าย ' + money(m.wht) + ' บาท/ปี</b> ไม่กระทบตารางเปรียบเทียบ เพราะเครดิตคืนได้ ดูผลจ่ายเพิ่มหรือขอคืนที่ตารางด้านขวา</div>');
     }
     if(m.people > 1){
       flags.push('<div class="flag info"><b>คนที่รับค่าตอบแทนต้องทำงานจริง</b> ส่วนที่จ่ายเกินสมควรเป็นรายจ่ายต้องห้ามตาม ม.65 ตรี (8)</div>');
@@ -869,7 +947,6 @@
     document.getElementById("flags").innerHTML = flags.join("");
   }
 
-  /* ผู้ที่เคยกรอกรหัสผ่านแล้วบนเครื่องนี้ ไม่ต้องกรอกซ้ำ */
   try{ if(localStorage.getItem(STORE) === "1"){ unlock(false); } }catch(e){}
 })();
 </script>
