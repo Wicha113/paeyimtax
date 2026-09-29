@@ -212,6 +212,24 @@
   .cta .lines{margin-top:14px;display:flex;flex-direction:column;gap:5px;font-size:13.5px}
   .cta .lines div{display:flex;gap:10px;align-items:baseline}
   .cta .lines b{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;color:var(--accent);flex:0 0 auto}
+
+  .dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:18px}
+  .dsec{margin-top:18px;padding-top:14px;border-top:1px solid var(--hair-soft)}
+  .dsec > h3{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-family:inherit}
+  .drow{display:grid;grid-template-columns:minmax(0,1fr) 150px 120px;gap:10px;align-items:center;padding:5px 0}
+  .drow + .drow{border-top:1px solid var(--hair-soft)}
+  .drow .lab{font-size:13px;color:var(--ink-2);line-height:1.4}
+  .drow .lab small{display:block;font-size:11px;color:var(--muted);margin-top:1px}
+  .drow .res{font-size:13px;text-align:right;font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace;color:var(--muted)}
+  .drow .res.cut{color:var(--warn);font-weight:600}
+  .drow .fixed{font-size:13px;text-align:right;color:var(--muted);padding-right:10px}
+  @media (max-width:640px){.drow{grid-template-columns:minmax(0,1fr) 110px;grid-template-areas:"lab inp" "res res"}
+    .drow .lab{grid-area:lab}.drow .res{grid-area:res;text-align:left}}
+  .dedout{margin-top:18px;padding:14px 16px;background:var(--accent-soft);border-radius:4px;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .dedout .k{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+  .dedout .v{font-size:25px;font-weight:600;color:var(--ink)}
+  .capnote{margin-top:12px;font-size:12px;line-height:1.5;padding:9px 11px;border-radius:3px;background:var(--warn-soft);color:var(--warn)}
   .foot{margin-top:26px;padding-top:16px;border-top:1px solid var(--hair);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </style>
 
@@ -256,7 +274,7 @@
       <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:4px">แป๊ะยิ้มเล่าเรื่อง</div>
       <h1>จดบริษัทคุ้มไหม และควรดึงเงินออกทางไหน</h1>
     </div>
-    <div class="meta">เวอร์ชัน 2.0 · ปีภาษี 2569<br>อัตราตาม ม.48 และ พ.ร.ฎ. (ฉบับที่ 530)</div>
+    <div class="meta">เวอร์ชัน 2.4 · ปีภาษี 2569<br>อัตราตาม ม.48 และ พ.ร.ฎ. (ฉบับที่ 530)</div>
   </header>
 
   <div class="cols">
@@ -368,9 +386,14 @@
               ตัวอย่าง มีบ้านให้เช่าปีละ 240,000 บาท เป็นเงินได้ ม.40(5) หักเหมาได้ 30% เหลือ 168,000 ให้กรอก 168,000
             </p>
             <table class="ptable">
-              <thead><tr><th></th><th>เงินได้อื่น (บาท/ปี)</th><th>ค่าใช้จ่ายเหมา 40(1)(2)<br>ที่ใช้ไปแล้ว</th></tr></thead>
+              <thead><tr><th></th><th>สัดส่วน<br>หุ้น %</th><th>สัดส่วน<br>ค่าตอบแทน %</th><th>เงินได้อื่น<br>(บาท/ปี)</th><th>ค่าลดหย่อน<br>ของคนนี้</th><th>ค่าใช้จ่ายเหมา<br>40(1)(2) ที่ใช้แล้ว</th></tr></thead>
               <tbody id="personRows"></tbody>
             </table>
+            <p class="hint" style="margin-top:9px">
+              <button type="button" class="linkbtn" id="evenBtn">แบ่งหุ้นเท่ากันทุกคน</button>
+              &nbsp;· เงินปันผลต้องจ่ายตามสัดส่วนหุ้น ตาม ป.พ.พ. ม.1200 ส่วนค่าตอบแทนจ่ายตามงานที่ทำจริง ไม่ต้องตรงกับสัดส่วนหุ้น จึงแยกเป็นสองช่อง
+              ใครไม่ได้ทำงานให้ใส่สัดส่วนค่าตอบแทน 0 เพราะจ่ายค่าตอบแทนให้คนที่ไม่ได้ทำงานเป็นรายจ่ายต้องห้ามตาม ม.65 ตรี (8)<br>ช่องค่าลดหย่อนของคนนี้ ใส่เฉพาะคนที่ไม่เท่ากับค่ากลางด้านบน ใส่ 0 หรือปล่อยว่างไว้ ระบบจะใช้ค่ากลางให้เอง
+            </p>
             <p class="hint" style="margin-top:11px">
               ช่องขวา ใส่เฉพาะกรณีเงินได้อื่นเป็น <b>เงินเดือนหรือค่าตอบแทนกรรมการจากที่อื่น</b>
               เพราะค่าใช้จ่ายเหมา 50% เพดาน 100,000 บาท ของเงินได้ ม.40(1) และ ม.40(2)
@@ -469,7 +492,7 @@
           <div class="scroll">
             <table class="data dense">
               <thead><tr>
-                <th>ทางเลือก</th><th>ค่าตอบแทน<br>รวม</th><th>ต่อคน<br>ต่อเดือน</th><th>ภาษี<br>นิติบุคคล</th>
+                <th>ทางเลือก</th><th>ค่าตอบแทน<br>รวม</th><th>เฉลี่ยต่อคน<br>ต่อเดือน</th><th>ภาษี<br>นิติบุคคล</th>
                 <th>ภาษีปันผล<br>หัก ณ ที่จ่าย</th><th>ภาษีบุคคล<br>สุทธิ</th><th>รวม<br>ภาษี</th><th>ประกัน<br>สังคม</th><th>เงินเหลือ<br>ถึงมือ</th>
               </tr></thead>
               <tbody id="coBody"></tbody>
@@ -480,6 +503,23 @@
             <li>ทางเลือก ข. ต้องนำเงินปันผลมารวมคำนวณใน ภ.ง.ด.90 ปลายปีจึงจะได้เครดิตตาม ม.47 ทวิ ปันผลจากกำไร 300,000 แรกที่ได้รับยกเว้นภาษีนิติบุคคล ไม่มีเครดิต</li>
             <li>ค่าตอบแทนต้องสมเหตุสมผลกับงานที่ทำจริง ส่วนที่จ่ายเกินสมควรเป็นรายจ่ายต้องห้ามตาม ม.65 ตรี (8)</li>
             <li>ห้ามดึงเงินบริษัทไปใช้นอก 5 ทางนี้ จะกลายเป็นเงินให้กู้ยืมแก่กรรมการ และอาจถูกประเมินดอกเบี้ยตาม ม.65 ทวิ (4)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-hd"><h2>แต่ละคนได้เท่าไหร่</h2><span class="tag" id="ppTag">—</span></div>
+        <div class="panel-bd">
+          <div class="scroll">
+            <table class="data">
+              <thead><tr><th>ผู้ถือหุ้น</th><th>สัดส่วนหุ้น</th><th>สัดส่วนค่าตอบแทน</th><th>ค่าตอบแทน</th><th>เงินปันผล</th><th>ภาษีบุคคล</th><th>เงินเหลือถึงมือ</th></tr></thead>
+              <tbody id="ppBody"></tbody>
+            </table>
+          </div>
+          <ul class="notes">
+            <li>เงินปันผลแบ่งตามสัดส่วนหุ้นตาม ป.พ.พ. ม.1200 ส่วนค่าตอบแทนแบ่งตามสัดส่วนค่าตอบแทนที่กรอก ซึ่งควรสะท้อนงานที่แต่ละคนทำจริง ไม่ต้องตรงกับสัดส่วนหุ้น</li>
+            <li>หักค่าทำบัญชีและประกันสังคมของแต่ละคนออกแล้ว ยอดรวมทุกคนจึงเท่ากับเงินเหลือถึงมือของทางเลือกนี้</li>
+            <li>ภาษีบุคคลติดลบแปลว่าได้เงินคืน เกิดได้เฉพาะทางเลือก ข. ที่ขอเครดิตภาษีเงินปันผลตาม ม.47 ทวิ</li>
           </ul>
         </div>
       </div>
@@ -544,6 +584,55 @@
             <li>หจก. จ่ายเงินเดือนหุ้นส่วนเป็นรายจ่ายได้ เว้นส่วนที่เกินสมควร (ม.65 ตรี (8)) แต่การถอนเงินโดยไม่มีค่าตอบแทนเป็นรายจ่ายไม่ได้ (ม.65 ตรี (7))</li>
             <li>ธุรกิจที่มีความเสี่ยงด้านหนี้สินสูง ส่วนต่างค่าบัญชีหลักหมื่นอาจไม่คุ้มกับความเสี่ยงของทรัพย์สินส่วนตัว</li>
           </ul>
+        </div>
+      </div>
+
+
+      <div class="panel">
+        <div class="panel-hd"><h2>เครื่องคำนวณค่าลดหย่อน</h2><span class="tag">ปีภาษี 2569 · ข้อมูล ณ 29 ก.ย. 2569</span></div>
+        <div class="panel-bd">
+          <details class="adv" id="advDed" style="margin-top:0;padding-top:0;border-top:0">
+            <summary>เปิดเครื่องคำนวณค่าลดหย่อน <span>กรอกทีละคน แล้วส่งค่าเข้าตารางรายคน</span></summary>
+            <div class="adv-body">
+              <div class="dgrid">
+                <div class="fld">
+                  <label for="dPerson">คำนวณของคนที่</label>
+                  <div class="seg" id="dPerson" role="group">
+                    <button type="button" data-v="1" aria-pressed="true">1</button>
+                    <button type="button" data-v="2" aria-pressed="false">2</button>
+                    <button type="button" data-v="3" aria-pressed="false">3</button>
+                    <button type="button" data-v="4" aria-pressed="false">4</button>
+                    <button type="button" data-v="5" aria-pressed="false">5</button>
+                  </div>
+                </div>
+                <div class="fld">
+                  <label for="dIncome">เงินได้พึงประเมินทั้งปีของคนนี้</label>
+                  <div class="inp"><input id="dIncome" type="number" min="0" step="10000" value="0"><span class="unit">บาท</span></div>
+                  <span class="hint">ใช้คำนวณเพดานที่คิดเป็น % ของรายได้ เช่น RMF 30% PVD 15% ประกันบำนาญ 15% ThaiESG 30%</span>
+                </div>
+                <div class="fld">
+                  <label for="dExpense">ค่าใช้จ่ายที่หักได้ของคนนี้</label>
+                  <div class="inp"><input id="dExpense" type="number" min="0" step="10000" value="100000"><span class="unit">บาท</span></div>
+                  <span class="hint">ใช้คำนวณเพดานเงินบริจาค 10% เงินเดือนและค่าตอบแทนกรรมการหักได้ 50% ไม่เกิน 100,000</span>
+                </div>
+              </div>
+              <div id="dedForm"></div>
+              <div class="dedout">
+                <div>
+                  <div class="k">ค่าลดหย่อนรวมของคนที่ <span id="dWho">1</span></div>
+                  <div class="v num" id="dTotal">60,000</div>
+                </div>
+                <button type="button" class="btn" id="dApply">ใส่ค่านี้ให้คนที่ <span id="dWho2">1</span></button>
+              </div>
+              <div id="dCapNotes"></div>
+              <ul class="notes">
+                <li>รายการที่มีเงื่อนไข เช่น อายุบิดามารดา ปีเกิดของบุตร หรือการเป็น e-donation ไฟล์ตรวจให้ไม่ได้ ผู้กรอกต้องตรวจเองว่าเข้าเงื่อนไขจริง</li>
+                <li>ค่าติดตั้งกล้องวงจรปิดในเขตพัฒนาพิเศษ และค่าลงทุนเพื่อการอนุรักษ์พลังงาน 1.5 เท่า เป็นการหัก<b>ค่าใช้จ่าย</b> ไม่ใช่ค่าลดหย่อน ไฟล์นี้จึงไม่รวมให้ ต้องไปหักในขั้นตอนคำนวณค่าใช้จ่ายแทน</li>
+                <li>ปีภาษี 2569 ไม่มีมาตรการ Easy E-Receipt</li>
+                <li>เพดานทั้งหมดอ้างอิงข้อมูล ณ วันที่ 29 กันยายน 2569 ควรตรวจสอบกับประกาศกรมสรรพากรอีกครั้งก่อนใช้จริง เพราะค่าลดหย่อนเปลี่ยนทุกปี</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
 
@@ -616,11 +705,35 @@
     var html = "";
     for(var i=1;i<=MAXP;i++){
       html += '<tr id="prow'+i+'"><td>คนที่ '+i+'</td>'+
+        '<td><span class="inp"><input id="share'+i+'" type="number" min="0" max="100" step="1" value="0"></span></td>'+
+        '<td><span class="inp"><input id="work'+i+'" type="number" min="0" max="100" step="1" value="0"></span></td>'+
         '<td><span class="inp"><input id="other'+i+'" type="number" min="0" step="10000" value="0"></span></td>'+
+        '<td><span class="inp"><input id="ded'+i+'" type="number" min="0" step="10000" value="0"></span></td>'+
         '<td><span class="inp"><input id="cap'+i+'" type="number" min="0" max="100000" step="10000" value="0"></span></td></tr>';
     }
     document.getElementById("personRows").innerHTML = html;
   })();
+
+  /* เติมสัดส่วนหุ้นให้เท่ากันตามจำนวนคน */
+  function fillEven(){
+    var n = Math.min(MAXP, Math.max(1, Math.round(num("people"))));
+    var each = Math.round(100/n*100)/100;
+    for(var i=1;i<=MAXP;i++){
+      var v = (i<=n) ? (i===n ? Math.round((100-each*(n-1))*100)/100 : each) : 0;
+      document.getElementById("share"+i).value = v;
+      document.getElementById("work"+i).value  = v;
+    }
+  }
+  function sharesAreBlank(){
+    var s = 0;
+    for(var i=1;i<=MAXP;i++){ s += Math.max(0, num("share"+i)) + Math.max(0, num("work"+i)); }
+    return s <= 0;
+  }
+  document.getElementById("evenBtn").addEventListener("click", function(){ fillEven(); recalc(); });
+  document.getElementById("people").addEventListener("change", function(){
+    if(sharesAreBlank()) return;   /* ปล่อยให้ระบบเฉลี่ยเองถ้ายังไม่เคยกรอก */
+    fillEven(); recalc();
+  });
 
   var segState = {raise:1, sso:0, sme:1, vatreg:1};
   function wireSeg(id){
@@ -661,10 +774,22 @@
     var isSme = segState.sme === 1, vatReg = segState.vatreg === 1;
     var whtShare = num("whtshare")/100, whtRate = num("whtrate")/100;
 
-    var other = [], usedCap = [];
-    for(var i=1;i<=MAXP;i++){
+    var other = [], usedCap = [], ded = [], rawShare = [], rawWork = [], shareSum = 0, workSum = 0, i;
+    for(i=1;i<=MAXP;i++){
+      var dv = i<=people ? Math.max(0, num("ded"+i)) : 0;
+      ded.push(dv > 0 ? dv : deduct);
       other.push(i<=people ? Math.max(0, num("other"+i)) : 0);
       usedCap.push(i<=people ? Math.min(100000, Math.max(0, num("cap"+i))) : 0);
+      var s = i<=people ? Math.max(0, num("share"+i)) : 0;
+      var w = i<=people ? Math.max(0, num("work"+i)) : 0;
+      rawShare.push(s); shareSum += s;
+      rawWork.push(w);  workSum  += w;
+    }
+    /* ไม่ได้กรอก หรือกรอกไม่ครบ 100 ให้ถือว่าแบ่งเท่ากัน */
+    var share = [], work = [];
+    for(i=0;i<MAXP;i++){
+      share.push(i < people ? (shareSum > 0 ? rawShare[i]/shareSum : 1/people) : 0);
+      work.push( i < people ? (workSum  > 0 ? rawWork[i]/workSum   : 1/people) : 0);
     }
 
     var inputVat   = vatReg ? cost * invShare * 7/107 : 0;
@@ -679,42 +804,65 @@
     }
 
     /* ----- personal ----- */
-    function personal(ownBase, empWage, empCount){
+    /* ค่าจ้างลูกจ้างในกรณีบุคคลธรรมดา ทางเลือก ค. แบ่งตามสัดส่วนค่าตอบแทน */
+    var empWages = [0], wageTotal = 0;
+    for(i=1;i<people;i++){ var wg = profit * work[i]; empWages.push(wg); wageTotal += wg; }
+
+    function personal(ownBase, wages){
       var ownTax = Math.max(PIT(ownBase), minTax);
-      var empTax = 0;
-      for(var i=1;i<=empCount;i++){
-        empTax += PIT(Math.max(0, empWage - empDeduct(empWage, i) + other[i] - deduct));
+      var empTax = 0, sso = 0;
+      for(var k=1;k<wages.length;k++){
+        empTax += PIT(Math.max(0, wages[k] - empDeduct(wages[k], k) + other[k] - ded[k]));
+        if(wages[k] > 0) sso += ssoAmt;
       }
       var total = ownTax + empTax;
-      var sso   = empCount * ssoAmt;
       return {ownBase:ownBase, ownTax:ownTax, empTax:empTax, total:total, acct:acctP, sso:sso,
-              wage:empWage, take: profit - total - acctP - sso};
+              wage:0, take: profit - total - acctP - sso};
     }
-    var peA = personal(Math.max(0, taxRevenue - taxRevenue*deemed + other[0] - deduct), 0, 0);
-    var peB = personal(Math.max(0, profit + other[0] - deduct), 0, 0);
-    var wageC = people > 1 ? profit / people : 0;
-    var peC = personal(Math.max(0, profit - (people-1)*wageC + other[0] - deduct), wageC, people-1);
+    var peA = personal(Math.max(0, taxRevenue - taxRevenue*deemed + other[0] - ded[0]), [0]);
+    var peB = personal(Math.max(0, profit + other[0] - ded[0]), [0]);
+    var peC = personal(Math.max(0, profit - wageTotal + other[0] - ded[0]), empWages);
+    peC.wage = wageTotal;
 
     /* ----- company ----- */
     function co(label, remun, mode){
       var cit = CIT(profit - remun, isSme);
-      var wht2, pit = 0, i;
+      var pool = profit - remun - cit;          /* เงินที่เหลือจ่ายเป็นปันผล */
+      var wht2, pit = 0, k, persons = [], perOf = function(j){ return remun * work[j]; };
       if(mode === "a"){
         wht2 = (profit - cit) * 0.1;
-        for(i=0;i<people;i++){ pit += PIT(Math.max(0, other[i] - deduct)); }
+        for(k=0;k<people;k++){
+          var pa = PIT(Math.max(0, other[k] - ded[k]));
+          pit += pa;
+          persons.push({remun:0, div: pool*share[k], wht: pool*share[k]*0.1, pit: pa});
+        }
       } else if(mode === "b"){
         wht2 = 0;
-        for(i=0;i<people;i++){ pit += PIT(Math.max(0, profit/people + other[i] - deduct)); }
-        pit -= cit;
+        for(k=0;k<people;k++){
+          var grossUp = (profit - remun) * share[k];   /* ปันผล + เครดิต */
+          var pb = PIT(Math.max(0, grossUp + other[k] - ded[k])) - cit*share[k];
+          pit += pb;
+          persons.push({remun:0, div: pool*share[k], wht: 0, pit: pb});
+        }
       } else {
-        wht2 = Math.max(0, (profit - remun - cit) * 0.1);
-        var per = remun / people;
-        for(i=0;i<people;i++){ pit += PIT(Math.max(0, per - empDeduct(per, i) + other[i] - deduct)); }
+        wht2 = Math.max(0, pool * 0.1);
+        for(k=0;k<people;k++){
+          var per = perOf(k);
+          var pc = PIT(Math.max(0, per - empDeduct(per, k) + other[k] - ded[k]));
+          pit += pc;
+          persons.push({remun: per, div: Math.max(0,pool)*share[k],
+                        wht: Math.max(0,pool)*share[k]*0.1, pit: pc});
+        }
       }
-      var total = cit + wht2 + pit;
-      var sso = remun > 0 ? people * ssoAmt * ssoFlag : 0;
+      var total = cit + wht2 + pit, sso = 0;
+      persons.forEach(function(p, idx){
+        p.sso  = p.remun > 0 ? ssoAmt * ssoFlag : 0;
+        sso   += p.sso;
+        p.acct = acctC * share[idx];
+        p.take = p.remun + p.div - p.wht - p.pit - p.sso - p.acct;
+      });
       return {label:label, remun:remun, perMonth: remun/people/12, cit:cit, wht:wht2, pit:pit,
-              total:total, sso:sso, take: profit - total - sso - acctC};
+              total:total, sso:sso, take: profit - total - sso - acctC, persons:persons};
     }
     var rows = [
       co("ก. ปันผลอย่างเดียว ยอมให้หัก 10% จบ", 0, "a"),
@@ -771,7 +919,8 @@
       {name:"หจก. ใช้ทางเลือกที่ดีที่สุด", take: lp.take, kind:"c"}
     ];
 
-    return {revenue:revenue, cost:cost, people:people, profit:profit, taxRevenue:taxRevenue,
+    return {share:share, shareSum:shareSum, rawShare:rawShare, work:work, workSum:workSum, ded:ded,
+            revenue:revenue, cost:cost, people:people, profit:profit, taxRevenue:taxRevenue,
             inputVat:inputVat, isSme:isSme, vatReg:vatReg, canRaise:canRaise, wht:wht,
             whtShare:whtShare, whtRate:whtRate,
             peA:peA, peB:peB, peC:peC, coRows:rows, bestCo:bestCo, refundB:refundB,
@@ -841,8 +990,20 @@
       "ทางเลือก ข. ผู้ถือหุ้นแต่ละคนจะได้เงินคืนจากเครดิตภาษีเงินปันผลประมาณ " +
       money(m.refundB) + " บาทต่อคนต่อปี (ภาษีบุคคลติดลบ = ได้คืน)";
 
+    /* per-person breakdown of the best company option */
+    document.getElementById("ppTag").textContent = "ทางเลือก " + m.bestCo.label.slice(0,2).trim() + " ซึ่งเหลือเงินมากที่สุด";
+    document.getElementById("ppBody").innerHTML = m.bestCo.persons.map(function(p, i){
+      return "<tr" + (i===0?'':'') + "><td>คนที่ " + (i+1) + "</td>" +
+        '<td class="v">' + (m.share[i]*100).toFixed(1) + "%</td>" +
+        '<td class="v">' + (m.work[i]*100).toFixed(1) + "%</td>" +
+        '<td class="v">' + money(p.remun) + "</td>" +
+        '<td class="v">' + money(p.div) + "</td>" +
+        '<td class="v">' + money(p.pit) + "</td>" +
+        '<td class="v" style="font-weight:600">' + money(p.take) + "</td></tr>";
+    }).join("");
+
     var P = [["กำไรก่อนจ่ายเจ้าของ","profitRow"],["เงินได้สุทธิของเจ้าของ","ownBase"],["ภาษีเจ้าของที่ต้องเสีย","ownTax"],
-             ["ค่าจ้างต่อคนที่จ่ายลูกจ้าง","wage"],["ภาษีลูกจ้างรวม","empTax"],["รวมภาษีทั้งหมด","total"],
+             ["ค่าจ้างลูกจ้างรวม","wage"],["ภาษีลูกจ้างรวม","empTax"],["รวมภาษีทั้งหมด","total"],
              ["ค่าทำบัญชี","acct"],["ประกันสังคมลูกจ้าง","sso"],["เงินเหลือถึงมือ","take"]];
     var cols = [m.peA, m.peB, m.peC];
     document.getElementById("peBody").innerHTML = P.map(function(row){
@@ -935,6 +1096,11 @@
     if(!m.isSme){
       flags.push('<div class="flag info"><b>ไม่ใช่ SME</b> เสียภาษีนิติบุคคล 20% ตั้งแต่บาทแรก ไม่มียกเว้นกำไร 300,000 แรก ทางเลือก ง. จึงไม่คุ้มอีกต่อไป</div>');
     }
+    if(m.shareSum <= 0){
+      flags.push('<div class="flag info"><b>ยังไม่ได้กรอกสัดส่วนหุ้น</b> ระบบถือว่าทุกคนถือเท่ากันคนละ ' + (100/m.people).toFixed(1) + '% ถ้าไม่เท่ากันให้เปิดกลุ่ม “เงินได้อื่นของแต่ละคน” แล้วกรอกสัดส่วนจริง เพราะมีผลกับทางเลือก ข.</div>');
+    } else if(Math.abs(m.shareSum - 100) > 0.5){
+      flags.push('<div class="flag warn"><b>สัดส่วนหุ้นรวมได้ ' + m.shareSum.toFixed(1) + '%</b> ไม่ใช่ 100% ระบบปรับให้เป็นสัดส่วนตามที่กรอกโดยอัตโนมัติ แต่ควรแก้ให้รวมเป็น 100 เพื่อไม่ให้สับสน</div>');
+    }
     var rawPeople = Math.round(num("people"));
     if(rawPeople < 1 || rawPeople > 5){
       flags.push('<div class="flag warn"><b>จำนวนคนต้องอยู่ระหว่าง 1 ถึง 5</b> ระบบกำลังคำนวณด้วย ' + m.people + ' คน ถ้าทีมมีมากกว่า 5 คน โครงสร้างจะซับซ้อนเกินกว่าที่ไฟล์นี้ครอบคลุม ควรปรึกษาผู้ทำบัญชี</div>');
@@ -950,6 +1116,205 @@
     }
     document.getElementById("flags").innerHTML = flags.join("");
   }
+
+
+  /* ================= เครื่องคำนวณค่าลดหย่อน ปีภาษี 2569 ================= */
+  var DED_SECTIONS = [
+    {t:"ลดหย่อนพื้นฐาน", items:[
+      {id:"d_self",   lab:"ส่วนตัว", fixed:60000, note:"ได้อัตโนมัติทุกคน"},
+      {id:"d_spouse", lab:"คู่สมรสที่ไม่มีเงินได้", kind:"check", unit:60000},
+      {id:"d_child1", lab:"บุตร คนละ 30,000", kind:"count", unit:30000},
+      {id:"d_child2", lab:"บุตรตั้งแต่คนที่ 2 ที่เกิดตั้งแต่ปี 2561 คนละ 60,000", kind:"count", unit:60000,
+        note:"นับเฉพาะคนที่เข้าเงื่อนไขทั้งลำดับและปีเกิด ห้ามนับซ้ำกับช่องบน"},
+      {id:"d_parent", lab:"บิดามารดา คนละ 30,000", kind:"count", unit:30000, maxCount:4,
+        note:"อายุตั้งแต่ 60 ปี และมีเงินได้ไม่เกิน 30,000 บาท สูงสุด 4 คน"},
+      {id:"d_disab",  lab:"อุปการะผู้พิการหรือทุพพลภาพ คนละ 60,000", kind:"count", unit:60000},
+      {id:"d_preg",   lab:"ค่าฝากครรภ์และคลอดบุตร", cap:60000, note:"ไม่เกินครรภ์ละ 60,000 หลายครรภ์ในปีเดียวให้รวมยอดมาเอง"}
+    ]},
+    {t:"ประกัน", items:[
+      {id:"d_sso",    lab:"ประกันสังคม", cap:10500},
+      {id:"d_life",   lab:"ประกันชีวิต", cap:100000, note:"รวมกับประกันสุขภาพตัวเองไม่เกิน 100,000"},
+      {id:"d_health", lab:"ประกันสุขภาพตัวเอง", cap:25000, note:"ไม่เกิน 25,000 และนับรวมอยู่ในวงเงิน 100,000 ของประกันชีวิต"},
+      {id:"d_phealth",lab:"ประกันสุขภาพบิดามารดา", cap:15000, note:"ของผู้มีเงินได้และคู่สมรส บิดามารดามีเงินได้ไม่เกิน 30,000"},
+      {id:"d_slife",  lab:"ประกันชีวิตคู่สมรสที่ไม่มีเงินได้", cap:10000}
+    ]},
+    {t:"กลุ่มเกษียณ — รวมกันไม่เกิน 500,000", items:[
+      {id:"d_annu",   lab:"ประกันชีวิตแบบบำนาญ", cap:200000, pct:0.15},
+      {id:"d_gpf",    lab:"กบข.", cap:500000},
+      {id:"d_pvd",    lab:"กองทุนสำรองเลี้ยงชีพ (PVD)", cap:500000, pct:0.15},
+      {id:"d_teach",  lab:"กองทุนสงเคราะห์ครูโรงเรียนเอกชน", cap:500000},
+      {id:"d_rmf",    lab:"RMF", cap:500000, pct:0.30},
+      {id:"d_nsf",    lab:"กอช.", cap:30000}
+    ]},
+    {t:"กองทุนไทยเพื่อความยั่งยืน", items:[
+      {id:"d_tesg",   lab:"TESG + TESGX เงินลงทุนใหม่", cap:300000, pct:0.30},
+      {id:"d_tesgx",  lab:"TESGX ที่ย้ายจาก LTF เมื่อปี 2568", cap:50000,
+        note:"เฉพาะส่วนมูลค่าที่เกิน 300,000 ลดหย่อนได้ปีละไม่เกิน 50,000 ในปี 2569–2572"}
+    ]},
+    {t:"บ้าน เงินบริจาค และมาตรการกระตุ้นเศรษฐกิจ", items:[
+      {id:"d_home",   lab:"ดอกเบี้ยเงินกู้ยืมเพื่อที่อยู่อาศัย", cap:100000},
+      {id:"d_se",     lab:"ลงทุนวิสาหกิจเพื่อสังคม", cap:100000},
+      {id:"d_art",    lab:"ค่าซื้องานศิลปะ", cap:100000},
+      {id:"d_solar",  lab:"ค่าติดตั้ง Solar rooftop", cap:200000},
+      {id:"d_don2",   lab:"บริจาคสถานพยาบาลรัฐ การศึกษา การกีฬา", note:"ระบบคูณ 2 ให้ก่อน แล้วค่อยตัดเพดานรวม 10%"},
+      {id:"d_don1",   lab:"บริจาคทั่วไป", note:"ต้องเป็น e-donation เท่านั้น"},
+      {id:"d_party",  lab:"บริจาคพรรคการเมือง", cap:10000}
+    ]}
+  ];
+
+  (function buildDed(){
+    var html = "";
+    DED_SECTIONS.forEach(function(sec){
+      html += '<div class="dsec"><h3>' + sec.t + "</h3>";
+      sec.items.forEach(function(it){
+        var input;
+        if(it.fixed !== undefined){
+          input = '<div class="fixed">' + f0.format(it.fixed) + "</div>";
+        } else if(it.kind === "check"){
+          input = '<div class="seg" style="max-width:150px"><button type="button" class="dchk" data-id="' + it.id + '" aria-pressed="false">มี / ไม่มี</button></div>';
+        } else if(it.kind === "count"){
+          input = '<span class="inp"><input id="' + it.id + '" type="number" min="0" step="1" value="0"><span class="unit">คน</span></span>';
+        } else {
+          input = '<span class="inp"><input id="' + it.id + '" type="number" min="0" step="1000" value="0"><span class="unit">บาท</span></span>';
+        }
+        html += '<div class="drow"><div class="lab">' + it.lab +
+          (it.note ? "<small>" + it.note + "</small>" : "") + "</div>" +
+          input + '<div class="res" id="r_' + it.id + '">—</div></div>';
+      });
+      html += "</div>";
+    });
+    document.getElementById("dedForm").innerHTML = html;
+  })();
+
+  var dedCheck = {};
+  document.getElementById("dedForm").addEventListener("click", function(e){
+    var b = e.target.closest(".dchk"); if(!b) return;
+    var on = b.getAttribute("aria-pressed") === "true";
+    b.setAttribute("aria-pressed", on ? "false" : "true");
+    b.textContent = on ? "มี / ไม่มี" : "มี";
+    dedCheck[b.getAttribute("data-id")] = !on;
+    calcDed();
+  });
+  document.getElementById("dedForm").addEventListener("input", calcDed);
+  document.getElementById("dIncome").addEventListener("input", calcDed);
+  document.getElementById("dExpense").addEventListener("input", calcDed);
+
+  var dedPerson = 1;
+  (function(){
+    var box = document.getElementById("dPerson");
+    box.addEventListener("click", function(e){
+      var b = e.target.closest("button"); if(!b) return;
+      Array.prototype.forEach.call(box.querySelectorAll("button"), function(x){
+        x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      dedPerson = parseInt(b.getAttribute("data-v"), 10);
+      document.getElementById("dWho").textContent = dedPerson;
+      document.getElementById("dWho2").textContent = dedPerson;
+    });
+  })();
+
+  var dedTotal = 60000;
+  function calcDed(){
+    var income  = Math.max(0, num("dIncome"));
+    var expense = Math.max(0, num("dExpense"));
+    function v(id){ return Math.max(0, num(id)); }
+    function show(id, val, cut){
+      var el = document.getElementById("r_" + id);
+      if(el){ el.textContent = f0.format(Math.round(val)); el.className = "res" + (cut ? " cut" : ""); }
+    }
+    var notes = [];
+
+    /* พื้นฐาน */
+    var base = 60000;
+    show("d_self", 60000, false);
+    var spouse = dedCheck["d_spouse"] ? 60000 : 0;
+    var child1 = v("d_child1") * 30000, child2 = v("d_child2") * 60000;
+    var nPar = Math.min(4, v("d_parent")), parent = nPar * 30000;
+    if(v("d_parent") > 4) notes.push("บิดามารดานับได้สูงสุด 4 คน ส่วนที่เกินถูกตัดออก");
+    var disab = v("d_disab") * 60000;
+    var preg = Math.min(v("d_preg"), 60000);
+    show("d_child1", child1, false); show("d_child2", child2, false);
+    show("d_parent", parent, v("d_parent") > 4); show("d_disab", disab, false);
+    show("d_preg", preg, v("d_preg") > 60000);
+    if(v("d_preg") > 60000) notes.push("ค่าฝากครรภ์และคลอดบุตรถูกตัดเหลือ 60,000 ต่อครรภ์");
+
+    /* ประกัน */
+    var sso = Math.min(v("d_sso"), 10500);
+    if(v("d_sso") > 10500) notes.push("ประกันสังคมถูกตัดเหลือเพดาน 10,500");
+    var health = Math.min(v("d_health"), 25000);
+    var lifeGroup = Math.min(v("d_life") + health, 100000);
+    var lifeCut = (v("d_life") + health) > 100000 || v("d_health") > 25000;
+    if(v("d_health") > 25000) notes.push("ประกันสุขภาพตัวเองถูกตัดเหลือ 25,000");
+    if((v("d_life") + health) > 100000) notes.push("ประกันชีวิตรวมประกันสุขภาพตัวเองถูกตัดเหลือ 100,000");
+    var phealth = Math.min(v("d_phealth"), 15000);
+    var slife = Math.min(v("d_slife"), 10000);
+    show("d_sso", sso, v("d_sso") > 10500);
+    show("d_life", lifeGroup, lifeCut); show("d_health", health, v("d_health") > 25000);
+    show("d_phealth", phealth, v("d_phealth") > 15000); show("d_slife", slife, v("d_slife") > 10000);
+
+    /* กลุ่มเกษียณ รวมไม่เกิน 500,000 */
+    function retire(id, cap, pct){
+      var raw = v(id), lim = cap;
+      if(pct) lim = Math.min(lim, income * pct);
+      return {raw:raw, out:Math.min(raw, lim), lim:lim};
+    }
+    var rItems = [["d_annu",200000,0.15,"ประกันชีวิตแบบบำนาญ"],["d_gpf",500000,0,"กบข."],
+                  ["d_pvd",500000,0.15,"กองทุนสำรองเลี้ยงชีพ"],["d_teach",500000,0,"กองทุนสงเคราะห์ครูเอกชน"],
+                  ["d_rmf",500000,0.30,"RMF"],["d_nsf",30000,0,"กอช."]];
+    var rSum = 0, rEach = [];
+    rItems.forEach(function(a){
+      var r = retire(a[0], a[1], a[2]);
+      rEach.push(r); rSum += r.out;
+    });
+    var rScale = rSum > 500000 ? 500000 / rSum : 1;
+    rItems.forEach(function(a, i){
+      var r = rEach[i], fin = r.out * rScale;
+      show(a[0], fin, r.raw > r.out || rScale < 1);
+      if(r.raw > r.out) notes.push(a[3] + " เกินเพดานของตัวเอง ถูกตัดเหลือ " + f0.format(Math.round(r.out)));
+    });
+    var retireTotal = rSum * rScale;
+    if(rScale < 1) notes.push("กลุ่มเกษียณรวมกันได้ " + f0.format(Math.round(rSum)) + " เกินเพดานรวม 500,000 ระบบตัดเหลือ 500,000 แล้วเฉลี่ยลงแต่ละรายการตามสัดส่วน");
+
+    /* ThaiESG */
+    var tesgLim = Math.min(300000, income * 0.30);
+    var tesg = Math.min(v("d_tesg"), tesgLim);
+    if(v("d_tesg") > tesgLim) notes.push("TESG + TESGX เงินลงทุนใหม่ ถูกตัดเหลือ " + f0.format(Math.round(tesgLim)) + " (30% ของรายได้ และไม่เกิน 300,000)");
+    var tesgx = Math.min(v("d_tesgx"), 50000);
+    show("d_tesg", tesg, v("d_tesg") > tesgLim); show("d_tesgx", tesgx, v("d_tesgx") > 50000);
+
+    /* บ้าน + มาตรการ */
+    var home = Math.min(v("d_home"), 100000), se = Math.min(v("d_se"), 100000);
+    var art = Math.min(v("d_art"), 100000), solar = Math.min(v("d_solar"), 200000);
+    show("d_home", home, v("d_home") > 100000); show("d_se", se, v("d_se") > 100000);
+    show("d_art", art, v("d_art") > 100000); show("d_solar", solar, v("d_solar") > 200000);
+
+    /* เงินบริจาค — คูณ 2 ก่อน แล้วตัดเพดาน 10% ของรายได้หลังหักค่าใช้จ่ายและลดหย่อนอื่น */
+    var party = Math.min(v("d_party"), 10000);
+    show("d_party", party, v("d_party") > 10000);
+    var nonDon = base + spouse + child1 + child2 + parent + disab + preg +
+                 sso + lifeGroup + phealth + slife + retireTotal + tesg + tesgx +
+                 home + se + art + solar;
+    var donBase = Math.max(0, income - expense - nonDon);
+    var donCap = donBase * 0.10;
+    var donRaw = v("d_don2") * 2 + v("d_don1");
+    var don = Math.min(donRaw, donCap);
+    var d2 = Math.min(v("d_don2") * 2, don);
+    show("d_don2", d2, donRaw > donCap);
+    show("d_don1", Math.max(0, don - d2), donRaw > donCap);
+    if(donRaw > donCap) notes.push("เงินบริจาคถูกตัดเหลือ " + f0.format(Math.round(donCap)) +
+      " เพราะเกิน 10% ของเงินได้หลังหักค่าใช้จ่ายและค่าลดหย่อนอื่น ซึ่งคำนวณได้ " + f0.format(Math.round(donBase)));
+
+    dedTotal = nonDon + don + party;
+    document.getElementById("dTotal").textContent = f0.format(Math.round(dedTotal));
+    document.getElementById("dCapNotes").innerHTML =
+      notes.filter(Boolean).map(function(n){ return '<div class="capnote">' + n + "</div>"; }).join("");
+  }
+  document.getElementById("dApply").addEventListener("click", function(){
+    document.getElementById("ded" + dedPerson).value = Math.round(dedTotal);
+    var adv = document.getElementById("advOther"); if(adv) adv.open = true;
+    recalc();
+  });
+
+  calcDed();
 
   try{ if(localStorage.getItem(STORE) === "1"){ unlock(false); } }catch(e){}
 })();
