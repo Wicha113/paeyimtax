@@ -93,9 +93,17 @@ document.addEventListener('DOMContentLoaded', () => {
           counterObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
 
-    counters.forEach(el => counterObserver.observe(el));
+    counters.forEach(el => {
+      // Animate immediately if already in viewport (e.g. hero stats above the fold)
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        animateCounter(el);
+      } else {
+        counterObserver.observe(el);
+      }
+    });
   }
 
   // === Cursor Glow (desktop only) ===
