@@ -1321,85 +1321,89 @@
 </script>
 
 
-<!--
-  ============================================================
-  แพตช์ปรับหน้าจอมือถือและ iPad  สำหรับเครื่องคำนวณแป๊ะยิ้ม
-  วิธีใช้ วางบล็อกนี้ทั้งหมดต่อท้ายไฟล์ ก่อนบรรทัด </body>
-  ไม่ต้องแก้อะไรในของเดิมเลย ลบบล็อกนี้ออกก็กลับไปเหมือนเดิม
-
-  สิ่งที่แพตช์นี้ทำ
-  1 จอกว้างไม่เกิน 800px  ตารางผลลัพธ์เปลี่ยนเป็นการ์ดเรียงลง
-    หัวคอลัมน์ย้ายไปเป็นป้ายชื่อในแต่ละบรรทัด เลิกเลื่อนซ้ายขวา
-  2 จอ 801 ถึง 1100px  บังคับเลย์เอาต์เหลือคอลัมน์เดียว
-    เพราะ iPad แนวนอนแตกเป็น 2 คอลัมน์แล้วตารางถูกบีบจนล้น
-  3 ทุกเครื่องที่ใช้นิ้วจิ้ม  ช่องกรอกเป็น 16px กันซาฟารีซูมเอง
-    และขยายปุ่มเป็น 44px ตามเกณฑ์ของ iOS
-  4 ตารางไหนที่ยังต้องเลื่อนข้าง จะมีเงาทางขวาบอกว่ามีต่อ
-  5 ตารางถูกสร้างใหม่ทุกครั้งที่กดคำนวณ จึงมีตัวเฝ้าคอยติดป้ายให้ใหม่เอง
-
-  เครื่องที่ทดสอบผ่านแล้ว  iPhone SE 320 / iPhone 14 390 / Pro Max 430
-  iPad mini 744 / iPad 768 / iPad Air 820 / iPad แนวนอน 1024 / 1194
-  โน้ตบุ๊ก 1280 / จอใหญ่ 1680  ทุกขนาดไม่มีการเลื่อนแนวนอน
-  หน้าจอที่ใช้เมาส์ยังเป็นดีไซน์เดิมทุกอย่าง
-  ============================================================
--->
-<!-- ===== MOBILE PATCH v1 — เพิ่มต่อท้าย ก่อน </body> ===== -->
+<!-- ===== MOBILE PATCH v3 — วางก่อน </body> ===== -->
 <style id="mobile-patch">
+/* สีของแพตช์ กำหนดเองทั้งหมด ไม่พึ่งตัวแปรของธีม จะได้อ่านออกทุกเครื่อง */
+:root{
+  --mp-card:#FFFFFF; --mp-text:#0E2033; --mp-label:#5A6B7C;
+  --mp-line:#D3DCE4; --mp-best-bg:#E8F5EE; --mp-best-line:#1B6E4B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --mp-card:#141F2A; --mp-text:#E7EEF5; --mp-label:#9FB2C4;
+    --mp-line:#2B3D4F; --mp-best-bg:#12302A; --mp-best-line:#6ED3A2;
+  }
+}
+:root[data-theme="dark"]{
+  --mp-card:#141F2A; --mp-text:#E7EEF5; --mp-label:#9FB2C4;
+  --mp-line:#2B3D4F; --mp-best-bg:#12302A; --mp-best-line:#6ED3A2;
+}
+
 @media (max-width:800px){
-  /* 1 กันไอโฟนซูมเองตอนจิ้มช่องกรอก ต้องไม่ต่ำกว่า 16px */
   input,select,textarea{font-size:16px !important}
-  /* 2 ขยายปุ่มและช่องกรอกให้นิ้วกดง่าย ตามเกณฑ์ 44px ของ iOS */
   input,select,button,.seg>*{min-height:44px}
-  /* 3 ตารางผลลัพธ์ เปลี่ยนจากตารางเป็นการ์ดเรียงลง เลิกเลื่อนแนวนอน */
+
   .scroll{overflow-x:visible !important}
   table.m-card{width:100% !important;min-width:0 !important;display:block}
   table.m-card thead{display:none}
   table.m-card tbody,table.m-card tr,table.m-card td,table.m-card th{display:block;width:auto !important}
+
   table.m-card tr{
-    border:1px solid var(--line,#e2e8f0);border-radius:12px;
-    margin:0 0 10px;padding:12px 14px;background:#fff;
+    border:1px solid var(--mp-line);border-radius:12px;
+    margin:0 0 10px;padding:12px 14px;
+    background:var(--mp-card);color:var(--mp-text);
   }
-  /* แถวที่ดีที่สุด ให้สีไปอยู่ที่การ์ดทั้งใบ ไม่ใช่ที่ช่องย่อย */
-  table.m-card tr.best{border-color:var(--good,#15803d);border-width:2px;background:var(--good-soft,#f0fdf4)}
-  table.m-card tr.best td{background:transparent !important;box-shadow:none !important}
-  /* แถบกราฟอันดับ ซ่อนบนมือถือ เพราะมีเลขอันดับอยู่แล้ว */
-  table.m-card td.bar-cell{display:none !important}
-  table.m-card td,table.m-card th{border:0 !important;padding:5px 0 !important;text-align:left !important}
-  /* ช่องแรกของแถว = หัวการ์ด */
+  table.m-card tr.best{border-color:var(--mp-best-line);border-width:2px;background:var(--mp-best-bg)}
+  table.m-card tr.best td,table.m-card tr.best th{background:transparent !important;box-shadow:none !important}
+
+  table.m-card td,table.m-card th{
+    border:0 !important;padding:5px 0 !important;text-align:left !important;
+    color:var(--mp-text) !important;background:transparent !important;
+  }
   table.m-card td.m-head,table.m-card th.m-head{
     font-weight:700;font-size:15px;line-height:1.35;
     padding:0 0 8px !important;margin-bottom:6px;
-    border-bottom:1px solid var(--line,#e2e8f0) !important;
+    border-bottom:1px solid var(--mp-line) !important;
   }
-  /* ช่องอื่น = ป้ายชื่อซ้าย ตัวเลขขวา */
-  table.m-card td:not(.m-head){
+  table.m-card td.m-val{
     display:flex;align-items:baseline;justify-content:space-between;gap:14px;font-size:14px;
   }
-  table.m-card td:not(.m-head)::before{
-    content:attr(data-label);
-    flex:0 0 auto;max-width:58%;
-    color:#64748b;font-weight:500;font-size:13px;line-height:1.3;text-align:left;
+  table.m-card td.m-val::before{
+    content:attr(data-label);flex:0 0 auto;max-width:58%;
+    color:var(--mp-label);font-weight:500;font-size:13px;line-height:1.3;
+  }
+  /* ช่องที่มีกล่องกรอก ห้ามซ่อน ป้ายชื่อซ้าย กล่องกรอกขวา */
+  table.m-card td.m-field{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0 !important;
+  }
+  table.m-card td.m-field::before{
+    content:attr(data-label);flex:1 1 auto;
+    color:var(--mp-label);font-weight:500;font-size:13px;line-height:1.3;
+  }
+  /* ช่องกรอกบางอันถูกห่อด้วย span ต้องกำหนดขนาดที่ลูกตัวสุดท้ายของเซลล์
+     ไม่ใช่ที่ input โดยตรง ไม่งั้นเปอร์เซ็นต์จะไปคิดจาก span ที่แคบอยู่แล้ว */
+  table.m-card td.m-field > *:last-child{flex:0 0 140px;max-width:56%}
+  table.m-card td.m-field input,
+  table.m-card td.m-field select,
+  table.m-card td.m-field textarea{
+    width:100%;max-width:100%;box-sizing:border-box;text-align:right;
   }
   table.m-card td.m-empty{display:none}
-  /* ปุ่มเปิดเครื่องคำนวณค่าลดหย่อน ให้ซ้อนลงแทนที่จะบีบเป็น 2 คอลัมน์ */
+  table.m-card td.bar-cell{display:none !important}
+
+  /* เครื่องคำนวณค่าลดหย่อน ตารางเดิมตั้งคอลัมน์ตายตัว 204px + 110px รวม 314px
+     ซึ่งกว้างกว่าจอมือถือ ช่องกรอกเลยถูกบีบเหลือ 67px ทำให้กรอกเลขหลักแสนลำบาก */
+  .drow{grid-template-columns:minmax(0,1fr) 136px !important;align-items:center;gap:10px}
+  .drow .inp{width:100%}
+  .drow .inp input{min-width:0}
+
   details>summary{padding:10px 0;line-height:1.45}
-  details>summary br{display:none}
 }
 
-/* iPad แนวนอน 1024-1100px เลย์เอาต์ยังแตก 2 คอลัมน์ ทำให้ตารางถูกบีบจนล้น
-   บังคับให้เหลือคอลัมน์เดียว ตารางจะได้ความกว้างเต็มหน้า */
 @media (min-width:801px) and (max-width:1100px){
   .cols{grid-template-columns:minmax(0,1fr) !important}
   .cols>*{min-width:0}
 }
-/* ถ้ายังมีตารางที่ต้องเลื่อนข้าง ให้เห็นเงาบอกว่ามีต่อทางขวา */
-.scroll{position:relative}
-.scroll.has-more{
-  background:linear-gradient(to left,rgba(15,23,42,.10),rgba(15,23,42,0) 36px);
-  background-attachment:local,scroll;
-}
-
-/* ทุกเครื่องที่ใช้นิ้วจิ้ม รวม iPad จอใหญ่ ต้องไม่ต่ำกว่า 16px ไม่งั้น Safari ซูมเอง */
 @media (pointer:coarse){
   input,select,textarea{font-size:16px !important}
   input,select,button,.seg>*{min-height:44px}
@@ -1407,37 +1411,45 @@
 </style>
 <script>
 (function(){
-  function label(t){
-    var head=t.tHead&&t.tHead.rows.length?t.tHead.rows[t.tHead.rows.length-1]:t.rows[0];
-    if(!head)return;
-    var names=[].map.call(head.cells,function(c){
-      return (c.innerText||'').replace(/\s+/g,' ').trim();
+  var FIELD='input,select,textarea,button';
+  function tag(t){
+    var head = t.tHead && t.tHead.rows.length ? t.tHead.rows[t.tHead.rows.length-1] : t.rows[0];
+    if(!head) return;
+    // ต้องใช้ textContent ไม่ใช่ innerText เพราะหัวตารางถูกซ่อนบนมือถือ
+    // innerText จะอ่านธาตุที่ถูกซ่อนไม่เห็น ได้ค่าว่าง ป้ายชื่อเลยหาย
+    var names = [].map.call(head.cells, function(c){
+      return (c.innerHTML||'').replace(/<br\s*\/?>/gi,' ')
+             .replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ')
+             .replace(/\s+/g,' ').trim();
     });
-    var body=t.tBodies.length?t.tBodies[0].rows:t.rows;
-    [].forEach.call(body,function(r){
-      if(r===head)return;
-      [].forEach.call(r.cells,function(c,i){
-        if(i===0){c.classList.add('m-head');return;}
-        var v=(c.innerText||'').trim();
-        if(v===''||v==='-'||v==='—'){c.classList.add('m-empty');return;}
-        c.classList.remove('m-empty');
-        c.setAttribute('data-label',names[i]||'');
+    var body = t.tBodies.length ? t.tBodies[0].rows : t.rows;
+    [].forEach.call(body, function(r){
+      if(r === head) return;
+      [].forEach.call(r.cells, function(c,i){
+        var has = !!c.querySelector(FIELD);
+        var cls = (i===0 && !has) ? 'm-head'
+                : has ? 'm-field'
+                : (function(v){ return (v===''||v==='-'||v==='—') ? 'm-empty' : 'm-val'; })((c.innerText||'').trim());
+        if(i!==0 || has) c.setAttribute('data-label', names[i] || '');
+        if(c.className.indexOf(cls)===-1){
+          c.classList.remove('m-head','m-val','m-field','m-empty');
+          c.classList.add(cls);
+        }
       });
     });
-    t.classList.add('m-card');
+    if(!t.classList.contains('m-card')) t.classList.add('m-card');
   }
-  function run(){[].forEach.call(document.querySelectorAll('table'),label);}
-  // ตารางไหนยังต้องเลื่อนข้าง ให้ติดเงาบอกใบ้
-  function hint(){
-    [].forEach.call(document.querySelectorAll('.scroll'),function(e){
-      e.classList.toggle('has-more', e.scrollWidth > e.clientWidth + 4);
-    });
+  function run(){ [].forEach.call(document.querySelectorAll('table'), tag); }
+  var pending=false, mo;
+  function schedule(){
+    if(pending) return; pending=true;
+    setTimeout(function(){ pending=false; mo.disconnect(); run(); watch(); },80);
   }
-  run(); hint();
-  window.addEventListener('resize',function(){clearTimeout(window.__mhr);window.__mhr=setTimeout(function(){run();hint();},120);});
-  // ตารางถูกสร้างใหม่ทุกครั้งที่คำนวณ ต้องติดป้ายใหม่ด้วย
-  var mo=new MutationObserver(function(){clearTimeout(window.__mlt);window.__mlt=setTimeout(function(){run();hint();},60);});
-  mo.observe(document.body,{childList:true,subtree:true});
+  function watch(){ mo.observe(document.body,{childList:true,subtree:true}); }
+  mo = new MutationObserver(function(m){
+    for(var i=0;i<m.length;i++){ if(m[i].type==='childList' && m[i].addedNodes.length){ schedule(); return; } }
+  });
+  run(); watch();
 })();
 </script>
 
