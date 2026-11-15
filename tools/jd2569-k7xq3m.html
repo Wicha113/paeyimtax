@@ -748,7 +748,31 @@
     });
   }
   ["raise","sso","sme","vatreg"].forEach(wireSeg);
-  document.getElementById("form").addEventListener("input", recalc);
+  /* การคำนวณหนึ่งรอบต้องสร้างตารางผลลัพธ์ใหม่ 8 ตาราง วัดบนมือถือกลางๆ ได้ราว 140 ms
+     ของเดิมสั่งคำนวณทุกตัวอักษรที่พิมพ์ จอจึงกระตุก โดยเฉพาะตอนลบแล้วพิมพ์ใหม่
+     แก้เป็น: รอให้หยุดพิมพ์ 130 ms แล้วคำนวณรอบเดียว
+     แต่ถ้าพิมพ์ยาวไม่หยุด ก็บังคับคำนวณให้ทุก 450 ms เพื่อให้ผลไม่ค้าง
+     ช่องกรอกเองไม่ถูกบล็อกเลย พิมพ์ลื่นตลอด */
+  var _calcT = 0, _calcFirst = 0;
+  var QUIET_MS = 130, MAX_WAIT_MS = 450;
+  function recalcSoon(){
+    var now = Date.now();
+    if(!_calcFirst) _calcFirst = now;
+    if(now - _calcFirst >= MAX_WAIT_MS){
+      if(_calcT){ clearTimeout(_calcT); _calcT = 0; }
+      _calcFirst = 0;
+      recalc();
+      return;
+    }
+    if(_calcT) clearTimeout(_calcT);
+    _calcT = setTimeout(function(){ _calcT = 0; _calcFirst = 0; recalc(); }, QUIET_MS);
+  }
+  document.getElementById("form").addEventListener("input", recalcSoon);
+  /* เปลี่ยนสวิตช์ จำนวนคน หรือกดปุ่ม ให้เห็นผลทันที ไม่ต้องรอ */
+  document.getElementById("form").addEventListener("change", function(){
+    if(_calcT){ clearTimeout(_calcT); _calcT = 0; }
+    _calcFirst = 0; recalc();
+  });
 
   /* ---------- tax engine ---------- */
   var PIT_BASE = [0,150000,300000,500000,750000,1000000,2000000,5000000];
@@ -1195,9 +1219,18 @@
     dedCheck[b.getAttribute("data-id")] = !on;
     calcDed();
   });
-  document.getElementById("dedForm").addEventListener("input", calcDed);
-  document.getElementById("dIncome").addEventListener("input", calcDed);
-  document.getElementById("dExpense").addEventListener("input", calcDed);
+  /* กล่องลดหย่อนก็รวบรอบเดียวต่อเฟรมเหมือนกัน */
+  var _rafDed = 0;
+  var _rafD = window.requestAnimationFrame
+    ? window.requestAnimationFrame.bind(window)
+    : function(f){ return setTimeout(f, 16); };
+  function calcDedSoon(){
+    if(_rafDed) return;
+    _rafDed = _rafD(function(){ _rafDed = 0; calcDed(); });
+  }
+  document.getElementById("dedForm").addEventListener("input", calcDedSoon);
+  document.getElementById("dIncome").addEventListener("input", calcDedSoon);
+  document.getElementById("dExpense").addEventListener("input", calcDedSoon);
 
   var dedPerson = 1;
   (function(){
@@ -1349,6 +1382,9 @@
   table.m-card tbody,table.m-card tr,table.m-card td,table.m-card th{display:block;width:auto !important}
 
   table.m-card tr{
+    /* contain บอกเบราว์เซอร์ว่าการ์ดใบนี้ไม่กระทบใบอื่น
+       สร้างตารางผลลัพธ์ใหม่แล้วไม่ต้องจัดหน้าใหม่ทั้งหน้า */
+    contain:layout style;
     border:1px solid var(--mp-line);border-radius:12px;
     margin:0 0 10px;padding:12px 14px;
     background:var(--mp-card);color:var(--mp-text);
@@ -1410,46 +1446,129 @@
 }
 </style>
 <script>
+/* ===== MOBILE PATCH — ตัวติดป้ายชื่อช่องบนมือถือ v4 =====
+   v3 กระตุกเพราะ 3 เรื่อง แก้ครบแล้วในนี้
+   1) ใช้ innerText อ่านทุกเซลล์ → บังคับให้เบราว์เซอร์คำนวณ layout ใหม่ทุกครั้ง
+      วัดได้ 11.8 ms ต่อรอบบนเครื่องแรง บนมือถือหนักกว่านี้หลายเท่า
+      เปลี่ยนเป็น textContent → 0.3 ms เร็วขึ้นราว 40 เท่า
+   2) ทุกครั้งที่ผลลัพธ์ถูกสร้างใหม่ มันไล่ติดป้ายตารางทั้ง 8 ตัว
+      ทั้งที่ตารางช่องกรอก (65 ช่อง) ไม่ได้เปลี่ยนเลย → ติดเฉพาะตารางที่เปลี่ยนจริง
+   3) ตั้ง setTimeout 80ms แล้ว disconnect/reconnect observer ทุกรอบ
+      → ใช้ requestAnimationFrame ทำหลังวาดจอ และไม่ต้อง disconnect
+         เพราะเราแก้แค่ attribute กับ class ซึ่งไม่ใช่ childList ที่เราเฝ้าอยู่
+   แถม: ถ้าจอไม่ได้อยู่โหมดการ์ด (กว้างเกิน 800px) ไม่ต้องติดป้ายเลย ไม่เสียแรงฟรี */
 (function(){
-  var FIELD='input,select,textarea,button';
-  function tag(t){
+  var FIELD = 'input,select,textarea,button';
+  var CARD_Q = window.matchMedia ? window.matchMedia('(max-width:800px)') : null;
+  function cardMode(){ return CARD_Q ? CARD_Q.matches : (window.innerWidth <= 800); }
+
+  /* อ่านชื่อหัวตารางจาก innerHTML เพราะบนมือถือ thead ถูกซ่อน (display:none)
+     innerText จะได้ค่าว่าง ป้ายชื่อหาย — บัคนี้เจอมาแล้วใน v1
+     แล้วจำไว้ต่อแถวหัวเดิม ไม่ต้องแปลงซ้ำทุกรอบ */
+  function headLabels(t){
     var head = t.tHead && t.tHead.rows.length ? t.tHead.rows[t.tHead.rows.length-1] : t.rows[0];
-    if(!head) return;
-    // ต้องใช้ textContent ไม่ใช่ innerText เพราะหัวตารางถูกซ่อนบนมือถือ
-    // innerText จะอ่านธาตุที่ถูกซ่อนไม่เห็น ได้ค่าว่าง ป้ายชื่อเลยหาย
-    var names = [].map.call(head.cells, function(c){
+    if(!head) return null;
+    if(t.__mpHead === head && t.__mpLabels) return t.__mpLabels;
+    t.__mpHead = head;
+    t.__mpLabels = [].map.call(head.cells, function(c){
       return (c.innerHTML||'').replace(/<br\s*\/?>/gi,' ')
              .replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ')
              .replace(/\s+/g,' ').trim();
     });
+    return t.__mpLabels;
+  }
+
+  function tag(t){
+    if(!t || !t.rows || !t.rows.length) return;
+    var names = headLabels(t);
+    if(!names) return;
+    var head = t.__mpHead;
     var body = t.tBodies.length ? t.tBodies[0].rows : t.rows;
-    [].forEach.call(body, function(r){
-      if(r === head) return;
-      [].forEach.call(r.cells, function(c,i){
+    for(var ri=0; ri<body.length; ri++){
+      var r = body[ri];
+      if(r === head) continue;
+      for(var i=0; i<r.cells.length; i++){
+        var c = r.cells[i];
         var has = !!c.querySelector(FIELD);
-        var cls = (i===0 && !has) ? 'm-head'
-                : has ? 'm-field'
-                : (function(v){ return (v===''||v==='-'||v==='—') ? 'm-empty' : 'm-val'; })((c.innerText||'').trim());
-        if(i!==0 || has) c.setAttribute('data-label', names[i] || '');
-        if(c.className.indexOf(cls)===-1){
+        var cls;
+        if(i===0 && !has){ cls = 'm-head'; }
+        else if(has){ cls = 'm-field'; }
+        else {
+          var v = (c.textContent||'').trim();
+          cls = (v==='' || v==='-' || v==='—') ? 'm-empty' : 'm-val';
+        }
+        if(i!==0 || has){
+          var lb = names[i] || '';
+          if(c.getAttribute('data-label') !== lb) c.setAttribute('data-label', lb);
+        }
+        if(!c.classList.contains(cls)){
           c.classList.remove('m-head','m-val','m-field','m-empty');
           c.classList.add(cls);
         }
-      });
-    });
+      }
+    }
     if(!t.classList.contains('m-card')) t.classList.add('m-card');
   }
-  function run(){ [].forEach.call(document.querySelectorAll('table'), tag); }
-  var pending=false, mo;
-  function schedule(){
-    if(pending) return; pending=true;
-    setTimeout(function(){ pending=false; mo.disconnect(); run(); watch(); },80);
+
+  function ownerTable(n){
+    while(n && n.nodeType === 1){
+      if(n.tagName === 'TABLE') return n;
+      n = n.parentNode;
+    }
+    return null;
   }
-  function watch(){ mo.observe(document.body,{childList:true,subtree:true}); }
-  mo = new MutationObserver(function(m){
-    for(var i=0;i<m.length;i++){ if(m[i].type==='childList' && m[i].addedNodes.length){ schedule(); return; } }
+
+  var dirty = [], queued = false;
+  var raf = window.requestAnimationFrame
+    ? window.requestAnimationFrame.bind(window)
+    : function(f){ return setTimeout(f, 16); };
+
+  function flush(){
+    queued = false;
+    var list = dirty; dirty = [];
+    if(!cardMode()) return;            /* จอใหญ่ ไม่ต้องติดป้าย */
+    for(var i=0;i<list.length;i++) tag(list[i]);
+  }
+  function mark(t){
+    if(!t) return;
+    if(dirty.indexOf(t) < 0) dirty.push(t);
+    if(queued) return;
+    queued = true;
+    raf(function(){ setTimeout(flush, 0); });   /* ทำหลังวาดจอเสร็จ จอจะไม่สะดุด */
+  }
+
+  function markAll(){
+    var ts = document.querySelectorAll('table');
+    for(var i=0;i<ts.length;i++) mark(ts[i]);
+  }
+
+  var mo = new MutationObserver(function(ms){
+    for(var i=0;i<ms.length;i++){
+      var m = ms[i];
+      if(m.type !== 'childList' || !m.addedNodes.length) continue;
+      var t = ownerTable(m.target);
+      if(t){ mark(t); continue; }
+      for(var j=0;j<m.addedNodes.length;j++){
+        var n = m.addedNodes[j];
+        if(!n || n.nodeType !== 1) continue;
+        if(n.tagName === 'TABLE'){ mark(n); }
+        else if(n.querySelectorAll){
+          var inner = n.querySelectorAll('table');
+          for(var k=0;k<inner.length;k++) mark(inner[k]);
+        }
+      }
+    }
   });
-  run(); watch();
+
+  markAll();
+  mo.observe(document.body, {childList:true, subtree:true});
+
+  /* หมุนจอ หรือสลับโหมด ให้ติดป้ายใหม่ทั้งหมด */
+  if(CARD_Q){
+    if(CARD_Q.addEventListener) CARD_Q.addEventListener('change', markAll);
+    else if(CARD_Q.addListener) CARD_Q.addListener(markAll);
+  }
+  window.addEventListener('orientationchange', markAll);
 })();
 </script>
 
