@@ -50,7 +50,13 @@
       "Bash(grep -rn \"ebook-seller-tax\\\\|ebook-vat\\\\|ebook-epayment\\\\|ebook-investor\\\\|ebook-restaurant\\\\|ebook-freelance\\\\|consult.html\\\\|course-pnd\" --include=\"*.html\" blog-*.html)",
       "Bash(ls blog-*.html)",
       "Skill(claude-in-chrome)",
-      "mcp__claude-in-chrome__navigate"
+      "mcp__claude-in-chrome__navigate",
+      "Bash(grep -rn \"instructor-img\" /Users/wicha/Desktop/paeyimtax/*.html)",
+      "Bash(grep:*)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i '' 's/border-radius: 50%; object-fit: cover;/border-radius: 50%; object-fit: cover; object-position: center 18%;/g' \"$f\")",
+      "Bash(done)"
     ]
   },
   "hooks": {
